@@ -7,7 +7,7 @@
     "build": "ng build --aot ",
     "lib:build:prod": "ng build ngx-snotifire; cd dist/ng-snotifire/ ; npm pack",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test  snotifire-workspace  --browsers=ChromeHeadless --watch=false --progress --code-coverage",
+    "test": "npm run snotifire-workspace:test",
     "snotifire-workspace:test":"ng test  snotifire-workspace  --browsers=ChromeHeadless --watch=false --progress --code-coverage",
     "lint": "ng lint",
     "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify",
