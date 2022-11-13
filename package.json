@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --aot",
+    "build": "ng build --aot ",
     "lib:build:prod": "ng build ngx-snotifire; cd dist/ng-snotifire/ ; npm pack",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --browsers=ChromeHeadless --watch=false",
+    "test": "ng test --browsers=ChromeHeadless --watch=false --progress",
     "lint": "ng lint",
     "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
