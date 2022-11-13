@@ -8,10 +8,9 @@ import { NotificationDefaults } from '../defaults/defaults.interface';
 import { SnotifireModel } from '../models/snotifire.model';
 import { NotifireModel } from '../components/toast/notifire-toast.model';
 import { mergeDeep, uuid } from '../utils';
-import { ToastDefaults } from '../defaults';
 
 @Injectable()
-export class NotificationService {
+export class SnotificationService {
   /**
    * Minimum display time of the notification message
    */

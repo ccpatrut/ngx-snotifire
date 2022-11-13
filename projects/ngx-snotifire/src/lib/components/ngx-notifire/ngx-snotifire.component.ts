@@ -9,7 +9,7 @@ import { Subject, Subscription, takeUntil } from 'rxjs';
 import { SnotifireEventType, SnotificationPositionType } from '../../models';
 import { SnotifireNotifications } from '../../models/snotifire-notifications.interface';
 import { NotifireModel } from '../toast/notifire-toast.model';
-import { NotificationService } from '../../services';
+import { SnotificationService } from '../../services';
 
 @Component({
   selector: 'ngx-snotifire',
@@ -51,7 +51,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
    */
   withBackdrop: NotifireModel[] = [];
 
-  constructor(readonly service: NotificationService) {}
+  constructor(readonly service: SnotificationService) {}
   ngAfterViewInit(): void {}
 
   ngOnInit(): void {
