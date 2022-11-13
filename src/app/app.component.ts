@@ -8,7 +8,7 @@ import {
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
-  NotificationPositionType,
+  SnotificationPositionType,
   NotificationService,
   SnotifireConfig,
   SnotifireEventType,
