@@ -24,4 +24,5 @@ jobs:
       - run: npm run-script lib:build:prod
       - run: npm run-script build
       - run: npm run-script test
-        env: CI:false
+env:
+  CI: false
