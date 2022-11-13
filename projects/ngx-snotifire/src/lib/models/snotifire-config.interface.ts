@@ -1,7 +1,7 @@
 import { SafeHtml } from '@angular/platform-browser';
 import { ButtonsConfig } from '../components/buttons/buttons-config.interface';
 import { SnotifireAnimate } from './snotifire-animate.interface';
-import { NotificationPositionType } from './snotifire-position.type';
+import { SnotificationPositionType } from './snotifire-position.type';
 import { SnotifireType } from './snotifire.type';
 
 export interface SnotifireConfig {
@@ -81,7 +81,7 @@ export interface SnotifireConfig {
   /**
    * Toasts position on screen
    */
-  position?: NotificationPositionType;
+  position?: SnotificationPositionType;
 
   /**
    * Backdrop opacity.

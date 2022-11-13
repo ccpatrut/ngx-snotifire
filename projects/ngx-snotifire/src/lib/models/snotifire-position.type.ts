@@ -1,4 +1,4 @@
-export enum NotificationPositionType {
+export enum SnotificationPositionType {
   LEFT_TOP = 'leftTop',
   LEFT_CENTER = 'leftCenter',
   LEFT_BOTTOM = 'leftBottom',

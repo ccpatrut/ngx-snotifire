@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Subject, Subscription, takeUntil } from 'rxjs';
-import { SnotifireEventType, NotificationPositionType } from '../../models';
+import { SnotifireEventType, SnotificationPositionType } from '../../models';
 import { SnotifireNotifications } from '../../models/snotifire-notifications.interface';
 import { NotifireModel } from '../toast/notifire-toast.model';
 import { NotificationService } from '../../services';
@@ -110,11 +110,11 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
   splitToasts(toasts: NotifireModel[]): SnotifireNotifications {
     const result: SnotifireNotifications = {};
 
-    for (const property in NotificationPositionType) {
-      if (NotificationPositionType.hasOwnProperty(property)) {
+    for (const property in SnotificationPositionType) {
+      if (SnotificationPositionType.hasOwnProperty(property)) {
         result[
-          NotificationPositionType[
-            property as keyof typeof NotificationPositionType
+          SnotificationPositionType[
+            property as keyof typeof SnotificationPositionType
           ]
         ] = [];
       }
@@ -122,10 +122,10 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
 
     toasts.forEach((toast: NotifireModel) => {
       if (toast.config.position) {
-        const keyIndex = Object.keys(NotificationPositionType).indexOf(
+        const keyIndex = Object.keys(SnotificationPositionType).indexOf(
           toast.config.position
         );
-        const searchedString = Object.values(NotificationPositionType)[
+        const searchedString = Object.values(SnotificationPositionType)[
           keyIndex
         ];
         result[searchedString]?.push(toast);
@@ -137,7 +137,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
 
   getNotificationArray(
     notifications: SnotifireNotifications,
-    position: NotificationPositionType
+    position: SnotificationPositionType
   ): NotifireModel[] | undefined {
     return notifications[position];
   }

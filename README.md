@@ -1,3 +1,7 @@
 # SnotifireWorkspace
 
-Demo project at [link](https://ccpatrut.github.io/ngx-snotifire/)
+Demo project at [https://ccpatrut.github.io/ngx-snotifire/](https://ccpatrut.github.io/ngx-snotifire/)
+
+# Features
+
+- 8 types of toast notifications

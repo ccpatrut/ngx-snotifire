@@ -1,4 +1,4 @@
-import { NotificationPositionType, SnotifireType } from '../models';
+import { SnotificationPositionType, SnotifireType } from '../models';
 
 /**
  * Snotify default configuration object
@@ -22,7 +22,7 @@ export const ToastDefaults = {
     icon: undefined,
     iconClass: undefined,
     html: undefined,
-    position: NotificationPositionType.RIGHT_BOTTOM,
+    position: SnotificationPositionType.RIGHT_BOTTOM,
     animation: { enter: 'fadeIn', exit: 'fadeOut', time: 400 },
   },
   type: {

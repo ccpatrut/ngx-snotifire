@@ -1,0 +1,12 @@
+
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./demo/compodoc",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "types": []
+  },
+  "exclude": ["e2e", "example", "dist", "docs", "node_modules"]
+}
