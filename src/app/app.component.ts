@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     readonly notificationService: NotificationService,
     private readonly fb: FormBuilder
   ) {
-    this.positions = Object.keys(NotificationPositionType);
+    this.positions = Object.keys(SnotificationPositionType);
     this.snotifireForm = this.fb.group({
       toastData: this.fb.group({
         title: ['Notification title!', [Validators.required]],
