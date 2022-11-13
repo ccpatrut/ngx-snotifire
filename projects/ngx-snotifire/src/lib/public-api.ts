@@ -2,7 +2,7 @@
  * Public API Surface of ngx-notifire
  */
 
-export * from './lib/ngx-snotifire.module';
+export * from './lib/ngx-notifire.module';
 export * from './lib/components';
 
 export * from './lib/models';

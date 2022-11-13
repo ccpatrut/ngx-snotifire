@@ -1,1 +1,41 @@
+
+@import "/src/app/styling/material";
+
 /* You can add global styles to this file, and also import other style files */
+.material {
+  @import "/projects/ngx-snotifire/styles/material.scss";
+}
+.simple {
+  @import "/projects/ngx-snotifire/styles/simple.scss";
+}
+.dark {
+  @import "/projects/ngx-snotifire/styles/dark.scss";
+}
+
+.snotify-icon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+html, body { height: 100%;
+color:#fff; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+}
+html{
+  background-image:linear-gradient(#F95859,
+  #F83F41);
+  background-size: cover;
+}

@@ -1,0 +1,68 @@
+
+.page{
+  padding-top:2rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+  align-content: center;
+
+  display: flex;
+  .config{
+    max-width: 40rem;
+    padding: 0rem 3rem;
+    .title{
+      text-align: center;
+    }
+    .functional-config{
+        &__length,&__ui{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        mat-form-field{
+          width: 45%;
+        }
+      }
+    }
+    &__booleans{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3.2rem;
+      max-width: 100%;
+      mat-slide-togle{
+        width: 40%;
+        display: inline-block;
+      }
+    }
+  }
+  .buttons{
+
+    max-width:70rem;
+    display: flex;
+    flex-direction: column;
+    margin-top:4.5rem;
+    margin-left: 10rem;
+    div{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      width: 100%;
+
+    }
+    button{
+      margin-left: 1rem;
+    }
+    .buttons__html, .buttons__clear-all{
+      display: block;
+      text-align: center;
+    }
+  }
+}
+mat-form-field{
+  width:100%;
+}
+mat-divider{
+  padding-top:0;
+  margin-bottom: 2rem;
+}
+
+

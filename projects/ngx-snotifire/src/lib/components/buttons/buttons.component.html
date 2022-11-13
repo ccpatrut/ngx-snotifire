@@ -1,0 +1,12 @@
+<div class="notifire-toast__buttons">
+    <ng-container *ngIf="toast.config">
+        <button
+            type="button"
+            *ngFor="let button of toast.config.buttons"
+            [ngClass]="{ 'notifire-toast__buttons--bold': button.bold }"
+            (click)="button.action ? button.action(toast) : remove()"
+        >
+            {{ button.text }}
+        </button>
+    </ng-container>
+</div>
