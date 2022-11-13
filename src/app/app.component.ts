@@ -8,7 +8,7 @@ import {
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
-  NotificationService,
+  SnotificationService,
   SnotificationPositionType,
   SnotifireConfig,
   SnotifireEventType,
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   constructor(
     protected readonly iconRegistry: MatIconRegistry,
     protected readonly sanitizer: DomSanitizer,
-    readonly notificationService: NotificationService,
+    readonly snotificationService: SnotificationService,
     private readonly fb: FormBuilder
   ) {
     this.positions = Object.keys(SnotificationPositionType);
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
   }
 
   getConfig(): SnotifireConfig {
-    this.notificationService.setDefaults({
+    this.snotificationService.setDefaults({
       global: {
         newOnTop: this.visualConfig.isNewItemsOnTop,
         maxAtPosition: this.notificationConfig.maxAtPosition,
@@ -103,28 +103,28 @@ export class AppComponent implements OnInit {
   }
 
   onSuccess() {
-    this.notificationService.success(
+    this.snotificationService.success(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
     );
   }
   onInfo() {
-    this.notificationService.info(
+    this.snotificationService.info(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
     );
   }
   onError() {
-    this.notificationService.error(
+    this.snotificationService.error(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
     );
   }
   onWarning() {
-    this.notificationService.warning(
+    this.snotificationService.warning(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
@@ -134,11 +134,11 @@ export class AppComponent implements OnInit {
   onHtml() {
     const html = `<div class="snotifyToast__title"><b>Html Bold Title</b></div>
     <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div>`;
-    this.notificationService.html(html, this.getConfig());
+    this.snotificationService.html(html, this.getConfig());
   }
 
   onClear() {
-    this.notificationService.clear();
+    this.snotificationService.clear();
   }
 
   onAsyncLoading() {
@@ -177,18 +177,18 @@ export class AppComponent implements OnInit {
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
      */
     const { timeout, ...config } = this.getConfig(); // Omit timeout
-    this.notificationService.async(
+    this.snotificationService.async(
       'This will resolve with error',
       'Async',
       errorAction,
       config
     );
-    this.notificationService.async(
+    this.snotificationService.async(
       'This will resolve with success',
       successAction,
       config
     );
-    this.notificationService.async(
+    this.snotificationService.async(
       'Called with promise',
       'Error async',
       new Promise((resolve, reject) => {
@@ -214,7 +214,7 @@ export class AppComponent implements OnInit {
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
     const { timeout, closeOnClick, ...config } = this.getConfig(); // Omit props what i don't need
-    this.notificationService.confirm(
+    this.snotificationService.confirm(
       this.toastData.body,
       this.toastData.title,
       {
@@ -228,16 +228,16 @@ export class AppComponent implements OnInit {
           { text: 'No', action: () => console.log('Clicked: No') },
           {
             text: 'Later',
-            action: (toast) => {
+            action: (toast: any) => {
               console.log('Clicked: Later');
-              this.notificationService.remove(toast.id);
+              this.snotificationService.remove(toast.id);
             },
           },
           {
             text: 'Close',
-            action: (toast) => {
+            action: (toast: any) => {
               console.log('Clicked: Close');
-              this.notificationService.remove(toast.id);
+              this.snotificationService.remove(toast.id);
             },
             bold: true,
           },
@@ -253,19 +253,19 @@ export class AppComponent implements OnInit {
      At the second we can't get it. But we can remove this toast
      */
     const { timeout, closeOnClick, ...config } = this.getConfig(); // Omit props what i don't need
-    this.notificationService
+    this.snotificationService
       .prompt(this.toastData.body, this.toastData.title, {
         ...config,
         buttons: [
           {
             text: 'Yes',
-            action: (toast) => console.log('Said Yes: ' + toast.value),
+            action: (toast: any) => console.log('Said Yes: ' + toast.value),
           },
           {
             text: 'No',
-            action: (toast) => {
+            action: (toast: any) => {
               console.log('Said No: ' + toast.value);
-              this.notificationService.remove(toast.id);
+              this.snotificationService.remove(toast.id);
             },
           },
         ],

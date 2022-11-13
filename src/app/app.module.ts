@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxSnotifireModule, NotificationService } from 'ngx-snotifire';
+import { NgxSnotifireModule, SnotificationService } from 'ngx-snotifire';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -33,7 +33,7 @@ import { ToastDefaults } from 'ngx-snotifire';
   ],
   providers: [
     { provide: 'NotifireConfig', useValue: ToastDefaults },
-    NotificationService,
+    SnotificationService,
   ],
   bootstrap: [AppComponent],
 })
