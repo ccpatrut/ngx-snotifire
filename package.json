@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --aot",
+    "lib:build:prod": "ng build ngx-snotifire; cd dist/ng-snotifire/ ; npm pack",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
