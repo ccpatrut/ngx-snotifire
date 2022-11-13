@@ -8,8 +8,8 @@ import {
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
-  SnotificationPositionType,
   NotificationService,
+  SnotificationPositionType,
   SnotifireConfig,
   SnotifireEventType,
   SnotifireModel,
@@ -297,7 +297,7 @@ export class AppComponent implements OnInit {
 }
 
 export interface NotificationFormValue {
-  position: NotificationPositionType;
+  position: SnotificationPositionType;
   toastData: ToastData;
 }
 interface ToastData {
