@@ -14,7 +14,7 @@
     "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
-    "docs:build": "gitbook build ./docs ./demo/documentation"
+    "docs:build": "gitbook install docs && gitbook build ./docs ./demo/documentation"
   },
   "private": true,
   "dependencies": {
