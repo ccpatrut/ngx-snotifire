@@ -13,7 +13,8 @@
     "lint": "ng lint",
     "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
-    "compodoc:serve": "compodoc -s"
+    "compodoc:serve": "compodoc -s",
+    "docs:build": "gitbook build ./docs ./demo/documentation",
   },
   "private": true,
   "dependencies": {

@@ -22,5 +22,5 @@ jobs:
       - run: npm run-script lib:build:prod
       - run: npm run-script build
       - run: npm run-script test
-env:
-  CI: false
+      - run: npm run-script compodoc:build
+      - run: npm run-script docs:build
