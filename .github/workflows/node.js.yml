@@ -20,8 +20,6 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm install gitbook-cli@2.1.2  -g
-
-      - run: npm run-script build
       - run: npm run-script test
       - run: npm run-script compodoc:build
       - run: npm run-script docs:build
