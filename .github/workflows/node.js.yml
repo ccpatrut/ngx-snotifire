@@ -26,6 +26,6 @@ jobs:
       - run: npm run-script test
       - run: npm run-script compodoc:build
       - run: npm run-script docs:build
-      - run: ls dist
+      - run: cd dist/ngx-snotifire && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
