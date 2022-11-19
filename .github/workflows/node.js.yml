@@ -25,7 +25,7 @@ jobs:
       - run: npm run-script build
       - run: npm run-script test
       - run: echo $NODE_AUTH_TOKEN
-      - run: cd dist/ngx-snotifire && npm publish cd ../../
+      - run: cd dist/ngx-snotifire && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm install gitbook-cli@2.1.2  -g
