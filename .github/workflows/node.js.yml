@@ -20,7 +20,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm ci
-      - run: npm install gitbook-cli@2.1.2  -g
       - run: npm run-script lib:build:prod
       - run: npm run-script build
       - run: npm run-script test
@@ -28,5 +27,6 @@ jobs:
       - run: cd dist/ngx-snotifire && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm install gitbook-cli@2.1.2  -g
       - run: npm run-script compodoc:build
       - run: npm run-script docs:build
