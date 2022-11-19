@@ -16,7 +16,7 @@
     "compodoc:serve": "compodoc -s",
     "docs:build": "gitbook install docs && gitbook build ./docs ./demo/documentation"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^14.2.0",
     "@angular/cdk": "^14.2.7",
