@@ -5,6 +5,7 @@ name: Node.js CI
 
 on: [push]
 run-name: build
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,8 +24,11 @@ jobs:
       - run: npm run-script lib:build:prod
       - run: npm run-script build
       - run: npm run-script test
+      - run:  echo $NODE_AUTH_TOKEN
+      - run: cd dist/ngx-snotifire && npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm run-script compodoc:build
       - run: npm run-script docs:build
-      - run: cd dist/ngx-snotifire && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
