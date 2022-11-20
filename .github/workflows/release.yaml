@@ -20,10 +20,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
+
       - run: npm ci
       - run: npm run-script lib:build:prod
       - run: npm run-script build
       - run: npm run-script test
+      - run: npm install gitbook-cli@2.1.2  -g
+      - run: npm run-script compodoc:build
+      - run: npm run-script docs:build
       - run: cd dist/ngx-snotifire && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        name: Deploy to npmjs 🚀
+      - name: Deploy to github page🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: demo
