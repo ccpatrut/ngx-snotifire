@@ -2,11 +2,11 @@
 
 ###### NPM 5
 
-`npm install ng-snotify`
+`npm install ngx-snotifire`
 
 ###### yarn
 
-`yarn add ng-snotify`
+`yarn add ngx-snotifire`
 
 #### Import Module
 
