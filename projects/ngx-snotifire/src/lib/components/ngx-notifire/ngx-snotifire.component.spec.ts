@@ -37,7 +37,7 @@ describe('NgxSnotifireComponent', () => {
         HttpClientModule,
       ],
       providers: [
-        { provide: 'NotifireConfig', useValue: ToastDefaults },
+        { provide: 'snotifireConfig', useValue: ToastDefaults },
         SnotifireService,
       ],
     }).compileComponents();

@@ -66,3 +66,35 @@ mat-divider{
 }
 
 
+footer{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ a:not(:last-child), h6{
+  text-align: center;
+  margin-left: 1rem;
+ }
+
+ a {
+  background-color: #f83f8b;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: baseline;
+
+}
+
+a:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  background-color: #ccc;
+}
+}
