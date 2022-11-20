@@ -285,7 +285,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/NotifireModel.html" target="_self" >NotifireModel</a></code>
+                        <i>Type : </i>        <code><a href="../classes/SnotifireToastModel.html" target="_self" >SnotifireToastModel</a></code>
 
                     </td>
                 </tr>
@@ -883,7 +883,7 @@
 } from &#x27;@angular/core&#x27;;
 import { Subject, takeUntil } from &#x27;rxjs&#x27;;
 import { SnotifireEventType, SnotifireType } from &#x27;../../models&#x27;;
-import { NotifireModel } from &#x27;./notifire-toast.model&#x27;;
+import { SnotifireToastModel } from &#x27;./notifire-toast.model&#x27;;
 import { SnotificationService } from &#x27;../../services&#x27;;
 
 @Component({
@@ -897,7 +897,7 @@ export class ToastComponent implements OnInit, OnDestroy {
   /**
    * Get toast from notifications array
    */
-  @Input() toast!: NotifireModel;
+  @Input() toast!: SnotifireToastModel;
   @Output() stateChanged &#x3D; new EventEmitter&lt;SnotifireEventType&gt;();
 
   /**
@@ -921,7 +921,7 @@ export class ToastComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.service.toastChanged
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((toast: NotifireModel) &#x3D;&gt; {
+      .subscribe((toast: SnotifireToastModel) &#x3D;&gt; {
         console.log(&#x27;toast&#x27;);
         if (this.toast.id &#x3D;&#x3D;&#x3D; toast.id) {
           this.initToast();
