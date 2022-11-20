@@ -35,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    { provide: 'NotifireConfig', useValue: ToastDefaults },
+    { provide: 'SnotifireConfig', useValue: ToastDefaults },
     SnotificationService,
   ],
   bootstrap: [AppComponent],

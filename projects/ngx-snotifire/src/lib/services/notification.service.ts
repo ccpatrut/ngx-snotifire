@@ -4,13 +4,13 @@ import { from, Observable, Subject, Subscription } from 'rxjs';
 import { SetToastType } from '../decorators/set-toast-type.decorator';
 import { TransformArgument } from '../decorators/transform-argument.decorator';
 import { SnotifireConfig, SnotifireEventType, SnotifireType } from '../models';
-import { NotificationDefaults } from '../defaults/defaults.interface';
+import { SnotifireDefaults } from '../defaults/defaults.interface';
 import { SnotifireModel } from '../models/snotifire.model';
 import { SnotifireToastModel } from '../components/toast/notifire-toast.model';
 import { mergeDeep, uuid } from '../utils';
 
 @Injectable()
-export class SnotificationService {
+export class SnotifireService {
   /**
    * Minimum display time of the notification message
    */
@@ -27,7 +27,7 @@ export class SnotificationService {
   notifications: Array<SnotifireToastModel> = [];
 
   constructor(
-    @Inject('NotifireConfig') public defaultConfig: NotificationDefaults
+    @Inject('NotifireConfig') public defaultConfig: SnotifireDefaults
   ) {}
 
   /**
@@ -79,11 +79,11 @@ export class SnotificationService {
     this.toastDeleted.next(id);
   }
 
-  setDefaults(defaults: NotificationDefaults): NotificationDefaults {
+  setDefaults(defaults: SnotifireDefaults): SnotifireDefaults {
     const mergedConfig = (this.defaultConfig = mergeDeep(
       this.defaultConfig,
       defaults
-    ) as NotificationDefaults);
+    ) as SnotifireDefaults);
     return mergedConfig;
   }
 
@@ -531,5 +531,15 @@ export class SnotificationService {
     }
     this.emit();
     this.toastChanged.next(toast);
+  }
+  /**
+   * returns SnotifyToast object
+   * @param id Number
+   * @return SnotifyToast|undefined
+   */
+  get(id: number): SnotifireToastModel | undefined {
+    return (
+      this.notifications && this.notifications.find((toast) => toast.id === id)
+    );
   }
 }

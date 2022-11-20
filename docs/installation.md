@@ -19,7 +19,7 @@ And provide SnotifyService with default configuration object
 // Import your library
 import {
   NgxSnotifireModule,
-  SnotificationService,
+  SnotifireService,
   ToastDefaults,
 } from "ngx-snotifire";
 
@@ -27,7 +27,7 @@ import {
   imports: [BrowserModule, SnotifyModule],
   providers: [
     { provide: "NotifireConfig", useValue: ToastDefaults },
-    SnotificationService,
+    SnotifireService,
   ],
 })
 export class AppModule {}
@@ -54,7 +54,7 @@ import { SnotifyService } from "ng-snotify";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  constructor(private snotificationService: SnotificationService) {}
+  constructor(private snotifireService: SnotifireService) {}
 }
 ```
 

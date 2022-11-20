@@ -1,6 +1,6 @@
-# SnotifyService
+# NotificationService
 
-> All methods return toast [SnotifyToast](model.md#snotifytoast)
+> All methods return toast [NotifireToastModel](model.md#snotifiretoastmodel)
 > Toast methods creates notifications with different class names `.snotify-${METHOD_NAME}`  
 > You can style them as you want.
 > Look more in [advanced section].
@@ -14,12 +14,12 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
   ```
-  
+
 ### success
 
 - type: `Function`
@@ -27,12 +27,12 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
-  ``` 
-  
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
+  ```
+
 ### info
 
 - type: `Function`
@@ -40,12 +40,12 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
   ```
-  
+
 ### warning
 
 - type: `Function`
@@ -53,12 +53,12 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
-  ```  
-  
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
+  ```
+
 ### error
 
 - type: `Function`
@@ -66,10 +66,10 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
   ```
 
 ### confirm
@@ -79,14 +79,15 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
   ```
+
   > Toast notification with buttons  
-  > Example - [here](../essentials/examples.md#confirm) 
-   
+  > Example - [here](../essentials/examples.md#confirm)
+
 ### prompt
 
 - type: `Function`
@@ -94,15 +95,15 @@
   Signature:
 
   ```
-  (body: string): SnotifyToast
-  (body: string, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  (body: string): SnotifireToastModel
+  (body: string, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string): SnotifireToastModel
+  (body: string, title: string, config: SnotifireConfig): SnotifireToastModel
   ```
+
   > Toast notification with buttons and input field
-  > Example - [here](../essentials/examples.md#prompt)   
-  
-  
+  > Example - [here](../essentials/examples.md#prompt)
+
 ### async
 
 - type: `Function`
@@ -110,15 +111,14 @@
   Signature:
 
   ```
-  (body: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
-  (body: string, title: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
-  (body: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyToastConfig): SnotifyToast
-  (body: string, title: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyToastConfig): SnotifyToast
+  (body: string, action: Promise<SnotifireModel> | Observable<SnotifireModel>): SnotifireToastModel
+  (body: string, title: string, action: Promise<SnotifireModel> | Observable<SnotifireModel>): SnotifireToastModel
+  (body: string, action: Promise<SnotifireModel> | Observable<SnotifireModel>, config: SnotifireConfig): SnotifireToastModel
+  (body: string, title: string, action: Promise<SnotifireModel> | Observable<SnotifireModel>, config: SnotifireConfig): SnotifireToastModel
   ```
-  > Toast notification of style - *info* and loading spinner. It changes style depending on complete or error `Observable`.  
-  > Example - [here](../essentials/examples.md#async)  
-  
 
+  > Toast notification of style - _info_ and loading spinner. It changes style depending on complete or error `Observable`.  
+  > Example - [here](../essentials/examples.md#async)
 
 ### html
 
@@ -127,10 +127,11 @@
   Signature:
 
   ```
-   html(html: string | SafeHtml, config?: SnotifyToastConfig): SnotifyToast
+   html(html: string | SafeHtml, config?: SnotifireConfig): SnotifireToastModel
   ```
-  > Toast notification of custom style(default - Simple). 
-  > Renders your html string inside `.snotifyToast__inner`
+
+  > Toast notification of custom style(default - Simple).
+  > Renders your html string inside `.notifire-toast__inner`
   > Example - [here](../essentials/examples.md#html)
 
 ## Other
@@ -143,11 +144,12 @@
 
   ```
   (
-    defaults: SnotifyDefaults
-  ) => SnotifyDefaults
+    defaults: SnotifireDefaults
+  ) => SnotifireDefaults
   ```
-  > Set global configuration object  
-  
+
+  > Set global configuration object
+
 ### get
 
 - type: `Function`
@@ -157,12 +159,12 @@
   ```
   (
     id: number
-  ) => SnotifyToast
+  ) => SnotifireToastModel
   ```
-  > [SnotifyToast](model.md#snotifytoast)
-  > Returns SnotifyToast object by id  
-    
-  
+
+  > [SnotifireToastModel](model.md#snotifiretoastmodel)
+  > Returns SnotifireToastModel object by id
+
 ### remove
 
 - type: `Function`
@@ -175,12 +177,11 @@
     remove?: boolean
   ) => void
   ```
-  > If id passed, removes toast instantly. 
+
+  > If id passed, removes toast instantly.
   > If no param passed it's the same as [clear()](#clear).  
   > If you want to remove toast instantly pass `true` as second argument
-  
-    
-  
+
 ### clear
 
 - type: `Function`
@@ -190,9 +191,9 @@
   ```
   () => void
   ```
+
   > Clear notifications array instantly
-      
-  
+
 ### create
 
 - type: `Function`
@@ -201,10 +202,9 @@
 
   ```
   (
-  snotify: Snotify
-  ) => SnotifyToast
+  snotifire: SnotifireModel
+  ) => SnotifireToastModel
   ```
-  > [Snotify](interfaces.md#snotify)
-  > [SnotifyToast](model.md#snotifytoast)
+
+  > [Snotifire](interfaces.md#snotifire) > [SnotifireToastModel](model.md#snotifiretoastmodel)
   > Creates custom notification object
-  

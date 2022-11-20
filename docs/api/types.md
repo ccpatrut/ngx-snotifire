@@ -1,33 +1,35 @@
 # Types
 
-## SnotifyTypeType
+## SnotifireType
 
- - definition
+- definition
+
 ```typescript
-SnotifyTypeType
-  = 'simple'
-  | 'success'
-  | 'error'
-  | 'warning'
-  | 'info'
-  | 'async'
-  | 'confirm'
-  | 'prompt';
-````
+  SUCCESS = 'success',
+  INFO = 'info',
+  WARNING = 'warning',
+  ERROR = 'error',
+  ASYNC = 'async',
+  CONFIRM = 'confirm',
+  PROMPT = 'prompt',
+```
 
-## SnotifyEvent
+## SnotifireEventType
 
- - definition
+- definition
+
 ```typescript
-SnotifyTypeType
-  = 'mounted'
-  | 'beforeShow'
-  | 'shown'
-  | 'input'
-  | 'click'
-  | 'mouseenter'
-  | 'mouseleave'
-  | 'beforeHide'
-  | 'hidden'
-  | 'destroyed';
-````
+SnotifireEventType {
+  MOUNTED = 'mounted',
+  BEFORE_SHOW = 'beforeShow',
+  SHOWN = 'shown',
+  INPUT = 'input',
+  CLICK = 'click',
+  MOUSE_ENTER = 'mouseenter',
+  MOUSE_LEAVE = 'mouseleave',
+  BEFORE_HIDE = 'beforeHide',
+  HIDDEN = 'hidden',
+  DESTROYED = 'destroyed',
+}
+
+```

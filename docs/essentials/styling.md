@@ -17,7 +17,7 @@ You should import one of this in your global style.scss like this `@import "~ngx
 
 ---
 
-**Snotify** offers you 3 themes.
+**Snotifire** offers you 3 themes.
 
 #### Material
 

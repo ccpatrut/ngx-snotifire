@@ -1,11 +1,11 @@
-import { NotificationGlobalConfig } from './global-config.interface';
+import { SnotifireGlobalConfig } from './global-config.interface';
 import { SnotifireConfig } from '../models/snotifire-config.interface';
 
 /**
  * Global configuration object
  */
-export interface NotificationDefaults {
-  global?: NotificationGlobalConfig;
+export interface SnotifireDefaults {
+  global?: SnotifireGlobalConfig;
   snotifireConfig?: SnotifireConfig;
   type?: {
     [key: string]: SnotifireConfig;

@@ -1,7 +1,7 @@
 /**
  * Toast dock configuration
  */
-export interface NotificationGlobalConfig {
+export interface SnotifireGlobalConfig {
   /**
    * Max toast items on screen.
    *

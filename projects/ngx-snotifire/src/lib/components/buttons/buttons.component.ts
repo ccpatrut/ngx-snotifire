@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { SnotifireToastModel } from '../toast/notifire-toast.model';
-import { SnotificationService } from '../../services';
+import { SnotifireService } from '../../services';
 
 @Component({
   selector: 'notifire-button',
@@ -23,7 +23,7 @@ export class ButtonsComponent {
    */
   @Input() toast!: SnotifireToastModel;
 
-  constructor(private readonly service: SnotificationService) {}
+  constructor(private readonly service: SnotifireService) {}
 
   /**
    * remove toast

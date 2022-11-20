@@ -10,7 +10,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import { SnotifireEventType, SnotifireType } from '../../models';
 import { SnotifireToastModel } from './notifire-toast.model';
-import { SnotificationService } from '../../services';
+import { SnotifireService } from '../../services';
 
 @Component({
   selector: 'ngx-toast',
@@ -42,7 +42,7 @@ export class ToastComponent implements OnInit, OnDestroy {
     promptType: SnotifireType.PROMPT,
   };
 
-  constructor(private readonly service: SnotificationService) {}
+  constructor(private readonly service: SnotifireService) {}
 
   ngOnInit(): void {
     this.service.toastChanged
