@@ -1,44 +1,40 @@
 # ng-snotify
 
-[![Build Status](https://travis-ci.org/artemsky/ng-snotify.svg?branch=master)](https://travis-ci.org/artemsky/ng-snotify)
-[![NPM Version](https://img.shields.io/npm/v/ng-snotify.svg)](https://www.npmjs.com/package/ng-snotify)
-[![NPM Downloads](https://img.shields.io/npm/dt/ng-snotify.svg)](https://www.npmjs.com/package/ng-snotify)
-[![Dev dependencies status list](https://david-dm.org/artemsky/ng-snotify/dev-status.svg)](https://david-dm.org/artemsky/ng-snotify?type=dev)
+[![Build Status](https://travis-ci.org/artemsky/ng-snotify.svg?branch=master)](https://github.com/ccpatrut/ngx-snotifire/actions)
+[![NPM Version](https://img.shields.io/npm/v/ng-snotify.svg)](https://www.npmjs.com/package/ngx-snotifire?activeTab=versions)
+[![NPM Downloads](https://img.shields.io/npm/dt/ng-snotify.svg)](https://www.npmjs.com/package/ngx-snotifire?activeTab=readme)
 
 ## Example
-https://artemsky.github.io/ng-snotify/
 
+https://ccpatrut.github.io/ngx-snotifire/
 
 ## Features
 
-- 9 types of toast notifications (async, confirm, prompt and more...)
+- 8 types of toast notifications
 - Ability to create toasts in different positions at the same time
 - Many config options (icons, backdrop, timeout, position and much more)
 - Custom fully controlled styling including animations
-- Repository includes 3 different styles. So you can use on of them, or create your own.
+- Repository includes 3 different styles. So you can use on of them, or create your own
 - Callbacks
 - Custom HTML
-- 4.3KB minified and gzipped
-
-###### Looking for an Vue.js 2 version? [Here](https://github.com/artemsky/vue-snotify/)
-
-![Snotify Gif](https://thumbs.gfycat.com/SoftGranularDalmatian-size_restricted.gif)
 
 ## Installation
 
-###### NPM 5
-`npm install ng-snotify`
+###### NPM
+
+`npm install ngx-snotifire`
 
 ###### yarn
-`yarn add ng-snotify`
+
+`yarn add ngx-snotifire`
 
 ## Documentation and Examples
 
-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation)  
-Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
-Auto-Documentation (Compodoc) - [here](https://artemsky.github.io/ng-snotify/compodoc/)  
-Change Log - [here](https://github.com/artemsky/ng-snotify/blob/master/CHANGELOG.md)
+Documentation - [here](https://ccpatrut.github.io/ngx-snotifire/documentation)  
+Example application source - [here](https://github.com/ccpatrut/ngx-snotifire/tree/main/src/app)  
+Auto-Documentation (Compodoc) - [here](https://ccpatrut.github.io/ngx-snotifire/compodoc)  
+Change Log - [here](ttps://github.com/ccpatrut/ngx-snotifire/tree/main/CHANGELOG.md)
 
 ## License
 
-MIT © [artemsky](mailto:mr.artemsky@gmail.com)
+APACHE © [ccpatrut](mailto:mr.artemsky@gmail.com)
