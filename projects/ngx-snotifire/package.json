@@ -1,6 +1,6 @@
 {
   "name": "ngx-snotifire",
-  "version": "1.0.1-beta",
+  "version": "1.0.2-beta",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0"
