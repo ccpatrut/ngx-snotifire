@@ -3,6 +3,7 @@ name: Release
 on:
   branches:
     - main
+
 run-name: release
 jobs:
   build:
