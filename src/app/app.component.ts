@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
       position: [this.positions[3]],
       notificationConf: this.fb.group({
         maxOnScreen: [6, [Validators.required]],
-        maxAtPosition: [4, [Validators.required]],
+        maxAtPosition: [6, [Validators.required]],
       }),
       toastStyle: [this.themes[0], [Validators.required]],
     });
