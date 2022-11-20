@@ -6,7 +6,7 @@ import { SnotifireType } from '../../models/snotifire.type';
 /**
  * Toast main model
  */
-export class NotifireModel {
+export class SnotifireModel {
   /**
    * Emits NotifireEventType
    */
@@ -64,7 +64,7 @@ export class NotifireModel {
    * @returns boolean true then equals else false.
    * @param toast notifire-toast
    */
-  equals(toast: NotifireModel): boolean {
+  equals(toast: SnotifireModel): boolean {
     return this.config && toast.config
       ? this.body === toast.body &&
           this.title === toast.title &&

@@ -29,10 +29,10 @@
 - `"hidden"`
 - `"destroyed"`
 
-> Events type - [SnotifyEvent](types.md#snotifyevent)
+> Events type - [SnotifireEventType](types.md#snotifyevent)
 
 ```js
-toast.on("click", (toast: Snotify) => {
+toast.on("click", (toast: SnotifireEventType) => {
   toast.body = "Change body...";
 });
 ```
