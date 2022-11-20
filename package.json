@@ -4,14 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --aot ",
-    "lib:build:prod": "ng build ngx-snotifire  ",
+    "build": "ng build --aot --base-href=/ng-snotify/ --output-path=demo/",
+    "lib:build:prod": "ng build ngx-snotifire; npm pack  ",
     "watch": "ng build --watch --configuration development",
     "test": "npm run snotifire-workspace:test; npm run lib:test",
     "snotifire-workspace:test":"ng test  snotifire-workspace  --browsers=ChromeHeadless --watch=false --progress --code-coverage",
     "lib:test": "ng test ngx-snotifire  --browsers=ChromeHeadless --watch=false --progress --code-coverage",
     "lint": "ng lint",
-    "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify",
+    "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify -d demo/compodoc/ --hideGenerator --theme Laravel",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
     "docs:build": "gitbook install docs && gitbook build ./docs ./demo/documentation"
