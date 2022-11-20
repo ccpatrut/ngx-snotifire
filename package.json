@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --aot --base-href=/ng-snotify/ --output-path=demo/",
+    "build": "ng build --aot --base-href=/ngx-snotifire/ --output-path=demo/",
     "lib:build:prod": "ng build ngx-snotifire; npm pack  ",
     "watch": "ng build --watch --configuration development",
     "test": "npm run snotifire-workspace:test; npm run lib:test",
