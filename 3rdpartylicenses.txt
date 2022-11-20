@@ -64,6 +64,7 @@ THE SOFTWARE.
 MIT
 
 ngx-snotifire
+Apache-2.0
 
 rxjs
 Apache-2.0
