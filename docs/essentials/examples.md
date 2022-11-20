@@ -49,7 +49,7 @@ const successAction = Observable.create((observer) => {
   }, 5000);
 });
 
-this.snotifyService.async(
+this.snotifireService.async(
   "This will resolve with success",
   successAction,
   config
@@ -74,7 +74,7 @@ service.async("This will resolve with error", "Async", errorAction);
 #### Prompt & Validation
 
 ```typescript
-const yesAction = (toast: SnotifyToast) => {
+const yesAction = (toast: SnotifireToastModel) => {
   if (!toast.value.match("snotify")) {
     toast.valid = false;
     return false;
@@ -84,7 +84,7 @@ const yesAction = (toast: SnotifyToast) => {
   }
 };
 
-const noAction = (toast: SnotifyToast) => {
+const noAction = (toast: SnotifireToastModel) => {
   service.remove(toast.id); // default
 };
 

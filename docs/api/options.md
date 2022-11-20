@@ -1,7 +1,7 @@
 # Configuration
 
 > `SnotifireConfig` - changes toasts configuration.  
-> `SnotifireConfig` - changes toast dock configuration.
+> `SnotifireGlobalConfig` - changes toast dock configuration.
 
 ## Setting default configuration
 

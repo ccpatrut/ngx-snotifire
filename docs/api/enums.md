@@ -27,7 +27,7 @@
 ###### Example
 
 ```typescript
-import { SnotificationPositionType, SnotifireType } from "ngx-snotify";
+import { SnotificationPositionType, SnotifireType } from "ngx-snotifire";
 
 snotifireService.create({
   title: "Example title",

@@ -4,7 +4,7 @@
 
 ### on
 
-- type: `Function`
+- type: `Function`t
 
 Signature:
 
@@ -52,6 +52,6 @@ Signature:
 
 ### config
 
-- type: [SnotifyToastConfig](options.md#snotifireconfig)
+- type: [SnotifireConfig](options.md#snotifireconfig)
 - default: `<Automatically generated value>`
   > Merges [default config](options.md#setting-default-configuration) with toast type config

@@ -14,7 +14,7 @@
 
 ### config
 
-- type: [SnotifyToastConfig](options.md/#snotifireconfig)
+- type: [SnotifireConfig](options.md/#SnotifireConfig)
   > Toast configuration object
 
 ### html
@@ -37,12 +37,12 @@
 
   ```
   (
-    toast: SnotifyToast
+    toast: SnotifireModel
   ) => void
   ```
 
 > Callback action which will be called on button click.  
-> Receive [SnotifyToast](model.md#snotifytoast)
+> Receive [SnotifireModel](model.md#SnotifireToastModel)
 
 ### bold
 
@@ -70,52 +70,52 @@
 
 ### global
 
-- type: [SnotifyGlobalConfig](options.md#snotifyglobalconfig)
+- type: [SnotifireGlobalConfig](options.md#snotifireglobalconfig)
   > Notifications dock config
 
 ### toast
 
-- type: [SnotifyToastConfig](options.md/#snotifytoastconfig)
+- type: [SnotifireToastConfig](options.md/#snotifiretoastconfig)
   > Toast config
 
 ### type
 
-- type: `{ [key: SnotifyTypeType]: SnotifyToastConfig }`
+- type: `{ [key: SnotifireType]: SnotifireToastConfig }`
   > Toast type default config  
   > Example can be found in [options](options.md#setting-default-configuration) defaults
 
-### SnotifyStyles
+### SnotifireStyle
 
 > Append snotify-${name} class name to snotify element
 
 ### simple
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### success
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### error
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### warning
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### info
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### async
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### confirm
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)
 
 ### prompt
 
-- type: [SnotifyTypeType](types.md#snotifytype)
+- type: [SnotifireType](types.md#snotifiretype)

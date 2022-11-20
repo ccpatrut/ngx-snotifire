@@ -11,7 +11,7 @@
   Signature:
 
   ```
-  action: (toast: SnotifyToast) => void
+  action: (toast: SnotifireToastModel) => void
   ```
 
   > [Snotifire](interfaces.md#snotifire)
@@ -29,10 +29,10 @@ BEFORE_HIDE = 'beforeHide',
 HIDDEN = 'hidden',
 DESTROYED = 'destroyed',
 
-> Events type - [SnotifyEvent](types.md#SnotifireEventType)
+> Events type - [SnotifireEventType](types.md#SnotifireToastModel)
 
 ```js
-toast.on("click", (toast: Snotify) => {
+toast.on("click", (toast: SnotifireToastModel) => {
   toast.body = "Change body...";
 });
 ```
