@@ -610,10 +610,10 @@
     
         <li class="chapter " data-level="1.4.3.2" data-path="options.html">
             
-                <a href="options.html#snotifyglobalconfig">
+                <a href="options.html#snotifireglobalconfig">
             
                     
-                    SnotifyGlobalConfig
+                    SnotifireGlobalConfig
             
                 </a>
             
@@ -655,10 +655,10 @@
     
         <li class="chapter " data-level="1.4.4.1" data-path="interfaces.html">
             
-                <a href="interfaces.html#snotify">
+                <a href="interfaces.html#snotifire">
             
                     
-                    Snotify
+                    Snotifire
             
                 </a>
             
@@ -668,10 +668,10 @@
     
         <li class="chapter " data-level="1.4.4.2" data-path="interfaces.html">
             
-                <a href="interfaces.html#snotifybutton">
+                <a href="interfaces.html#snotifirebutton">
             
                     
-                    SnotifyButton
+                    SnotifireButton
             
                 </a>
             
@@ -681,10 +681,10 @@
     
         <li class="chapter " data-level="1.4.4.3" data-path="interfaces.html">
             
-                <a href="interfaces.html#snotifyanimate">
+                <a href="interfaces.html#snotifireanimate">
             
                     
-                    SnotifyAnimate
+                    SnotifireAnimate
             
                 </a>
             
@@ -694,10 +694,10 @@
     
         <li class="chapter " data-level="1.4.4.4" data-path="interfaces.html">
             
-                <a href="interfaces.html#snotifydefaults">
+                <a href="interfaces.html#snotifiredefaults">
             
                     
-                    SnotifyDefaults
+                    SnotifireDefaults
             
                 </a>
             
@@ -707,10 +707,10 @@
     
         <li class="chapter " data-level="1.4.4.5" data-path="interfaces.html">
             
-                <a href="interfaces.html#snotifystyles">
+                <a href="interfaces.html#snotifirestyle">
             
                     
-                    SnotifyStyles
+                    SnotifireType
             
                 </a>
             
@@ -739,10 +739,10 @@
     
         <li class="chapter " data-level="1.4.5.1" data-path="enums.html">
             
-                <a href="enums.html#snotifystyle">
+                <a href="enums.html#SnotifireType">
             
                     
-                    SnotifyStyle
+                    SnotifireType
             
                 </a>
             
@@ -752,10 +752,10 @@
     
         <li class="chapter " data-level="1.4.5.2" data-path="enums.html">
             
-                <a href="enums.html#snotifyposition">
+                <a href="enums.html#snotificationpositiontype">
             
                     
-                    SnotifyPosition
+                    SnotificationPositionType
             
                 </a>
             
@@ -787,7 +787,7 @@
                 <a href="types.html#snotifytype">
             
                     
-                    SnotifyTypeType
+                    SnotifireType
             
                 </a>
             
@@ -797,10 +797,10 @@
     
         <li class="chapter " data-level="1.4.6.2" data-path="types.html">
             
-                <a href="types.html#snotifyevent">
+                <a href="types.html#SnotifireEventType">
             
                     
-                    SnotifyEvent
+                    SnotifireEventType
             
                 </a>
             
@@ -818,7 +818,7 @@
                 <a href="model.html">
             
                     
-                    SnotifyToast
+                    SnotifireToast
             
                 </a>
             
@@ -986,19 +986,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../essentials/upgrade.html">
-            
-                <a href="../essentials/upgrade.html">
-            
-                    
-                    Upgrading from v3
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
 
@@ -1064,7 +1051,7 @@
 </ul>
 <h3 id="config">config</h3>
 <ul>
-<li>type: <a href="options.html#snotifireconfig">SnotifyToastConfig</a><blockquote>
+<li>type: <a href="options.html#SnotifireConfig">SnotifireConfig</a><blockquote>
 <p>Toast configuration object</p>
 </blockquote>
 </li>
@@ -1089,12 +1076,12 @@
 <li><p>type: <code>function</code></p>
 <p>Signature:</p>
 <pre><code>(
-  toast: SnotifyToast
+  toast: SnotifireModel
 ) =&gt; void
 </code></pre></li>
 </ul>
 <blockquote>
-<p>Callback action which will be called on button click.<br>Receive <a href="model.html#snotifytoast">SnotifyToast</a></p>
+<p>Callback action which will be called on button click.<br>Receive <a href="model.html#SnotifireToastModel">SnotifireModel</a></p>
 </blockquote>
 <h3 id="bold">bold</h3>
 <ul>
@@ -1128,60 +1115,60 @@
 <h3 id="snotifydefaults">SnotifyDefaults</h3>
 <h3 id="global">global</h3>
 <ul>
-<li>type: <a href="options.html#snotifyglobalconfig">SnotifyGlobalConfig</a><blockquote>
+<li>type: <a href="options.html#snotifireglobalconfig">SnotifireGlobalConfig</a><blockquote>
 <p>Notifications dock config</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="toast">toast</h3>
 <ul>
-<li>type: <a href="options.html#snotifytoastconfig">SnotifyToastConfig</a><blockquote>
+<li>type: <a href="options.html#snotifiretoastconfig">SnotifireToastConfig</a><blockquote>
 <p>Toast config</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="type">type</h3>
 <ul>
-<li>type: <code>{ [key: SnotifyTypeType]: SnotifyToastConfig }</code><blockquote>
+<li>type: <code>{ [key: SnotifireType]: SnotifireToastConfig }</code><blockquote>
 <p>Toast type default config<br>Example can be found in <a href="options.html#setting-default-configuration">options</a> defaults</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="snotifystyles">SnotifyStyles</h3>
+<h3 id="snotifirestyle">SnotifireStyle</h3>
 <blockquote>
 <p>Append snotify-${name} class name to snotify element</p>
 </blockquote>
 <h3 id="simple">simple</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="success">success</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="error">error</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="warning">warning</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="info">info</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="async">async</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="confirm">confirm</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 <h3 id="prompt">prompt</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a></li>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a></li>
 </ul>
 
                                 
@@ -1229,7 +1216,7 @@
                 </a>
                 
                 
-                <a href="interfaces.html#snotify" class="navigation navigation-next " aria-label="Next page: Snotify">
+                <a href="interfaces.html#snotifire" class="navigation navigation-next " aria-label="Next page: Snotifire">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1240,7 +1227,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Interfaces","level":"1.4.4","depth":2,"next":{"title":"Snotify","level":"1.4.4.1","depth":3,"anchor":"#snotify","path":"api/interfaces.md","ref":"api/interfaces.md#snotify","articles":[]},"previous":{"title":"ToastDefaults","level":"1.4.3.3","depth":3,"anchor":"#setting-default-configuration","path":"api/options.md","ref":"api/options.md#setting-default-configuration","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api/interfaces.md","mtime":"2022-11-20T09:56:50.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T10:00:13.063Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Interfaces","level":"1.4.4","depth":2,"next":{"title":"Snotifire","level":"1.4.4.1","depth":3,"anchor":"#snotifire","path":"api/interfaces.md","ref":"api/interfaces.md#snotifire","articles":[]},"previous":{"title":"ToastDefaults","level":"1.4.3.3","depth":3,"anchor":"#setting-default-configuration","path":"api/options.md","ref":"api/options.md#setting-default-configuration","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api/interfaces.md","mtime":"2022-11-20T10:15:14.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T10:18:48.716Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
