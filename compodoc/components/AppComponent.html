@@ -1,0 +1,1876 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-snotify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-snotify</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  AppComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/app.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#positions" >positions</a>
+                            </li>
+                            <li>
+                                <a href="#snotifireForm" >snotifireForm</a>
+                            </li>
+                            <li>
+                                <a href="#themes" >themes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#addIcon" >addIcon</a>
+                            </li>
+                            <li>
+                                <a href="#getConfig" >getConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getSvg" >getSvg</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAsyncLoading" >onAsyncLoading</a>
+                            </li>
+                            <li>
+                                <a href="#onClear" >onClear</a>
+                            </li>
+                            <li>
+                                <a href="#onConfirmation" >onConfirmation</a>
+                            </li>
+                            <li>
+                                <a href="#onError" >onError</a>
+                            </li>
+                            <li>
+                                <a href="#onHtml" >onHtml</a>
+                            </li>
+                            <li>
+                                <a href="#onInfo" >onInfo</a>
+                            </li>
+                            <li>
+                                <a href="#onPrompt" >onPrompt</a>
+                            </li>
+                            <li>
+                                <a href="#onSuccess" >onSuccess</a>
+                            </li>
+                            <li>
+                                <a href="#onWarning" >onWarning</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#positionFormControl" >positionFormControl</a>
+                                </li>
+                                <li>
+                                    <a href="#themeControl" >themeControl</a>
+                                </li>
+                                <li>
+                                    <a href="#functionalConfig" >functionalConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#visualConfig" >visualConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#toastData" >toastData</a>
+                                </li>
+                                <li>
+                                    <a href="#notificationConfig" >notificationConfig</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(iconRegistry: MatIconRegistry, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, snotificationService: <a href="../injectables/SnotificationService.html" target="_self">SnotificationService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>iconRegistry</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatIconRegistry</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sanitizer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snotificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SnotificationService.html" target="_self" >SnotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addIcon"></a>
+                    <span class="name">
+                        <span class="modifier">Protected</span>
+                        <span ><b>addIcon</b></span>
+                        <a href="#addIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addIcon(iconName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, location: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/app.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>iconName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>location</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getConfig"></a>
+                    <span class="name">
+                        <span ><b>getConfig</b></span>
+                        <a href="#getConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getConfig()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/app.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/SnotifireConfig.html" target="_self" >SnotifireConfig</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSvg"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getSvg</b></span>
+                        <a href="#getSvg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSvg(svg: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">src/app/app.component.ts:294</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>svg</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/app.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAsyncLoading"></a>
+                    <span class="name">
+                        <span ><b>onAsyncLoading</b></span>
+                        <a href="#onAsyncLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAsyncLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/app/app.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClear"></a>
+                    <span class="name">
+                        <span ><b>onClear</b></span>
+                        <a href="#onClear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClear()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/app.component.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfirmation"></a>
+                    <span class="name">
+                        <span ><b>onConfirmation</b></span>
+                        <a href="#onConfirmation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfirmation()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="212"
+                            class="link-to-prism">src/app/app.component.ts:212</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onError"></a>
+                    <span class="name">
+                        <span ><b>onError</b></span>
+                        <a href="#onError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onError()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/app.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onHtml"></a>
+                    <span class="name">
+                        <span ><b>onHtml</b></span>
+                        <a href="#onHtml"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onHtml()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/app.component.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onInfo"></a>
+                    <span class="name">
+                        <span ><b>onInfo</b></span>
+                        <a href="#onInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/app.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrompt"></a>
+                    <span class="name">
+                        <span ><b>onPrompt</b></span>
+                        <a href="#onPrompt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPrompt()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/app/app.component.ts:249</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSuccess"></a>
+                    <span class="name">
+                        <span ><b>onSuccess</b></span>
+                        <a href="#onSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSuccess()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/app.component.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onWarning"></a>
+                    <span class="name">
+                        <span ><b>onWarning</b></span>
+                        <a href="#onWarning"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onWarning()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/app.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="positions"></a>
+                    <span class="name">
+                        <span ><b>positions</b></span>
+                        <a href="#positions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/app.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="snotifireForm"></a>
+                    <span class="name">
+                        <span ><b>snotifireForm</b></span>
+                        <a href="#snotifireForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/app.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="themes"></a>
+                    <span class="name">
+                        <span ><b>themes</b></span>
+                        <a href="#themes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;material&#x27;, &#x27;dark&#x27;, &#x27;simple&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="positionFormControl"></a>
+                        <span class="name"><b>positionFormControl</b><a href="#positionFormControl"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>positionFormControl()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/app.component.ts:73</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="themeControl"></a>
+                        <span class="name"><b>themeControl</b><a href="#themeControl"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>themeControl()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/app.component.ts:77</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="functionalConfig"></a>
+                        <span class="name"><b>functionalConfig</b><a href="#functionalConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>functionalConfig()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="279" class="link-to-prism">src/app/app.component.ts:279</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visualConfig"></a>
+                        <span class="name"><b>visualConfig</b><a href="#visualConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>visualConfig()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/app/app.component.ts:283</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toastData"></a>
+                        <span class="name"><b>toastData</b><a href="#toastData"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>toastData()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/app/app.component.ts:286</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationConfig"></a>
+                        <span class="name"><b>notificationConfig</b><a href="#notificationConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>notificationConfig()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="290" class="link-to-prism">src/app/app.component.ts:290</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from &#x27;@angular/forms&#x27;;
+import { MatIconRegistry } from &#x27;@angular/material/icon&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+import {
+  SnotificationService,
+  SnotificationPositionType,
+  SnotifireConfig,
+  SnotifireEventType,
+  SnotifireModel,
+  ToastDefaults,
+} from &#x27;ngx-snotifire&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-root&#x27;,
+  templateUrl: &#x27;./app.component.html&#x27;,
+  styleUrls: [&#x27;./app.component.scss&#x27;],
+})
+export class AppComponent implements OnInit {
+  snotifireForm: FormGroup;
+  positions: string[];
+  themes &#x3D; [&#x27;material&#x27;, &#x27;dark&#x27;, &#x27;simple&#x27;];
+
+  constructor(
+    protected readonly iconRegistry: MatIconRegistry,
+    protected readonly sanitizer: DomSanitizer,
+    readonly snotificationService: SnotificationService,
+    private readonly fb: FormBuilder
+  ) {
+    this.positions &#x3D; Object.keys(SnotificationPositionType);
+    this.snotifireForm &#x3D; this.fb.group({
+      toastData: this.fb.group({
+        title: [&#x27;Notification title!&#x27;, [Validators.required]],
+        body: [&#x27;Lorem ipsum dolor sit amet!&#x27;, [Validators.required]],
+      }),
+      toastFunctionalConfig: this.fb.group({
+        titleMaxLength: [&#x27;15&#x27;, [Validators.required]],
+        boydMaxLength: [&#x27;78&#x27;, [Validators.required]],
+        timeout: [&#x27;3000&#x27;, [Validators.required]],
+        backdrop: [&#x27;-1&#x27;, [Validators.required]],
+      }),
+      toastVisualConfig: this.fb.group({
+        isShowProgressBar: [true],
+        isCloseOnClick: [true],
+        isPauseOnHover: [true],
+        isNewItemsOnTop: [true],
+        isFilterDuplicates: [false],
+      }),
+      position: [this.positions[3]],
+      notificationConf: this.fb.group({
+        maxOnScreen: [6, [Validators.required]],
+        maxAtPosition: [4, [Validators.required]],
+      }),
+      toastStyle: [this.themes[0], [Validators.required]],
+    });
+    this.addIcon(&#x27;icon-fire&#x27;, &#x27;fire&#x27;);
+  }
+  ngOnInit(): void {}
+
+  protected addIcon(iconName: string, location: string): void {
+    this.iconRegistry.addSvgIcon(
+      iconName,
+      this.sanitizer.bypassSecurityTrustResourceUrl(this.getSvg(location))
+    );
+  }
+
+  get positionFormControl(): FormControl | null {
+    return this.snotifireForm.get(&#x27;position&#x27;) as FormControl;
+  }
+
+  get themeControl(): FormControl | null {
+    return this.snotifireForm.get(&#x27;toastStyle&#x27;) as FormControl;
+  }
+
+  getConfig(): SnotifireConfig {
+    this.snotificationService.setDefaults({
+      global: {
+        newOnTop: this.visualConfig.isNewItemsOnTop,
+        maxAtPosition: this.notificationConfig.maxAtPosition,
+        maxOnScreen: this.notificationConfig.maxOnScreen,
+        // @ts-ignore
+        filterDuplicates: this.visualConfig.isFilterDuplicates,
+      },
+      snotifireConfig: ToastDefaults.toast,
+    });
+    return {
+      bodyMaxLength: this.functionalConfig.boydMaxLength,
+      titleMaxLength: this.functionalConfig.titleMaxLengt,
+
+      backdrop: this.functionalConfig.backdrop,
+      position: this.snotifireForm.getRawValue().position,
+      timeout: this.functionalConfig.timeout,
+      showProgressBar: this.visualConfig.isShowProgressBar,
+      closeOnClick: this.visualConfig.isCloseOnClick,
+      pauseOnHover: this.visualConfig.isPauseOnHover,
+    };
+  }
+
+  onSuccess() {
+    this.snotificationService.success(
+      this.toastData.body,
+      this.toastData.title,
+      this.getConfig()
+    );
+  }
+  onInfo() {
+    this.snotificationService.info(
+      this.toastData.body,
+      this.toastData.title,
+      this.getConfig()
+    );
+  }
+  onError() {
+    this.snotificationService.error(
+      this.toastData.body,
+      this.toastData.title,
+      this.getConfig()
+    );
+  }
+  onWarning() {
+    this.snotificationService.warning(
+      this.toastData.body,
+      this.toastData.title,
+      this.getConfig()
+    );
+  }
+
+  onHtml() {
+    const html &#x3D; &#x60;&lt;div class&#x3D;&quot;snotifyToast__title&quot;&gt;&lt;b&gt;Html Bold Title&lt;/b&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__body&quot;&gt;&lt;i&gt;Html&lt;/i&gt; &lt;b&gt;toast&lt;/b&gt; &lt;u&gt;content&lt;/u&gt;&lt;/div&gt;&#x60;;
+    this.snotificationService.html(html, this.getConfig());
+  }
+
+  onClear() {
+    this.snotificationService.clear();
+  }
+
+  onAsyncLoading() {
+    const errorAction &#x3D; new Observable&lt;SnotifireModel&gt;((observer) &#x3D;&gt; {
+      setTimeout(() &#x3D;&gt; {
+        observer.error({
+          title: &#x27;Error&#x27;,
+          body: &#x27;Example. Error 404. Service not found&#x27;,
+        });
+      }, 2000);
+    });
+
+    const successAction &#x3D; new Observable&lt;SnotifireModel&gt;((observer) &#x3D;&gt; {
+      setTimeout(() &#x3D;&gt; {
+        observer.next({
+          body: &#x27;Still loading.....&#x27;,
+        });
+      }, 2000);
+
+      setTimeout(() &#x3D;&gt; {
+        observer.next({
+          title: &#x27;Success&#x27;,
+          body: &#x27;Example. Data loaded!&#x27;,
+          config: {
+            closeOnClick: true,
+            timeout: 5000,
+            showProgressBar: true,
+          },
+        });
+        observer.complete();
+      }, 5000);
+    });
+    /*
+      You should pass Promise or Observable of type Snotify to change some data or do some other actions
+      More information how to work with observables:
+      https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
+     */
+    const { timeout, ...config } &#x3D; this.getConfig(); // Omit timeout
+    this.snotificationService.async(
+      &#x27;This will resolve with error&#x27;,
+      &#x27;Async&#x27;,
+      errorAction,
+      config
+    );
+    this.snotificationService.async(
+      &#x27;This will resolve with success&#x27;,
+      successAction,
+      config
+    );
+    this.snotificationService.async(
+      &#x27;Called with promise&#x27;,
+      &#x27;Error async&#x27;,
+      new Promise((resolve, reject) &#x3D;&gt; {
+        setTimeout(
+          () &#x3D;&gt;
+            reject({
+              title: &#x27;Error!!!&#x27;,
+              body: &#x27;We got an example error!&#x27;,
+              config: {
+                closeOnClick: true,
+              },
+            }),
+          1000
+        );
+        setTimeout(() &#x3D;&gt; resolve({}), 1500);
+      }),
+      config
+    );
+  }
+
+  onConfirmation() {
+    /*
+    Here we pass an buttons array, which contains of 2 element of type SnotifyButton
+     */
+    const { timeout, closeOnClick, ...config } &#x3D; this.getConfig(); // Omit props what i don&#x27;t need
+    this.snotificationService.confirm(
+      this.toastData.body,
+      this.toastData.title,
+      {
+        ...config,
+        buttons: [
+          {
+            text: &#x27;Yes&#x27;,
+            action: () &#x3D;&gt; console.log(&#x27;Clicked: Yes&#x27;),
+            bold: false,
+          },
+          { text: &#x27;No&#x27;, action: () &#x3D;&gt; console.log(&#x27;Clicked: No&#x27;) },
+          {
+            text: &#x27;Later&#x27;,
+            action: (toast: any) &#x3D;&gt; {
+              console.log(&#x27;Clicked: Later&#x27;);
+              this.snotificationService.remove(toast.id);
+            },
+          },
+          {
+            text: &#x27;Close&#x27;,
+            action: (toast: any) &#x3D;&gt; {
+              console.log(&#x27;Clicked: Close&#x27;);
+              this.snotificationService.remove(toast.id);
+            },
+            bold: true,
+          },
+        ],
+      }
+    );
+  }
+
+  onPrompt() {
+    /*
+     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
+     At the action of the first buttons we can get what user entered into input field.
+     At the second we can&#x27;t get it. But we can remove this toast
+     */
+    const { timeout, closeOnClick, ...config } &#x3D; this.getConfig(); // Omit props what i don&#x27;t need
+    this.snotificationService
+      .prompt(this.toastData.body, this.toastData.title, {
+        ...config,
+        buttons: [
+          {
+            text: &#x27;Yes&#x27;,
+            action: (toast: any) &#x3D;&gt; console.log(&#x27;Said Yes: &#x27; + toast.value),
+          },
+          {
+            text: &#x27;No&#x27;,
+            action: (toast: any) &#x3D;&gt; {
+              console.log(&#x27;Said No: &#x27; + toast.value);
+              this.snotificationService.remove(toast.id);
+            },
+          },
+        ],
+        placeholder: &#x27;Enter &quot;ng-snotify&quot; to validate this input&#x27;, // Max-length &#x3D; 40
+      })
+      .on(SnotifireEventType.INPUT, (toast) &#x3D;&gt; {
+        console.log(toast.value);
+      });
+  }
+
+  private get functionalConfig(): FunctionalConfig {
+    return this.snotifireForm.getRawValue().toastFunctionalConfig;
+  }
+
+  private get visualConfig(): VisualConfig {
+    return this.snotifireForm.getRawValue().toastVisualConfig;
+  }
+  private get toastData(): ToastData {
+    return this.snotifireForm.getRawValue().toastData;
+  }
+
+  private get notificationConfig(): NotificationConfig {
+    return this.snotifireForm.getRawValue().notificationConf;
+  }
+
+  private getSvg(svg: string): string {
+    return &#x60;assets/${svg}.svg&#x60;;
+  }
+}
+
+export interface NotificationFormValue {
+  position: SnotificationPositionType;
+  toastData: ToastData;
+}
+interface ToastData {
+  title: string;
+  body: string;
+}
+interface FunctionalConfig {
+  titleMaxLengt: number;
+  boydMaxLength: number;
+  timeout: number;
+  backdrop: number;
+}
+interface NotificationConfig {
+  maxOnScreen: number;
+  maxAtPosition: number;
+}
+
+interface VisualConfig {
+  isShowProgressBar: boolean;
+  isCloseOnClick: boolean;
+  isPauseOnHover: boolean;
+  isNewItemsOnTop: boolean;
+  isFilterDuplicates: boolean;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;page&quot;&gt;
+    &lt;div class&#x3D;&quot;config&quot;&gt;
+        &lt;h1 class&#x3D;&quot;title&quot;&gt;
+            &lt;mat-icon svgIcon&#x3D;&quot;icon-fire&quot;&gt;&lt;/mat-icon&gt;
+            Config Noti
+            &lt;mat-icon svgIcon&#x3D;&quot;icon-fire&quot;&gt;&lt;/mat-icon&gt;
+            Toast
+            &lt;mat-icon svgIcon&#x3D;&quot;icon-fire&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/h1&gt;
+
+        &lt;form
+            [formGroup]&#x3D;&quot;snotifireForm&quot;
+            novalidate
+        &gt;
+            &lt;div class&#x3D;&quot;data&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;data__toast&quot;
+                    formGroupName&#x3D;&quot;toastData&quot;
+                &gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Name&lt;/mat-label&gt;
+                        &lt;input
+                            matInput
+                            placeholder&#x3D;&quot;Title&quot;
+                            formControlName&#x3D;&quot;title&quot;
+                        &gt;
+                    &lt;/mat-form-field&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Body&lt;/mat-label&gt;
+                        &lt;input
+                            matInput
+                            placeholder&#x3D;&quot;Body&quot;
+                            formControlName&#x3D;&quot;body&quot;
+                        &gt;
+                    &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;div
+                    class&#x3D;&quot;functional-config&quot;
+                    formGroupName&#x3D;&quot;toastFunctionalConfig&quot;
+                &gt;
+                    &lt;div class&#x3D;&quot;functional-config__length&quot;&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                            &lt;mat-label&gt;Title Max Length&lt;/mat-label&gt;
+                            &lt;input
+                                matInput
+                                placeholder&#x3D;&quot;Max length of the displayed title&quot;
+                                formControlName&#x3D;&quot;titleMaxLength&quot;
+                                type&#x3D;&quot;number&quot;
+                            &gt;
+                        &lt;/mat-form-field&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                            &lt;mat-label&gt;Body Max Length&lt;/mat-label&gt;
+                            &lt;input
+                                matInput
+                                placeholder&#x3D;&quot;Max length of the displayed body notification&quot;
+                                formControlName&#x3D;&quot;boydMaxLength&quot;
+                                type&#x3D;&quot;number&quot;
+                            &gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;functional-config__ui&quot;&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                            &lt;mat-label&gt;Timeout&lt;/mat-label&gt;
+                            &lt;input
+                                matInput
+                                placeholder&#x3D;&quot;Time before the notification expires&quot;
+                                formControlName&#x3D;&quot;timeout&quot;
+                                type&#x3D;&quot;number&quot;
+                            &gt;
+                        &lt;/mat-form-field&gt;
+                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                            &lt;mat-label&gt;Backdrop&lt;/mat-label&gt;
+                            &lt;input
+                                matInput
+                                placeholder&#x3D;&quot;Shadow opacity when notiifcation is shown&quot;
+                                formControlName&#x3D;&quot;backdrop&quot;
+                                type&#x3D;&quot;number&quot;
+                            &gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;div class&#x3D;&quot;snotifire-position&quot;&gt;
+                    &lt;mat-form-field
+                        appearance&#x3D;&quot;outline&quot;
+                        *ngIf&#x3D;&quot;positionFormControl&quot;
+                    &gt;
+                        &lt;mat-label&gt;Select Notification Position&lt;/mat-label&gt;
+                        &lt;mat-select
+                            [formControl]&#x3D;&quot;positionFormControl&quot;
+                            name&#x3D;&quot;position&quot;
+                        &gt;
+                            &lt;mat-option
+                                *ngFor&#x3D;&quot;let position  of positions&quot;
+                                [value]&#x3D;&quot;position&quot;
+                            &gt;
+                                {{position}}
+                            &lt;/mat-option&gt;
+                        &lt;/mat-select&gt;
+                    &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;config__booleans&quot;
+                    formGroupName&#x3D;&quot;toastVisualConfig&quot;
+                &gt;
+                    &lt;mat-slide-toggle formControlName&#x3D;&quot;isShowProgressBar&quot;&gt;Show Progress Bar&lt;/mat-slide-toggle&gt;
+                    &lt;mat-slide-toggle formControlName&#x3D;&quot;isCloseOnClick&quot;&gt;Close on click&lt;/mat-slide-toggle&gt;
+                    &lt;mat-slide-toggle formControlName&#x3D;&quot;isPauseOnHover&quot;&gt;Pause on hover&lt;/mat-slide-toggle&gt;
+                    &lt;mat-slide-toggle formControlName&#x3D;&quot;isNewItemsOnTop&quot;&gt;New items on top&lt;/mat-slide-toggle&gt;
+                    &lt;mat-slide-toggle formControlName&#x3D;&quot;isFilterDuplicates&quot;&gt;Filter duplicates&lt;/mat-slide-toggle&gt;
+
+                &lt;/div&gt;
+
+                &lt;mat-divider&gt;&lt;/mat-divider&gt;
+                &lt;div
+                    class&#x3D;&quot;inputs__max&quot;
+                    formGroupName&#x3D;&quot;notificationConf&quot;
+                &gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Max number of Toastrs on Screen&lt;/mat-label&gt;
+                        &lt;input
+                            matInput
+                            placeholder&#x3D;&quot;Max number of toastrs on screen&quot;
+                            formControlName&#x3D;&quot;maxOnScreen&quot;
+                            type&#x3D;&quot;number&quot;
+                        &gt;
+                    &lt;/mat-form-field&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Max number of Toastrs per Position&lt;/mat-label&gt;
+                        &lt;input
+                            matInput
+                            placeholder&#x3D;&quot;Max number of toastrs per Position&quot;
+                            formControlName&#x3D;&quot;maxAtPosition&quot;
+                            type&#x3D;&quot;number&quot;
+                        &gt;
+                    &lt;/mat-form-field&gt;
+
+                &lt;/div&gt;
+
+                &lt;mat-form-field
+                    appearance&#x3D;&quot;outline&quot;
+                    *ngIf&#x3D;&quot;themeControl&quot;
+                &gt;
+                    &lt;mat-label&gt;Select theme&lt;/mat-label&gt;
+                    &lt;mat-select
+                        [formControl]&#x3D;&quot;themeControl&quot;
+                        name&#x3D;&quot;toastStyle&quot;
+                    &gt;
+                        &lt;mat-option
+                            *ngFor&#x3D;&quot;let theme of themes&quot;
+                            [value]&#x3D;&quot;theme&quot;
+                        &gt;
+                            {{theme}}
+                        &lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;buttons&quot;&gt;
+        &lt;div class&#x3D;&quot;buttons__classic&quot;&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;primary&quot;
+                (click)&#x3D;&quot;onSuccess()&quot;
+            &gt;
+                Success
+            &lt;/button&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;info&quot;
+                (click)&#x3D;&quot;onInfo()&quot;
+            &gt;
+                Info
+            &lt;/button&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;warn&quot;
+                (click)&#x3D;&quot;onError()&quot;
+            &gt;
+                Error
+            &lt;/button&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;primary&quot;
+                (click)&#x3D;&quot;onWarning()&quot;
+            &gt;
+                Warning
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;buttons__special&quot;&gt;
+
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;info&quot;
+                (click)&#x3D;&quot;onAsyncLoading()&quot;
+            &gt;
+                Async
+            &lt;/button&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;warn&quot;
+                (click)&#x3D;&quot;onConfirmation()&quot;
+            &gt;
+                Confirm
+            &lt;/button&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;primary&quot;
+                (click)&#x3D;&quot;onPrompt()&quot;
+            &gt;
+                Prompt
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;buttons__html&quot;&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;primary&quot;
+                (click)&#x3D;&quot;onHtml()&quot;
+            &gt;
+                HTML
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;buttons__clear-all&quot;&gt;
+            &lt;button
+                mat-raised-button
+                color&#x3D;&quot;primary&quot;
+                (click)&#x3D;&quot;onClear()&quot;
+            &gt;
+                Clear all
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;ngx-snotifire class&#x3D;&quot;{{ snotifireForm.getRawValue().toastStyle }}&quot;&gt;&lt;/ngx-snotifire&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./app.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.page{
+  padding-top:2rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+  align-content: center;
+
+  display: flex;
+  .config{
+    max-width: 40rem;
+    padding: 0rem 3rem;
+    .title{
+      text-align: center;
+    }
+    .functional-config{
+        &amp;__length,&amp;__ui{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        mat-form-field{
+          width: 45%;
+        }
+      }
+    }
+    &amp;__booleans{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3.2rem;
+      max-width: 100%;
+      mat-slide-togle{
+        width: 40%;
+        display: inline-block;
+      }
+    }
+  }
+  .buttons{
+
+    max-width:70rem;
+    display: flex;
+    flex-direction: column;
+    margin-top:4.5rem;
+    margin-left: 10rem;
+    div{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      width: 100%;
+
+    }
+    button{
+      margin-left: 1rem;
+    }
+    .buttons__html, .buttons__clear-all{
+      display: block;
+      text-align: center;
+    }
+  }
+}
+mat-form-field{
+  width:100%;
+}
+mat-divider{
+  padding-top:0;
+  margin-bottom: 2rem;
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="page">    <div class="config">        <h1 class="title">            <mat-icon svgIcon="icon-fire"></mat-icon>            Config Noti            <mat-icon svgIcon="icon-fire"></mat-icon>            Toast            <mat-icon svgIcon="icon-fire"></mat-icon>        </h1>        <form            [formGroup]="snotifireForm"            novalidate        >            <div class="data">                <div                    class="data__toast"                    formGroupName="toastData"                >                    <mat-form-field appearance="outline">                        <mat-label>Name</mat-label>                        <input                            matInput                            placeholder="Title"                            formControlName="title"                        >                    </mat-form-field>                    <mat-form-field appearance="outline">                        <mat-label>Body</mat-label>                        <input                            matInput                            placeholder="Body"                            formControlName="body"                        >                    </mat-form-field>                </div>                <mat-divider></mat-divider>                <div                    class="functional-config"                    formGroupName="toastFunctionalConfig"                >                    <div class="functional-config__length">                        <mat-form-field appearance="outline">                            <mat-label>Title Max Length</mat-label>                            <input                                matInput                                placeholder="Max length of the displayed title"                                formControlName="titleMaxLength"                                type="number"                            >                        </mat-form-field>                        <mat-form-field appearance="outline">                            <mat-label>Body Max Length</mat-label>                            <input                                matInput                                placeholder="Max length of the displayed body notification"                                formControlName="boydMaxLength"                                type="number"                            >                        </mat-form-field>                    </div>                    <div class="functional-config__ui">                        <mat-form-field appearance="outline">                            <mat-label>Timeout</mat-label>                            <input                                matInput                                placeholder="Time before the notification expires"                                formControlName="timeout"                                type="number"                            >                        </mat-form-field>                        <mat-form-field appearance="outline">                            <mat-label>Backdrop</mat-label>                            <input                                matInput                                placeholder="Shadow opacity when notiifcation is shown"                                formControlName="backdrop"                                type="number"                            >                        </mat-form-field>                    </div>                </div>                <mat-divider></mat-divider>                <div class="snotifire-position">                    <mat-form-field                        appearance="outline"                        *ngIf="positionFormControl"                    >                        <mat-label>Select Notification Position</mat-label>                        <mat-select                            [formControl]="positionFormControl"                            name="position"                        >                            <mat-option                                *ngFor="let position  of positions"                                [value]="position"                            >                                {{position}}                            </mat-option>                        </mat-select>                    </mat-form-field>                </div>                <div                    class="config__booleans"                    formGroupName="toastVisualConfig"                >                    <mat-slide-toggle formControlName="isShowProgressBar">Show Progress Bar</mat-slide-toggle>                    <mat-slide-toggle formControlName="isCloseOnClick">Close on click</mat-slide-toggle>                    <mat-slide-toggle formControlName="isPauseOnHover">Pause on hover</mat-slide-toggle>                    <mat-slide-toggle formControlName="isNewItemsOnTop">New items on top</mat-slide-toggle>                    <mat-slide-toggle formControlName="isFilterDuplicates">Filter duplicates</mat-slide-toggle>                </div>                <mat-divider></mat-divider>                <div                    class="inputs__max"                    formGroupName="notificationConf"                >                    <mat-form-field appearance="outline">                        <mat-label>Max number of Toastrs on Screen</mat-label>                        <input                            matInput                            placeholder="Max number of toastrs on screen"                            formControlName="maxOnScreen"                            type="number"                        >                    </mat-form-field>                    <mat-form-field appearance="outline">                        <mat-label>Max number of Toastrs per Position</mat-label>                        <input                            matInput                            placeholder="Max number of toastrs per Position"                            formControlName="maxAtPosition"                            type="number"                        >                    </mat-form-field>                </div>                <mat-form-field                    appearance="outline"                    *ngIf="themeControl"                >                    <mat-label>Select theme</mat-label>                    <mat-select                        [formControl]="themeControl"                        name="toastStyle"                    >                        <mat-option                            *ngFor="let theme of themes"                            [value]="theme"                        >                            {{theme}}                        </mat-option>                    </mat-select>                </mat-form-field>            </div>        </form>    </div>    <div class="buttons">        <div class="buttons__classic">            <button                mat-raised-button                color="primary"                (click)="onSuccess()"            >                Success            </button>            <button                mat-raised-button                color="info"                (click)="onInfo()"            >                Info            </button>            <button                mat-raised-button                color="warn"                (click)="onError()"            >                Error            </button>            <button                mat-raised-button                color="primary"                (click)="onWarning()"            >                Warning            </button>        </div>        <div class="buttons__special">            <button                mat-raised-button                color="info"                (click)="onAsyncLoading()"            >                Async            </button>            <button                mat-raised-button                color="warn"                (click)="onConfirmation()"            >                Confirm            </button>            <button                mat-raised-button                color="primary"                (click)="onPrompt()"            >                Prompt            </button>        </div>        <div class="buttons__html">            <button                mat-raised-button                color="primary"                (click)="onHtml()"            >                HTML            </button>        </div>        <div class="buttons__clear-all">            <button                mat-raised-button                color="primary"                (click)="onClear()"            >                Clear all            </button>        </div>    </div></section><ngx-snotifire class="{{ snotifireForm.getRawValue().toastStyle }}"></ngx-snotifire></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'notifire-button'},{'name': 'NgxSnotifireComponent', 'selector': 'ngx-snotifire'},{'name': 'PromptComponent', 'selector': 'ngx-snotify-prompt'},{'name': 'ToastComponent', 'selector': 'ngx-toast'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
