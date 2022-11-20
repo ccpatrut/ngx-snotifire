@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
 import {
   NgxSnotifireModule,
-  SnotificationService,
+  SnotifireService,
   ToastDefaults,
 } from 'ngx-snotifire';
 
@@ -36,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     { provide: 'SnotifireConfig', useValue: ToastDefaults },
-    SnotificationService,
+    SnotifireService,
   ],
   bootstrap: [AppComponent],
 })

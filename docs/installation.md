@@ -10,8 +10,8 @@
 
 #### Import Module
 
-Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors  
-And provide SnotifyService with default configuration object
+Import NgxSnotifireModule, also you can try NgxSnotifireModule.forRoot() if you have build errors  
+And provide SnotifireService with default configuration object
 
 > How to change ToastDefaults config - [options](api/snotify.md#setdefaults)
 
@@ -24,7 +24,7 @@ import {
 } from "ngx-snotifire";
 
 @NgModule({
-  imports: [BrowserModule, SnotifyModule],
+  imports: [BrowserModule, NgxSnotifireModule],
   providers: [
     { provide: "NotifireConfig", useValue: ToastDefaults },
     SnotifireService,
@@ -43,10 +43,10 @@ Include `ngx-snotifire` component to you root component
 
 #### Dependency injection
 
-Now you should inject `SnotifyService`
+Now you should inject `SnotifireService`
 
 ```typescript
-import { SnotifyService } from "ng-snotify";
+import { SnotifireService } from "ngx-snotifire";
 
 @Component({
   selector: "app-root",
