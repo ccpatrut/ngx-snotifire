@@ -1,6 +1,7 @@
 # ng-snotify
 
-[![Build Status](https://travis-ci.org/artemsky/ng-snotify.svg?branch=master)](https://github.com/ccpatrut/ngx-snotifire/actions)
+[![Build Status](https://github.com/ccpatrut/ngx-snotifire/actions)](https://github.com/ccpatrut/ngx-snotifire/actions)
+[![Issues](https://github.com/ccpatrut/ngx-snotifire/issues)](https://github.com/ccpatrut/ngx-snotifire/actions)
 [![NPM Version](https://img.shields.io/npm/v/ng-snotify.svg)](https://www.npmjs.com/package/ngx-snotifire?activeTab=versions)
 [![NPM Downloads](https://img.shields.io/npm/dt/ng-snotify.svg)](https://www.npmjs.com/package/ngx-snotifire?activeTab=readme)
 
