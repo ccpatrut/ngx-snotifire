@@ -214,7 +214,11 @@
 import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { MatInputModule } from &#x27;@angular/material/input&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
-import { NgxSnotifireModule, SnotificationService } from &#x27;ngx-snotifire&#x27;;
+import {
+  NgxSnotifireModule,
+  SnotificationService,
+  ToastDefaults,
+} from &#x27;ngx-snotifire&#x27;;
 
 import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
@@ -225,7 +229,6 @@ import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
 import { MatDividerModule } from &#x27;@angular/material/divider&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
 import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
-import { ToastDefaults } from &#x27;ngx-snotifire&#x27;;
 
 @NgModule({
   declarations: [AppComponent],
