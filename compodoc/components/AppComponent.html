@@ -1728,11 +1728,10 @@ interface VisualConfig {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">
 .page{
-  padding-top:2rem;
+  padding-top: 2rem;
   padding-bottom: 1rem;
   justify-content: center;
   align-content: center;
-
   display: flex;
   .config{
     max-width: 40rem;
@@ -1795,9 +1794,14 @@ mat-divider{
 
 
 footer{
+
+
  display: flex;
  justify-content: center;
  align-items: center;
+ position: fixed;
+ bottom: 1rem;
+ width:100%;
  a:not(:last-child), h6{
   text-align: center;
   margin-left: 1rem;
@@ -1823,6 +1827,30 @@ a:active {
 }
 
 
+}
+@media  (max-width: 800px) {
+  .page{
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    .config{
+      max-width:100%;
+      margin-top:2rem;
+    }
+    .buttons{
+      margin: 0;
+      max-width: 400px;
+    }
+
+  }
+  footer{
+    position: relative;
+    a{
+      padding: 0.5rem
+    }
+  }
+}
+@media  (max-width: 500px) {
 }
 </code></pre>
     </div>
