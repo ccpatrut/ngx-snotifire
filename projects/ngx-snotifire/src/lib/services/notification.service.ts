@@ -27,7 +27,7 @@ export class SnotifireService {
   notifications: Array<SnotifireToastModel> = [];
 
   constructor(
-    @Inject('NotifireConfig') public defaultConfig: SnotifireDefaults
+    @Inject('snotifireConfig') public defaultConfig: SnotifireDefaults
   ) {}
 
   /**

@@ -9,7 +9,7 @@
 > Of course you can use it like json, just omit imports, and replace `SnotifireEventType` & `SnotificationPositionType` with string values.
 > Just be sure that you are follow [SnotifireDefaults](interfaces.md#snotifiredefaults) interface.  
 > You should initialize `ngx-snotifire` with default configuration object.  
-> We provide it by custom object injection ` { provide: 'SnotifireConfig', useValue: ToastDefaults }` by default.
+> We provide it by custom object injection ` { provide: 'snotifireConfig', useValue: ToastDefaults }` by default.
 
 ###### Example
 
@@ -23,7 +23,7 @@ import {
   declarations: [AppComponent],
   imports: [NgxSnotifireModule],
   providers: [
-    { provide: "SnotifireConfig", useValue: ToastDefaults },
+    { provide: "snotifireConfig", useValue: ToastDefaults },
     SnotifireService,
   ],
   bootstrap: [AppComponent],
