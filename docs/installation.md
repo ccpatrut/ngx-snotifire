@@ -1,56 +1,62 @@
 # Installation
 
 ###### NPM 5
+
 `npm install ng-snotify`
+
 ###### yarn
+
 `yarn add ng-snotify`
 
-
 #### Import Module
+
 Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors  
-And provide SnotifyService with default configuration object  
-> How to change ToastDefaults config - [options](api/snotify.md#setdefaults)  
+And provide SnotifyService with default configuration object
+
+> How to change ToastDefaults config - [options](api/snotify.md#setdefaults)
 
 ```typescript
 // Import your library
-import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import {
+  NgxSnotifireModule,
+  SnotificationService,
+  ToastDefaults,
+} from "ngx-snotifire";
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    SnotifyModule
-  ],
+  imports: [BrowserModule, SnotifyModule],
   providers: [
-    { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
-    SnotifyService
-  ]
+    { provide: "NotifireConfig", useValue: ToastDefaults },
+    SnotificationService,
+  ],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 #### Add selector
-Include `ng-snotify` component to you root component
+
+Include `ngx-snotifire` component to you root component
 
 ```html
-<ng-snotify></ng-snotify>
+<ngx-snotifire></ngx-snotifire>
 ```
+
 #### Dependency injection
+
 Now you should inject `SnotifyService`
 
 ```typescript
-import {SnotifyService} from 'ng-snotify';
+import { SnotifyService } from "ng-snotify";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  constructor(private snotifyService: SnotifyService) {}
+  constructor(private snotificationService: SnotificationService) {}
 }
-
 ```
-
 
 #### Import Styles
 
