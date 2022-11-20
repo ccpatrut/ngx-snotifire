@@ -1,24 +1,19 @@
 # NgxSnotifire
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+Demo project at [https://ccpatrut.github.io/ngx-snotifire/](https://ccpatrut.github.io/ngx-snotifire/)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name --project ngx-snotifire` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-snotifire`.
-> Note: Don't forget to add `--project ngx-snotifire` or else it will be added to the default project in your `angular.json` file. 
+- 8 types of toast notifications
+- Ability to create toasts in different positions at the same time
+- Many config options (icons, backdrop, timeout, position and much more)
+- Custom fully controlled styling including animations
+- Repository includes 3 different styles. So you can use on of them, or create your own
+- Callbacks
+- Custom HTML
 
-## Build
+## Instalation
 
-Run `ng build ngx-snotifire` to build the project. The build artifacts will be stored in the `dist/` directory.
+NPM
 
-## Publishing
-
-After building your library with `ng build ngx-snotifire`, go to the dist folder `cd dist/ngx-snotifire` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-snotifire` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`npm install ngx-snotifire`

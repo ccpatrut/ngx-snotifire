@@ -1,31 +1,53 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  NgxSnotifireModule,
+  SnotifireService,
+  ToastDefaults,
+} from 'ngx-snotifire';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
 
-describe('AppComponent', () => {
+describe('TestComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+      declarations: [AppComponent],
+      imports: [
+        ReactiveFormsModule,
+        NgxSnotifireModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatSlideToggleModule,
+        MatFormFieldModule,
+        MatDividerModule,
+        MatIconModule,
+        HttpClientModule,
+      ],
+      providers: [
+        { provide: 'snotifireConfig', useValue: ToastDefaults },
+        SnotifireService,
       ],
     }).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'snotifire-workspace'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('snotifire-workspace');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('snotifire-workspace app is running!');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });
