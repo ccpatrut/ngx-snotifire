@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   NgxSnotifireComponent,
   NgxSnotifireModule,
-  SnotificationService,
+  SnotifireService,
   ToastDefaults,
 } from 'ngx-snotifire';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,7 +38,7 @@ describe('NgxSnotifireComponent', () => {
       ],
       providers: [
         { provide: 'NotifireConfig', useValue: ToastDefaults },
-        SnotificationService,
+        SnotifireService,
       ],
     }).compileComponents();
 

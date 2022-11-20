@@ -1,4 +1,4 @@
-# ng-snotify
+# ng-snotifire
 
 ## Overview
 
@@ -7,7 +7,7 @@
   - [Getting Started](essentials/getting-started.md)
   - [Basic Examples](essentials/examples.md)
 - API
-  - [Snotify](api/snotify.md)
+  - [Snotifire](api/snotify.md)
     - [success](api/snotify.md#success)
     - [info](api/snotify.md#info)
     - [warning](api/snotify.md#warning)
@@ -22,7 +22,7 @@
     - [create](api/snotify.md#create)
   - [Callbacks](api/callbacks.md)
   - [Options](api/options.md)
-    - [SnotifyToastConfig](api/options.md#snotifytoastconfig)
+    - [SnotifireConfig](api/options.md#snotifiretoastconfig)
       - [id](api/options.md#id)
       - [timeout](api/options.md#timeout)
       - [showProgressBar](api/options.md#showprogressbar)
