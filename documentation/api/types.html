@@ -184,7 +184,7 @@
                 <a href="snotify.html">
             
                     
-                    Snotify
+                    Snotifire
             
                 </a>
             
@@ -383,10 +383,10 @@
     
         <li class="chapter " data-level="1.4.3.1" data-path="options.html">
             
-                <a href="options.html#snotifytoastconfig">
+                <a href="options.html#snotifiretoastconfig">
             
                     
-                    SnotifyToastConfig
+                    SnotifireConfig
             
                 </a>
             
@@ -1047,38 +1047,35 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="types">Types</h1>
-<h2 id="snotifytypetype">SnotifyTypeType</h2>
+<h2 id="snotifiretype">SnotifireType</h2>
 <ul>
-<li>definition<pre><code class="lang-typescript">SnotifyTypeType
-= <span class="hljs-string">&apos;simple&apos;</span>
-| <span class="hljs-string">&apos;success&apos;</span>
-| <span class="hljs-string">&apos;error&apos;</span>
-| <span class="hljs-string">&apos;warning&apos;</span>
-| <span class="hljs-string">&apos;info&apos;</span>
-| <span class="hljs-string">&apos;async&apos;</span>
-| <span class="hljs-string">&apos;confirm&apos;</span>
-| <span class="hljs-string">&apos;prompt&apos;</span>;
-<span class="hljs-string">`
-</span></code></pre>
-</li>
+<li>definition</li>
 </ul>
-<h2 id="snotifyevent">SnotifyEvent</h2>
+<pre><code class="lang-typescript">  SUCCESS = <span class="hljs-string">&apos;success&apos;</span>,
+  INFO = <span class="hljs-string">&apos;info&apos;</span>,
+  WARNING = <span class="hljs-string">&apos;warning&apos;</span>,
+  ERROR = <span class="hljs-string">&apos;error&apos;</span>,
+  ASYNC = <span class="hljs-string">&apos;async&apos;</span>,
+  CONFIRM = <span class="hljs-string">&apos;confirm&apos;</span>,
+  PROMPT = <span class="hljs-string">&apos;prompt&apos;</span>,
+</code></pre>
+<h2 id="snotifireeventtype">SnotifireEventType</h2>
 <ul>
-<li>definition<pre><code class="lang-typescript">SnotifyTypeType
-= <span class="hljs-string">&apos;mounted&apos;</span>
-| <span class="hljs-string">&apos;beforeShow&apos;</span>
-| <span class="hljs-string">&apos;shown&apos;</span>
-| <span class="hljs-string">&apos;input&apos;</span>
-| <span class="hljs-string">&apos;click&apos;</span>
-| <span class="hljs-string">&apos;mouseenter&apos;</span>
-| <span class="hljs-string">&apos;mouseleave&apos;</span>
-| <span class="hljs-string">&apos;beforeHide&apos;</span>
-| <span class="hljs-string">&apos;hidden&apos;</span>
-| <span class="hljs-string">&apos;destroyed&apos;</span>;
-<span class="hljs-string">`
-</span></code></pre>
-</li>
+<li>definition</li>
 </ul>
+<pre><code class="lang-typescript">SnotifireEventType {
+  MOUNTED = <span class="hljs-string">&apos;mounted&apos;</span>,
+  BEFORE_SHOW = <span class="hljs-string">&apos;beforeShow&apos;</span>,
+  SHOWN = <span class="hljs-string">&apos;shown&apos;</span>,
+  INPUT = <span class="hljs-string">&apos;input&apos;</span>,
+  CLICK = <span class="hljs-string">&apos;click&apos;</span>,
+  MOUSE_ENTER = <span class="hljs-string">&apos;mouseenter&apos;</span>,
+  MOUSE_LEAVE = <span class="hljs-string">&apos;mouseleave&apos;</span>,
+  BEFORE_HIDE = <span class="hljs-string">&apos;beforeHide&apos;</span>,
+  HIDDEN = <span class="hljs-string">&apos;hidden&apos;</span>,
+  DESTROYED = <span class="hljs-string">&apos;destroyed&apos;</span>,
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1136,7 +1133,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Types","level":"1.4.6","depth":2,"next":{"title":"SnotifyTypeType","level":"1.4.6.1","depth":3,"anchor":"#snotifytype","path":"api/types.md","ref":"api/types.md#snotifytype","articles":[]},"previous":{"title":"SnotifyPosition","level":"1.4.5.2","depth":3,"anchor":"#snotifyposition","path":"api/enums.md","ref":"api/enums.md#snotifyposition","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api/types.md","mtime":"2022-11-20T07:39:54.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T07:42:18.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Types","level":"1.4.6","depth":2,"next":{"title":"SnotifyTypeType","level":"1.4.6.1","depth":3,"anchor":"#snotifytype","path":"api/types.md","ref":"api/types.md#snotifytype","articles":[]},"previous":{"title":"SnotifyPosition","level":"1.4.5.2","depth":3,"anchor":"#snotifyposition","path":"api/enums.md","ref":"api/enums.md#snotifyposition","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api/types.md","mtime":"2022-11-20T09:56:50.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T10:00:13.063Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

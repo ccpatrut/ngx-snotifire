@@ -182,7 +182,7 @@
                 <a href="../api/snotify.html">
             
                     
-                    Snotify
+                    Snotifire
             
                 </a>
             
@@ -381,10 +381,10 @@
     
         <li class="chapter " data-level="1.4.3.1" data-path="../api/options.html">
             
-                <a href="../api/options.html#snotifytoastconfig">
+                <a href="../api/options.html#snotifiretoastconfig">
             
                     
-                    SnotifyToastConfig
+                    SnotifireConfig
             
                 </a>
             
@@ -1047,40 +1047,51 @@
                                 <h1 id="upgrade-guide">Upgrade guide</h1>
 <h3 id="1-provide-default-configuration">1. Provide default configuration</h3>
 <blockquote>
-<p>Options totally reworked.<br>  Now you have <a href="../api/options.html#setting-default-configuration">setDefaults</a> method to change toast dock configuration.</p>
+<p>Options totally reworked.<br> Now you have <a href="../api/options.html#setting-default-configuration">setDefaults</a> method to change toast dock configuration.</p>
 </blockquote>
 <pre><code class="lang-typescript"><span class="hljs-comment">// Import your library</span>
-<span class="hljs-keyword">import</span> { SnotifyModule, SnotifyService, ToastDefaults } from <span class="hljs-string">&apos;ng-snotify&apos;</span>;
+<span class="hljs-keyword">import</span> {
+  NgxSnotifireModule,
+  SnotifireService,
+  ToastDefaults,
+} from <span class="hljs-string">&quot;ngx-snotifire&quot;</span>;
 
 @NgModule({
-  imports: [
-    SnotifyModule
-  ],
+  imports: [NgxSnotifireModule],
   providers: [
-    { provide: <span class="hljs-string">&apos;SnotifyToastConfig&apos;</span>, useValue: ToastDefaults}, <span class="hljs-comment">// Default configuration</span>
-    SnotifyService
-  ]
+    { provide: <span class="hljs-string">&quot;SnotifireConfig&quot;</span>, useValue: ToastDefaults }, <span class="hljs-comment">// Default configuration</span>
+    SnotifireService,
+  ],
 })
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { }
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {}
 </code></pre>
 <p>Now you can play with this, and create <code>toast.json</code> configuration for example</p>
 <h3 id="2-callbacks-totally-removed-from-snotifyservice">2. Callbacks totally removed from <code>SnotifyService</code></h3>
 <p>Now you have jQuery-like syntax on toast object</p>
-<pre><code class="lang-typescript">service.prompt(<span class="hljs-string">&apos;Accept license&apos;</span>, {
-  placeholder: <span class="hljs-string">&apos;Enter your age&apos;</span>,
-  buttons: [
-    {text: <span class="hljs-string">&apos;Accept&apos;</span>, action: (toast) =&gt; { toast.valid ? service.remove(toast.id) : <span class="hljs-literal">false</span> }, bold: <span class="hljs-literal">true</span>},
-    {text: <span class="hljs-string">&apos;Cancel&apos;</span> }
-  ]
-}).on(<span class="hljs-string">&apos;input&apos;</span>, (toast: Snotify) =&gt; {
-  <span class="hljs-keyword">if</span> (+toast.value &gt;= <span class="hljs-number">21</span>) {
-    toast.valid = <span class="hljs-literal">true</span>;
-  } <span class="hljs-keyword">else</span> {
-    toast.valid = <span class="hljs-literal">false</span>;
-  }
-}).on(<span class="hljs-string">&apos;hidden&apos;</span>, () =&gt; {
-  <span class="hljs-comment">/* do some stuff */</span>
-})
+<pre><code class="lang-typescript">service
+  .prompt(<span class="hljs-string">&quot;Accept license&quot;</span>, {
+    placeholder: <span class="hljs-string">&quot;Enter your age&quot;</span>,
+    buttons: [
+      {
+        text: <span class="hljs-string">&quot;Accept&quot;</span>,
+        action: (toast) =&gt; {
+          toast.valid ? service.remove(toast.id) : <span class="hljs-literal">false</span>;
+        },
+        bold: <span class="hljs-literal">true</span>,
+      },
+      { text: <span class="hljs-string">&quot;Cancel&quot;</span> },
+    ],
+  })
+  .on(<span class="hljs-string">&quot;input&quot;</span>, (toast: Snotify) =&gt; {
+    <span class="hljs-keyword">if</span> (+toast.value &gt;= <span class="hljs-number">21</span>) {
+      toast.valid = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+      toast.valid = <span class="hljs-literal">false</span>;
+    }
+  })
+  .on(<span class="hljs-string">&quot;hidden&quot;</span>, () =&gt; {
+    <span class="hljs-comment">/* do some stuff */</span>
+  });
 </code></pre>
 <h3 id="3-custom-arguments-order">3. Custom arguments order</h3>
 <blockquote>
@@ -1090,20 +1101,20 @@
 In that case we don&apos;t need to pass <code>null</code> in title order. We just skip it.</p>
 <p>Unfortunately for now I can not do the same for <code>body</code> and <code>title</code> because both parameters are typeof string and I can&apos;t determine what exactly you are going to pass</p>
 <h6 id="before">Before</h6>
-<pre><code class="lang-typescript">service.simple(body)
-service.simple(body, <span class="hljs-literal">null</span>, config)
-service.async(body, <span class="hljs-literal">null</span>, action, config)
-service.async(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, action, config)
+<pre><code class="lang-typescript">service.simple(body);
+service.simple(body, <span class="hljs-literal">null</span>, config);
+service.async(body, <span class="hljs-literal">null</span>, action, config);
+service.async(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, action, config);
 </code></pre>
 <h6 id="now">Now</h6>
-<pre><code class="lang-typescript">service.simple(body)
-service.simple(body, config)
-service.async(body, action)
-service.async(body, action, config)
+<pre><code class="lang-typescript">service.simple(body);
+service.simple(body, config);
+service.async(body, action);
+service.async(body, action, config);
 </code></pre>
 <h3 id="4-buttons">4. Buttons</h3>
 <p>Now button action get only one param of type <a href="../api/model.html#snotifytoast">SnotifyToast</a> and by default removes toast</p>
-<pre><code class="lang-typescript"> action: (toast: SnotifyToast) =&gt; service.remove(toast.id)
+<pre><code class="lang-typescript">action: (toast: SnotifyToast) =&gt; service.remove(toast.id);
 </code></pre>
 <h3 id="5-removed">5. REMOVED</h3>
 <ul>
@@ -1171,7 +1182,7 @@ service.async(body, action, config)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Upgrading from v3","level":"1.6","depth":1,"previous":{"title":"Development","level":"1.5.3","depth":2,"path":"essentials/development.md","ref":"essentials/development.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"essentials/upgrade.md","mtime":"2022-11-20T07:39:54.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T07:42:18.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Upgrading from v3","level":"1.6","depth":1,"previous":{"title":"Development","level":"1.5.3","depth":2,"path":"essentials/development.md","ref":"essentials/development.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"essentials/upgrade.md","mtime":"2022-11-20T09:56:50.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T10:00:13.063Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

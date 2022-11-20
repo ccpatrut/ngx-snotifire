@@ -288,7 +288,7 @@ import {
   ToastComponent,
 } from &#x27;./components&#x27;;
 import { KeysPipe, TruncatePipe } from &#x27;./pipes&#x27;;
-import { SnotificationService } from &#x27;./services&#x27;;
+import { SnotifireService } from &#x27;./services&#x27;;
 
 @NgModule({
   declarations: [
@@ -306,7 +306,7 @@ export class NgxSnotifireModule {
   static forRoot(): ModuleWithProviders&lt;NgxSnotifireModule&gt; {
     return {
       ngModule: NgxSnotifireModule,
-      providers: [SnotificationService],
+      providers: [SnotifireService],
     };
   }
 }

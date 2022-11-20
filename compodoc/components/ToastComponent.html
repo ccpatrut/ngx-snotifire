@@ -230,7 +230,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(service: <a href="../injectables/SnotificationService.html" target="_self">SnotificationService</a>)</code>
+<code>constructor(service: <a href="../injectables/SnotifireService.html" target="_self">SnotifireService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -256,7 +256,7 @@
                                                         <td>service</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/SnotificationService.html" target="_self" >SnotificationService</a></code>
+                                                                        <code><a href="../injectables/SnotifireService.html" target="_self" >SnotifireService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -884,7 +884,7 @@
 import { Subject, takeUntil } from &#x27;rxjs&#x27;;
 import { SnotifireEventType, SnotifireType } from &#x27;../../models&#x27;;
 import { SnotifireToastModel } from &#x27;./notifire-toast.model&#x27;;
-import { SnotificationService } from &#x27;../../services&#x27;;
+import { SnotifireService } from &#x27;../../services&#x27;;
 
 @Component({
   selector: &#x27;ngx-toast&#x27;,
@@ -916,7 +916,7 @@ export class ToastComponent implements OnInit, OnDestroy {
     promptType: SnotifireType.PROMPT,
   };
 
-  constructor(private readonly service: SnotificationService) {}
+  constructor(private readonly service: SnotifireService) {}
 
   ngOnInit(): void {
     this.service.toastChanged

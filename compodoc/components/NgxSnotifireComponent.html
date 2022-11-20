@@ -210,7 +210,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(service: <a href="../injectables/SnotificationService.html" target="_self">SnotificationService</a>)</code>
+<code>constructor(service: <a href="../injectables/SnotifireService.html" target="_self">SnotifireService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -236,7 +236,7 @@
                                                         <td>service</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/SnotificationService.html" target="_self" >SnotificationService</a></code>
+                                                                        <code><a href="../injectables/SnotifireService.html" target="_self" >SnotifireService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -923,7 +923,7 @@ import { Subject, Subscription, takeUntil } from &#x27;rxjs&#x27;;
 import { SnotifireEventType, SnotificationPositionType } from &#x27;../../models&#x27;;
 import { SnotifireNotifications } from &#x27;../../models/snotifire-notifications.interface&#x27;;
 import { SnotifireToastModel } from &#x27;../toast/notifire-toast.model&#x27;;
-import { SnotificationService } from &#x27;../../services&#x27;;
+import { SnotifireService } from &#x27;../../services&#x27;;
 
 @Component({
   selector: &#x27;ngx-snotifire&#x27;,
@@ -965,7 +965,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
    */
   withBackdrop: SnotifireToastModel[] &#x3D; [];
 
-  constructor(readonly service: SnotificationService) {}
+  constructor(readonly service: SnotifireService) {}
   ngAfterViewInit(): void {}
 
   ngOnInit(): void {

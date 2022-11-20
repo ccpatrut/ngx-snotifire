@@ -243,7 +243,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(iconRegistry: MatIconRegistry, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, snotificationService: <a href="../injectables/SnotificationService.html" target="_self">SnotificationService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(iconRegistry: MatIconRegistry, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, snotifireService: <a href="../injectables/SnotifireService.html" target="_self">SnotifireService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -290,10 +290,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>snotificationService</td>
+                                                        <td>snotifireService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/SnotificationService.html" target="_self" >SnotificationService</a></code>
+                                                                        <code><a href="../injectables/SnotifireService.html" target="_self" >SnotifireService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -473,8 +473,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="294"
-                            class="link-to-prism">src/app/app.component.ts:294</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="290"
+                            class="link-to-prism">src/app/app.component.ts:290</a></div>
                 </td>
             </tr>
 
@@ -801,8 +801,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="249"
-                            class="link-to-prism">src/app/app.component.ts:249</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="245"
+                            class="link-to-prism">src/app/app.component.ts:245</a></div>
                 </td>
             </tr>
 
@@ -1047,7 +1047,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="279" class="link-to-prism">src/app/app.component.ts:279</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/app.component.ts:275</a></div>
                                 </td>
                             </tr>
 
@@ -1069,7 +1069,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/app/app.component.ts:283</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="279" class="link-to-prism">src/app/app.component.ts:279</a></div>
                                 </td>
                             </tr>
 
@@ -1091,7 +1091,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/app/app.component.ts:286</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="282" class="link-to-prism">src/app/app.component.ts:282</a></div>
                                 </td>
                             </tr>
 
@@ -1113,7 +1113,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="290" class="link-to-prism">src/app/app.component.ts:290</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/app/app.component.ts:286</a></div>
                                 </td>
                             </tr>
 
@@ -1134,7 +1134,7 @@ import {
 import { MatIconRegistry } from &#x27;@angular/material/icon&#x27;;
 import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
 import {
-  SnotificationService,
+  SnotifireService,
   SnotificationPositionType,
   SnotifireConfig,
   SnotifireEventType,
@@ -1156,7 +1156,7 @@ export class AppComponent implements OnInit {
   constructor(
     protected readonly iconRegistry: MatIconRegistry,
     protected readonly sanitizer: DomSanitizer,
-    readonly snotificationService: SnotificationService,
+    readonly snotifireService: SnotifireService,
     private readonly fb: FormBuilder
   ) {
     this.positions &#x3D; Object.keys(SnotificationPositionType);
@@ -1205,7 +1205,7 @@ export class AppComponent implements OnInit {
   }
 
   getConfig(): SnotifireConfig {
-    this.snotificationService.setDefaults({
+    this.snotifireService.setDefaults({
       global: {
         newOnTop: this.visualConfig.isNewItemsOnTop,
         maxAtPosition: this.notificationConfig.maxAtPosition,
@@ -1229,28 +1229,28 @@ export class AppComponent implements OnInit {
   }
 
   onSuccess() {
-    this.snotificationService.success(
+    this.snotifireService.success(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
     );
   }
   onInfo() {
-    this.snotificationService.info(
+    this.snotifireService.info(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
     );
   }
   onError() {
-    this.snotificationService.error(
+    this.snotifireService.error(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
     );
   }
   onWarning() {
-    this.snotificationService.warning(
+    this.snotifireService.warning(
       this.toastData.body,
       this.toastData.title,
       this.getConfig()
@@ -1260,11 +1260,11 @@ export class AppComponent implements OnInit {
   onHtml() {
     const html &#x3D; &#x60;&lt;div class&#x3D;&quot;snotifyToast__title&quot;&gt;&lt;b&gt;Html Bold Title&lt;/b&gt;&lt;/div&gt;
     &lt;div class&#x3D;&quot;snotifyToast__body&quot;&gt;&lt;i&gt;Html&lt;/i&gt; &lt;b&gt;toast&lt;/b&gt; &lt;u&gt;content&lt;/u&gt;&lt;/div&gt;&#x60;;
-    this.snotificationService.html(html, this.getConfig());
+    this.snotifireService.html(html, this.getConfig());
   }
 
   onClear() {
-    this.snotificationService.clear();
+    this.snotifireService.clear();
   }
 
   onAsyncLoading() {
@@ -1303,18 +1303,18 @@ export class AppComponent implements OnInit {
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
      */
     const { timeout, ...config } &#x3D; this.getConfig(); // Omit timeout
-    this.snotificationService.async(
+    this.snotifireService.async(
       &#x27;This will resolve with error&#x27;,
       &#x27;Async&#x27;,
       errorAction,
       config
     );
-    this.snotificationService.async(
+    this.snotifireService.async(
       &#x27;This will resolve with success&#x27;,
       successAction,
       config
     );
-    this.snotificationService.async(
+    this.snotifireService.async(
       &#x27;Called with promise&#x27;,
       &#x27;Error async&#x27;,
       new Promise((resolve, reject) &#x3D;&gt; {
@@ -1340,36 +1340,32 @@ export class AppComponent implements OnInit {
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
     const { timeout, closeOnClick, ...config } &#x3D; this.getConfig(); // Omit props what i don&#x27;t need
-    this.snotificationService.confirm(
-      this.toastData.body,
-      this.toastData.title,
-      {
-        ...config,
-        buttons: [
-          {
-            text: &#x27;Yes&#x27;,
-            action: () &#x3D;&gt; console.log(&#x27;Clicked: Yes&#x27;),
-            bold: false,
+    this.snotifireService.confirm(this.toastData.body, this.toastData.title, {
+      ...config,
+      buttons: [
+        {
+          text: &#x27;Yes&#x27;,
+          action: () &#x3D;&gt; console.log(&#x27;Clicked: Yes&#x27;),
+          bold: false,
+        },
+        { text: &#x27;No&#x27;, action: () &#x3D;&gt; console.log(&#x27;Clicked: No&#x27;) },
+        {
+          text: &#x27;Later&#x27;,
+          action: (toast: any) &#x3D;&gt; {
+            console.log(&#x27;Clicked: Later&#x27;);
+            this.snotifireService.remove(toast.id);
           },
-          { text: &#x27;No&#x27;, action: () &#x3D;&gt; console.log(&#x27;Clicked: No&#x27;) },
-          {
-            text: &#x27;Later&#x27;,
-            action: (toast: any) &#x3D;&gt; {
-              console.log(&#x27;Clicked: Later&#x27;);
-              this.snotificationService.remove(toast.id);
-            },
+        },
+        {
+          text: &#x27;Close&#x27;,
+          action: (toast: any) &#x3D;&gt; {
+            console.log(&#x27;Clicked: Close&#x27;);
+            this.snotifireService.remove(toast.id);
           },
-          {
-            text: &#x27;Close&#x27;,
-            action: (toast: any) &#x3D;&gt; {
-              console.log(&#x27;Clicked: Close&#x27;);
-              this.snotificationService.remove(toast.id);
-            },
-            bold: true,
-          },
-        ],
-      }
-    );
+          bold: true,
+        },
+      ],
+    });
   }
 
   onPrompt() {
@@ -1379,7 +1375,7 @@ export class AppComponent implements OnInit {
      At the second we can&#x27;t get it. But we can remove this toast
      */
     const { timeout, closeOnClick, ...config } &#x3D; this.getConfig(); // Omit props what i don&#x27;t need
-    this.snotificationService
+    this.snotifireService
       .prompt(this.toastData.body, this.toastData.title, {
         ...config,
         buttons: [
@@ -1391,7 +1387,7 @@ export class AppComponent implements OnInit {
             text: &#x27;No&#x27;,
             action: (toast: any) &#x3D;&gt; {
               console.log(&#x27;Said No: &#x27; + toast.value);
-              this.snotificationService.remove(toast.id);
+              this.snotifireService.remove(toast.id);
             },
           },
         ],

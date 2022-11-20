@@ -182,7 +182,7 @@
                 <a href="api/snotify.html">
             
                     
-                    Snotify
+                    Snotifire
             
                 </a>
             
@@ -381,10 +381,10 @@
     
         <li class="chapter " data-level="1.4.3.1" data-path="api/options.html">
             
-                <a href="api/options.html#snotifytoastconfig">
+                <a href="api/options.html#snotifiretoastconfig">
             
                     
-                    SnotifyToastConfig
+                    SnotifireConfig
             
                 </a>
             
@@ -1046,26 +1046,26 @@
                                 
                                 <h1 id="installation">Installation</h1>
 <h6 id="npm-5">NPM 5</h6>
-<p><code>npm install ng-snotify</code></p>
+<p><code>npm install ngx-snotifire</code></p>
 <h6 id="yarn">yarn</h6>
-<p><code>yarn add ng-snotify</code></p>
+<p><code>yarn add ngx-snotifire</code></p>
 <h4 id="import-module">Import Module</h4>
-<p>Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors<br>And provide SnotifyService with default configuration object</p>
+<p>Import NgxSnotifireModule, also you can try NgxSnotifireModule.forRoot() if you have build errors<br>And provide SnotifireService with default configuration object</p>
 <blockquote>
 <p>How to change ToastDefaults config - <a href="api/snotify.html#setdefaults">options</a></p>
 </blockquote>
 <pre><code class="lang-typescript"><span class="hljs-comment">// Import your library</span>
 <span class="hljs-keyword">import</span> {
   NgxSnotifireModule,
-  SnotificationService,
+  SnotifireService,
   ToastDefaults,
 } from <span class="hljs-string">&quot;ngx-snotifire&quot;</span>;
 
 @NgModule({
-  imports: [BrowserModule, SnotifyModule],
+  imports: [BrowserModule, NgxSnotifireModule],
   providers: [
     { provide: <span class="hljs-string">&quot;NotifireConfig&quot;</span>, useValue: ToastDefaults },
-    SnotificationService,
+    SnotifireService,
   ],
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {}
@@ -1075,8 +1075,8 @@
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ngx-snotifire</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ngx-snotifire</span>&gt;</span>
 </code></pre>
 <h4 id="dependency-injection">Dependency injection</h4>
-<p>Now you should inject <code>SnotifyService</code></p>
-<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { SnotifyService } from <span class="hljs-string">&quot;ng-snotify&quot;</span>;
+<p>Now you should inject <code>SnotifireService</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { SnotifireService } from <span class="hljs-string">&quot;ngx-snotifire&quot;</span>;
 
 @Component({
   selector: <span class="hljs-string">&quot;app-root&quot;</span>,
@@ -1084,7 +1084,7 @@
   styleUrls: [<span class="hljs-string">&quot;./app.component.css&quot;</span>],
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-  <span class="hljs-keyword">constructor</span>(private snotificationService: SnotificationService) {}
+  <span class="hljs-keyword">constructor</span>(private snotifireService: SnotifireService) {}
 }
 </code></pre>
 <h4 id="import-styles">Import Styles</h4>
@@ -1142,7 +1142,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.2","depth":1,"next":{"title":"Basics","level":"1.3","depth":1,"ref":"","articles":[{"title":"Getting Started","level":"1.3.1","depth":2,"path":"essentials/getting-started.md","ref":"essentials/getting-started.md","articles":[]},{"title":"Basic Examples","level":"1.3.2","depth":2,"path":"essentials/examples.md","ref":"essentials/examples.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"installation.md","mtime":"2022-11-20T07:39:54.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T07:42:18.540Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.2","depth":1,"next":{"title":"Basics","level":"1.3","depth":1,"ref":"","articles":[{"title":"Getting Started","level":"1.3.1","depth":2,"path":"essentials/getting-started.md","ref":"essentials/getting-started.md","articles":[]},{"title":"Basic Examples","level":"1.3.2","depth":2,"path":"essentials/examples.md","ref":"essentials/examples.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"installation.md","mtime":"2022-11-20T09:56:50.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T10:00:13.063Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -184,7 +184,7 @@
                 <a href="snotify.html">
             
                     
-                    Snotify
+                    Snotifire
             
                 </a>
             
@@ -383,10 +383,10 @@
     
         <li class="chapter " data-level="1.4.3.1" data-path="options.html">
             
-                <a href="options.html#snotifytoastconfig">
+                <a href="options.html#snotifiretoastconfig">
             
                     
-                    SnotifyToastConfig
+                    SnotifireConfig
             
                 </a>
             
@@ -1048,34 +1048,34 @@
                                 
                                 <h1 id="configuration">Configuration</h1>
 <blockquote>
-<p><code>SnotifyToastConfig</code> - changes toasts configuration.<br><code>SnotifyGlobalConfig</code> - changes toast dock configuration.</p>
+<p><code>SnotifireConfig</code> - changes toasts configuration.<br><code>SnotifireConfig</code> - changes toast dock configuration.</p>
 </blockquote>
 <h2 id="setting-default-configuration">Setting default configuration</h2>
 <blockquote>
-<p>Default configuration looks like this - <a href="https://github.com/artemsky/ng-snotify/blob/master/src/snotify/toastDefaults.ts" target="_blank">toastDefaults</a><br>Of course you can use it like json, just omit imports, and replace <code>SnotifyStyle</code> &amp; <code>SnotifyPosition</code> with string values.
-Just be sure that you are follow <a href="interfaces.html#snotifydefaults">SnotifyDefaults</a> interface.<br>You should initialize <code>ng-snotify</code> with default configuration object.<br>We provide it by custom object injection <code>{ provide: &apos;SnotifyToastConfig&apos;, useValue: ToastDefaults}</code> by default.</p>
+<p>Default configuration looks like this - <a href="https://github.com/ccpatrut/ngx-snotifire/blob/main/projects/ngx-snotifire/src/lib/defaults/toast-defaults.ts" target="_blank">toastDefaults</a><br>Of course you can use it like json, just omit imports, and replace <code>SnotifireEventType</code> &amp; <code>SnotificationPositionType</code> with string values.
+Just be sure that you are follow <a href="interfaces.html#snotifiredefaults">SnotifireDefaults</a> interface.<br>You should initialize <code>ngx-snotifire</code> with default configuration object.<br>We provide it by custom object injection <code>{ provide: &apos;SnotifireConfig&apos;, useValue: ToastDefaults }</code> by default.</p>
 </blockquote>
 <h6 id="example">Example</h6>
-<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {SnotifyModule, SnotifyService, ToastDefaults} from <span class="hljs-string">&apos;ng-snotify&apos;</span>;
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {
+  NgxSnotifireModule,
+  SnotifireService,
+  ToastDefaults,
+} from <span class="hljs-string">&quot;ngx-snotifire&quot;</span>;
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    SnotifyModule
-  ],
+  declarations: [AppComponent],
+  imports: [NgxSnotifireModule],
   providers: [
-    { provide: <span class="hljs-string">&apos;SnotifyToastConfig&apos;</span>, useValue: ToastDefaults},
-    SnotifyService
+    { provide: <span class="hljs-string">&quot;SnotifireConfig&quot;</span>, useValue: ToastDefaults },
+    SnotifireService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { }
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {}
 </code></pre>
 <blockquote>
 <p>If you want to change default config in runtime you can use <a href="snotify.html#setdefaults">service.setDefaults()</a> method</p>
 </blockquote>
-<h2 id="snotifytoastconfig">SnotifyToastConfig</h2>
+<h2 id="snotifireconfig">SnotifireConfig</h2>
 <h3 id="timeout">timeout</h3>
 <ul>
 <li>type: <code>number</code></li>
@@ -1094,7 +1094,7 @@ Just be sure that you are follow <a href="interfaces.html#snotifydefaults">Snoti
 </ul>
 <h3 id="type">type</h3>
 <ul>
-<li>type: <a href="types.html#snotifytype">SnotifyTypeType</a><blockquote>
+<li>type: <a href="types.html#snotifiretype">SnotifireType</a><blockquote>
 <p>Depends on toast type - success | async | error | etc...
 Actually it changes only toast class name</p>
 </blockquote>
@@ -1118,11 +1118,11 @@ Actually it changes only toast class name</p>
 </ul>
 <h3 id="buttons">buttons</h3>
 <ul>
-<li>type: <a href="interfaces.html#snotifybutton">SnotifyButton[]</a></li>
-<li>default: <pre><code class="lang-typescript">  [
-    {text: <span class="hljs-string">&apos;Ok&apos;</span>, action: <span class="hljs-literal">null</span>, bold: <span class="hljs-literal">true</span>},
-    {text: <span class="hljs-string">&apos;Cancel&apos;</span>, action: <span class="hljs-literal">null</span>, bold: <span class="hljs-literal">false</span>},
-  ]
+<li>type: <a href="interfaces.html#snotifirebutton">ButtonsConfig[]</a></li>
+<li>default:<pre><code class="lang-typescript">[
+  { text: <span class="hljs-string">&quot;Ok&quot;</span>, action: <span class="hljs-literal">null</span>, bold: <span class="hljs-literal">true</span> },
+  { text: <span class="hljs-string">&quot;Cancel&quot;</span>, action: <span class="hljs-literal">null</span>, bold: <span class="hljs-literal">false</span> },
+];
 </code></pre>
 <blockquote>
 <p>Buttons config for Confirmation &amp; Prompt types
@@ -1159,10 +1159,10 @@ You can pass, unlimited number of buttons. Just be sure you can handle it)</p>
 <li>type: <code>string</code></li>
 <li>default: <code>null</code><blockquote>
 <p>Custom icon url.</p>
-<pre><code class="lang-js">  <span class="hljs-keyword">const</span> icon = <span class="hljs-string">`https://placehold.it/48x100`</span>;
-  vm.$snotify.simple(<span class="hljs-string">&apos;Example body&apos;</span>, <span class="hljs-literal">null</span>, {
-    icon: icon
-  });
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> icon = <span class="hljs-string">`https://placehold.it/48x100`</span>;
+vm.$snotify.simple(<span class="hljs-string">&quot;Example body&quot;</span>, <span class="hljs-literal">null</span>, {
+  icon: icon,
+});
 </code></pre>
 </blockquote>
 </li>
@@ -1171,7 +1171,7 @@ You can pass, unlimited number of buttons. Just be sure you can handle it)</p>
 <ul>
 <li>type: <code>string</code></li>
 <li>default: <code>null</code><blockquote>
-<p>Custom icon class.  </p>
+<p>Custom icon class.</p>
 </blockquote>
 </li>
 </ul>
@@ -1179,19 +1179,17 @@ You can pass, unlimited number of buttons. Just be sure you can handle it)</p>
 <ul>
 <li>type: <code>number</code></li>
 <li>default: <code>-1</code><blockquote>
-<p>Backdrop opacity in range from <code>0.0</code> to <code>1.0</code>. 
-Disabled <code>-1</code> </p>
+<p>Backdrop opacity in range from <code>0.0</code> to <code>1.0</code>.
+Disabled <code>-1</code></p>
 </blockquote>
 </li>
 </ul>
 <h3 id="animation">animation</h3>
 <ul>
-<li>type: <a href="interfaces.html#snotifyanimate">SnotifyAnimate</a>  </li>
-<li>default: <code>{enter: &apos;fadeIn&apos;, exit: &apos;fadeOut&apos;, time: 400}</code>
-```<blockquote>
-<p>Animation configuration object. Time in milliseconds</p>
-</blockquote>
-</li>
+<li>type: <a href="interfaces.html#snotifireanimate">SnotifireAnimate</a></li>
+<li><p>default: <code>{enter: &apos;fadeIn&apos;, exit: &apos;fadeOut&apos;, time: 400}</code></p>
+<pre><code>&gt; Animation configuration object. Time in milliseconds
+</code></pre></li>
 </ul>
 <h3 id="html">html</h3>
 <ul>
@@ -1203,13 +1201,13 @@ Disabled <code>-1</code> </p>
 </ul>
 <h3 id="position">position</h3>
 <ul>
-<li>type: <a href="enums.html#snotifyposition">SnotifyPosition</a></li>
+<li>type: <a href="enums.html#snotificationpositiontype">SnotificationPositionType</a></li>
 <li>default: <code>rightBottom</code><blockquote>
 <p>Toasts position on screen</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="snotifyglobalconfig">SnotifyGlobalConfig</h2>
+<h2 id="snotifireglobalconfig">SnotifireGlobalConfig</h2>
 <h3 id="maxonscreen">maxOnScreen</h3>
 <ul>
 <li>type: <code>number</code></li>
@@ -1222,7 +1220,7 @@ Disabled <code>-1</code> </p>
 <ul>
 <li>type: <code>number</code></li>
 <li>default: <code>8</code><blockquote>
-<p>Max toast items at position.<br>  Same as <code>maxOnScreen</code> but affects only current toast position block.</p>
+<p>Max toast items at position.<br> Same as <code>maxOnScreen</code> but affects only current toast position block.</p>
 </blockquote>
 </li>
 </ul>
@@ -1280,7 +1278,7 @@ Disabled <code>-1</code> </p>
                 </a>
                 
                 
-                <a href="options.html#snotifytoastconfig" class="navigation navigation-next " aria-label="Next page: SnotifyToastConfig">
+                <a href="options.html#snotifiretoastconfig" class="navigation navigation-next " aria-label="Next page: SnotifireConfig">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1291,7 +1289,7 @@ Disabled <code>-1</code> </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Options","level":"1.4.3","depth":2,"next":{"title":"SnotifyToastConfig","level":"1.4.3.1","depth":3,"anchor":"#snotifytoastconfig","path":"api/options.md","ref":"api/options.md#snotifytoastconfig","articles":[{"title":"id","level":"1.4.3.1.1","depth":4,"anchor":"#id","path":"api/options.md","ref":"api/options.md#id","articles":[]},{"title":"timeout","level":"1.4.3.1.2","depth":4,"anchor":"#timeout","path":"api/options.md","ref":"api/options.md#timeout","articles":[]},{"title":"showProgressBar","level":"1.4.3.1.3","depth":4,"anchor":"#showprogressbar","path":"api/options.md","ref":"api/options.md#showprogressbar","articles":[]},{"title":"type","level":"1.4.3.1.4","depth":4,"anchor":"#type","path":"api/options.md","ref":"api/options.md#type","articles":[]},{"title":"closeOnClick","level":"1.4.3.1.5","depth":4,"anchor":"#closeonclick","path":"api/options.md","ref":"api/options.md#closeonclick","articles":[]},{"title":"pauseOnHover","level":"1.4.3.1.6","depth":4,"anchor":"#pauseonhover","path":"api/options.md","ref":"api/options.md#pauseonhover","articles":[]},{"title":"buttons","level":"1.4.3.1.7","depth":4,"anchor":"#buttons","path":"api/options.md","ref":"api/options.md#buttons","articles":[]},{"title":"placeholder","level":"1.4.3.1.8","depth":4,"anchor":"#placeholder","path":"api/options.md","ref":"api/options.md#placeholder","articles":[]},{"title":"titleMaxLength","level":"1.4.3.1.9","depth":4,"anchor":"#titlemaxlength","path":"api/options.md","ref":"api/options.md#titlemaxlength","articles":[]},{"title":"bodyMaxLength","level":"1.4.3.1.10","depth":4,"anchor":"#bodymaxlength","path":"api/options.md","ref":"api/options.md#bodymaxlength","articles":[]},{"title":"icon","level":"1.4.3.1.11","depth":4,"anchor":"#icon","path":"api/options.md","ref":"api/options.md#icon","articles":[]},{"title":"iconClass","level":"1.4.3.1.12","depth":4,"anchor":"#iconclass","path":"api/options.md","ref":"api/options.md#iconclass","articles":[]},{"title":"backdrop","level":"1.4.3.1.13","depth":4,"anchor":"#backdrop","path":"api/options.md","ref":"api/options.md#backdrop","articles":[]},{"title":"animation","level":"1.4.3.1.14","depth":4,"anchor":"#animation","path":"api/options.md","ref":"api/options.md#animation","articles":[]},{"title":"html","level":"1.4.3.1.15","depth":4,"anchor":"#html","path":"api/options.md","ref":"api/options.md#html","articles":[]},{"title":"position","level":"1.4.3.1.16","depth":4,"anchor":"#position","path":"api/options.md","ref":"api/options.md#position","articles":[]}]},"previous":{"title":"Callbacks","level":"1.4.2","depth":2,"path":"api/callbacks.md","ref":"api/callbacks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api/options.md","mtime":"2022-11-20T07:39:54.502Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T07:42:18.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Options","level":"1.4.3","depth":2,"next":{"title":"SnotifireConfig","level":"1.4.3.1","depth":3,"anchor":"#snotifiretoastconfig","path":"api/options.md","ref":"api/options.md#snotifiretoastconfig","articles":[{"title":"id","level":"1.4.3.1.1","depth":4,"anchor":"#id","path":"api/options.md","ref":"api/options.md#id","articles":[]},{"title":"timeout","level":"1.4.3.1.2","depth":4,"anchor":"#timeout","path":"api/options.md","ref":"api/options.md#timeout","articles":[]},{"title":"showProgressBar","level":"1.4.3.1.3","depth":4,"anchor":"#showprogressbar","path":"api/options.md","ref":"api/options.md#showprogressbar","articles":[]},{"title":"type","level":"1.4.3.1.4","depth":4,"anchor":"#type","path":"api/options.md","ref":"api/options.md#type","articles":[]},{"title":"closeOnClick","level":"1.4.3.1.5","depth":4,"anchor":"#closeonclick","path":"api/options.md","ref":"api/options.md#closeonclick","articles":[]},{"title":"pauseOnHover","level":"1.4.3.1.6","depth":4,"anchor":"#pauseonhover","path":"api/options.md","ref":"api/options.md#pauseonhover","articles":[]},{"title":"buttons","level":"1.4.3.1.7","depth":4,"anchor":"#buttons","path":"api/options.md","ref":"api/options.md#buttons","articles":[]},{"title":"placeholder","level":"1.4.3.1.8","depth":4,"anchor":"#placeholder","path":"api/options.md","ref":"api/options.md#placeholder","articles":[]},{"title":"titleMaxLength","level":"1.4.3.1.9","depth":4,"anchor":"#titlemaxlength","path":"api/options.md","ref":"api/options.md#titlemaxlength","articles":[]},{"title":"bodyMaxLength","level":"1.4.3.1.10","depth":4,"anchor":"#bodymaxlength","path":"api/options.md","ref":"api/options.md#bodymaxlength","articles":[]},{"title":"icon","level":"1.4.3.1.11","depth":4,"anchor":"#icon","path":"api/options.md","ref":"api/options.md#icon","articles":[]},{"title":"iconClass","level":"1.4.3.1.12","depth":4,"anchor":"#iconclass","path":"api/options.md","ref":"api/options.md#iconclass","articles":[]},{"title":"backdrop","level":"1.4.3.1.13","depth":4,"anchor":"#backdrop","path":"api/options.md","ref":"api/options.md#backdrop","articles":[]},{"title":"animation","level":"1.4.3.1.14","depth":4,"anchor":"#animation","path":"api/options.md","ref":"api/options.md#animation","articles":[]},{"title":"html","level":"1.4.3.1.15","depth":4,"anchor":"#html","path":"api/options.md","ref":"api/options.md#html","articles":[]},{"title":"position","level":"1.4.3.1.16","depth":4,"anchor":"#position","path":"api/options.md","ref":"api/options.md#position","articles":[]}]},"previous":{"title":"Callbacks","level":"1.4.2","depth":2,"path":"api/callbacks.md","ref":"api/callbacks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/ccpatrut/ngx-snotifire/tree/develop/documentation"},"github":{"url":"https://github.com/ccpatrut/ngx-snotifire"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ng-snotifire","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api/options.md","mtime":"2022-11-20T09:56:50.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-20T10:00:13.063Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
