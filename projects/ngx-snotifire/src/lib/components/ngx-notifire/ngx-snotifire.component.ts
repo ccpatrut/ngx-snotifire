@@ -8,7 +8,7 @@ import {
 import { Subject, Subscription, takeUntil } from 'rxjs';
 import { SnotifireEventType, SnotificationPositionType } from '../../models';
 import { SnotifireNotifications } from '../../models/snotifire-notifications.interface';
-import { SnotifireModel } from '../toast/snotifire-toast.model';
+import { NotifireModel } from '../toast/notifire-toast.model';
 import { SnotificationService } from '../../services';
 
 @Component({
@@ -49,7 +49,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
   /**
    * How many toasts with backdrop in current queue
    */
-  withBackdrop: SnotifireModel[] = [];
+  withBackdrop: NotifireModel[] = [];
 
   constructor(readonly service: SnotificationService) {}
   ngAfterViewInit(): void {}
@@ -57,7 +57,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.service.emitter
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((toasts: SnotifireModel[]) => {
+      .subscribe((toasts: NotifireModel[]) => {
         if (
           this.service.defaultConfig &&
           this.service.defaultConfig.global &&
@@ -107,7 +107,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
    * @param toasts notifire-toast[]
    * @returns SnotifyNotifications
    */
-  splitToasts(toasts: SnotifireModel[]): SnotifireNotifications {
+  splitToasts(toasts: NotifireModel[]): SnotifireNotifications {
     const result: SnotifireNotifications = {};
 
     for (const property in SnotificationPositionType) {
@@ -120,7 +120,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
       }
     }
 
-    toasts.forEach((toast: SnotifireModel) => {
+    toasts.forEach((toast: NotifireModel) => {
       if (toast.config.position) {
         const keyIndex = Object.keys(SnotificationPositionType).indexOf(
           toast.config.position
@@ -138,7 +138,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
   getNotificationArray(
     notifications: SnotifireNotifications,
     position: SnotificationPositionType
-  ): SnotifireModel[] | undefined {
+  ): NotifireModel[] | undefined {
     return notifications[position];
   }
 

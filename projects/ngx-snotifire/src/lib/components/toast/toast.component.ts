@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { SnotifireEventType, SnotifireType } from '../../models';
-import { SnotifireModel } from './snotifire-toast.model';
+import { NotifireModel } from './notifire-toast.model';
 import { SnotificationService } from '../../services';
 
 @Component({
@@ -23,7 +23,7 @@ export class ToastComponent implements OnInit, OnDestroy {
   /**
    * Get toast from notifications array
    */
-  @Input() toast!: SnotifireModel;
+  @Input() toast!: NotifireModel;
   @Output() stateChanged = new EventEmitter<SnotifireEventType>();
 
   /**
@@ -47,7 +47,7 @@ export class ToastComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.service.toastChanged
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((toast: SnotifireModel) => {
+      .subscribe((toast: NotifireModel) => {
         console.log('toast');
         if (this.toast.id === toast.id) {
           this.initToast();

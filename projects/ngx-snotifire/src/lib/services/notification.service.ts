@@ -6,7 +6,7 @@ import { TransformArgument } from '../decorators/transform-argument.decorator';
 import { SnotifireConfig, SnotifireEventType, SnotifireType } from '../models';
 import { NotificationDefaults } from '../defaults/defaults.interface';
 import { SnotifireModel } from '../models/snotifire.model';
-import { SnotifireModel } from '../components/toast/snotifire-toast.model';
+import { NotifireModel } from '../components/toast/notifire-toast.model';
 import { mergeDeep, uuid } from '../utils';
 
 @Injectable()
@@ -19,12 +19,12 @@ export class SnotificationService {
   /**
    * Emits Notifire Notifications
    */
-  readonly emitter = new Subject<SnotifireModel[]>();
+  readonly emitter = new Subject<NotifireModel[]>();
 
   readonly toastDeleted = new Subject<number>();
-  readonly toastChanged = new Subject<SnotifireModel>();
+  readonly toastChanged = new Subject<NotifireModel>();
 
-  notifications: Array<SnotifireModel> = [];
+  notifications: Array<NotifireModel> = [];
 
   constructor(
     @Inject('NotifireConfig') public defaultConfig: NotificationDefaults
@@ -35,14 +35,14 @@ export class SnotificationService {
    * @param NotificationModel NotificationModel
    * @return number
    */
-  create(notif: SnotifireModel): SnotifireModel {
+  create(notif: SnotifireModel): NotifireModel {
     if (this.defaultConfig.type && notif.config && notif.config.type) {
       const config = mergeDeep(
         this.defaultConfig.snotifireConfig,
         this.defaultConfig.type[notif.config.type],
         notif.config
       );
-      const toast = new SnotifireModel(
+      const toast = new NotifireModel(
         uuid(),
         notif.title ? notif.title : '',
         notif.body ? notif.body : '',
@@ -52,7 +52,7 @@ export class SnotificationService {
       return toast;
     }
     const config = mergeDeep(this.defaultConfig.snotifireConfig, notif.config);
-    const defaulToast = new SnotifireModel(
+    const defaulToast = new NotifireModel(
       uuid(),
       notif.title ? notif.title : '',
       notif.body ? notif.body : '',
@@ -99,7 +99,7 @@ export class SnotificationService {
    * add NotifireToast to notifications array
    * @param toast NotifireToast
    */
-  private add(toast: SnotifireModel): void {
+  private add(toast: NotifireModel): void {
     if (
       this.defaultConfig &&
       this.defaultConfig.global &&
@@ -135,7 +135,7 @@ export class SnotificationService {
    * @param inToast NotifireToast
    * @returns boolean
    */
-  private containsToast(inToast: SnotifireModel): boolean {
+  private containsToast(inToast: NotifireModel): boolean {
     return this.notifications.some((toast) => toast.equals(inToast));
   }
 
@@ -145,7 +145,7 @@ export class SnotificationService {
    * @param config NotifireConfig
    * @returns number
    */
-  html(html: string | SafeHtml, config?: SnotifireConfig): SnotifireModel {
+  html(html: string | SafeHtml, config?: SnotifireConfig): NotifireModel {
     return this.create({
       title: undefined,
       body: undefined,
@@ -160,21 +160,21 @@ export class SnotificationService {
    * @param body string
    * @returns number
    */
-  success(body: string): SnotifireModel;
+  success(body: string): NotifireModel;
   /**
    * Create toast with success style returns toast id;
    * @param body string
    * @param title string
    * @returns number
    */
-  success(body: string, title: string): SnotifireModel;
+  success(body: string, title: string): NotifireModel;
   /**
    * Create toast with success style returns toast id;
    * @param body string
    * @param config NotificationConfig
    * @returns number
    */
-  success(body: string, config: SnotifireConfig): SnotifireModel;
+  success(body: string, config: SnotifireConfig): NotifireModel;
   /**
    * Create toast with success style  returns toast id;
    * @param [body] string
@@ -182,7 +182,7 @@ export class SnotificationService {
    * @param [config] NotificationConfig
    * @returns number
    */
-  success(body: string, title: string, config: SnotifireConfig): SnotifireModel;
+  success(body: string, title: string, config: SnotifireConfig): NotifireModel;
 
   /**
    * Transform toast arguments into NotificationModel object
@@ -192,7 +192,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  success(args: any): SnotifireModel {
+  success(args: any): NotifireModel {
     if (!args.config) {
       throw new Error('Missing config, please configure service accordingly');
     }
@@ -204,21 +204,21 @@ export class SnotificationService {
    * @param body string
    * @returns number
    */
-  error(body: string): SnotifireModel;
+  error(body: string): NotifireModel;
   /**
    * Create toast with error style returns toast id;
    * @param body string
    * @param title string
    * @returns number
    */
-  error(body: string, title: string): SnotifireModel;
+  error(body: string, title: string): NotifireModel;
   /**
    * Create toast with error style returns toast id;
    * @param body string
    * @param config NotificationConfig
    * @returns number
    */
-  error(body: string, config: SnotifireConfig): SnotifireModel;
+  error(body: string, config: SnotifireConfig): NotifireModel;
   /**
    * Create toast with error style  returns toast id;
    * @param [body] string
@@ -226,7 +226,7 @@ export class SnotificationService {
    * @param [config] NotificationConfig
    * @returns number
    */
-  error(body: string, title: string, config: SnotifireConfig): SnotifireModel;
+  error(body: string, title: string, config: SnotifireConfig): NotifireModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -235,7 +235,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  error(args: any): SnotifireModel {
+  error(args: any): NotifireModel {
     return this.create(args);
   }
 
@@ -244,21 +244,21 @@ export class SnotificationService {
    * @param body string
    * @returns number
    */
-  info(body: string): SnotifireModel;
+  info(body: string): NotifireModel;
   /**
    * Create toast with info style returns toast id;
    * @param body string
    * @param title string
    * @returns number
    */
-  info(body: string, title: string): SnotifireModel;
+  info(body: string, title: string): NotifireModel;
   /**
    * Create toast with info style returns toast id;
    * @param body string
    * @param config NotificationConfig
    * @returns number
    */
-  info(body: string, config: SnotifireConfig): SnotifireModel;
+  info(body: string, config: SnotifireConfig): NotifireModel;
   /**
    * Create toast with info style  returns toast id;
    * @param [body] string
@@ -266,7 +266,7 @@ export class SnotificationService {
    * @param [config] NotificationConfig
    * @returns number
    */
-  info(body: string, title: string, config: SnotifireConfig): SnotifireModel;
+  info(body: string, title: string, config: SnotifireConfig): NotifireModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -275,7 +275,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  info(args: any): SnotifireModel {
+  info(args: any): NotifireModel {
     return this.create(args);
   }
 
@@ -284,21 +284,21 @@ export class SnotificationService {
    * @param body string
    * @returns number
    */
-  warning(body: string): SnotifireModel;
+  warning(body: string): NotifireModel;
   /**
    * Create toast with warning style returns toast id;
    * @param body string
    * @param title string
    * @returns number
    */
-  warning(body: string, title: string): SnotifireModel;
+  warning(body: string, title: string): NotifireModel;
   /**
    * Create toast with warning style returns toast id;
    * @param body string
    * @param config NotificationConfig
    * @returns number
    */
-  warning(body: string, config: SnotifireConfig): SnotifireModel;
+  warning(body: string, config: SnotifireConfig): NotifireModel;
   /**
    * Create toast with warning style  returns toast id;
    * @param [body] string
@@ -306,7 +306,7 @@ export class SnotificationService {
    * @param [config] NotificationConfig
    * @returns number
    */
-  warning(body: string, title: string, config: SnotifireConfig): SnotifireModel;
+  warning(body: string, title: string, config: SnotifireConfig): NotifireModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -315,7 +315,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  warning(args: any): SnotifireModel {
+  warning(args: any): NotifireModel {
     return this.create(args);
   }
 
@@ -324,21 +324,21 @@ export class SnotificationService {
    * @param body string
    * @returns number
    */
-  confirm(body: string): SnotifireModel;
+  confirm(body: string): NotifireModel;
   /**
    * Create toast with confirm style returns toast id;
    * @param body string
    * @param title string
    * @returns number
    */
-  confirm(body: string, title: string): SnotifireModel;
+  confirm(body: string, title: string): NotifireModel;
   /**
    * Create toast with confirm style returns toast id;
    * @param body string
    * @param config NotificationConfig
    * @returns number
    */
-  confirm(body: string, config: SnotifireConfig): SnotifireModel;
+  confirm(body: string, config: SnotifireConfig): NotifireModel;
   /**
    * Create toast with confirm style  returns toast id;
    * @param [body] string
@@ -346,7 +346,7 @@ export class SnotificationService {
    * @param [config] NotificationConfig
    * @returns number
    */
-  confirm(body: string, title: string, config: SnotifireConfig): SnotifireModel;
+  confirm(body: string, title: string, config: SnotifireConfig): NotifireModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -355,7 +355,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  confirm(args: any): SnotifireModel {
+  confirm(args: any): NotifireModel {
     return this.create(args);
   }
 
@@ -364,21 +364,21 @@ export class SnotificationService {
    * @param body string
    * @returns number
    */
-  prompt(body: string): SnotifireModel;
+  prompt(body: string): NotifireModel;
   /**
    * Create toast with Prompt style with two buttons, returns toast id;
    * @param body string
    * @param title string
    * @returns number
    */
-  prompt(body: string, title: string): SnotifireModel;
+  prompt(body: string, title: string): NotifireModel;
   /**
    * Create toast with Prompt style with two buttons, returns toast id;
    * @param body string
    * @param config NotificationConfig
    * @returns number
    */
-  prompt(body: string, config: SnotifireConfig): SnotifireModel;
+  prompt(body: string, config: SnotifireConfig): NotifireModel;
   /**
    * Create toast with Prompt style with two buttons, returns toast id;
    * @param [body] string
@@ -386,7 +386,7 @@ export class SnotificationService {
    * @param [config] NotificationConfig
    * @returns number
    */
-  prompt(body: string, title: string, config: SnotifireConfig): SnotifireModel;
+  prompt(body: string, title: string, config: SnotifireConfig): NotifireModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -395,7 +395,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  prompt(args: any): SnotifireModel {
+  prompt(args: any): NotifireModel {
     return this.create(args);
   }
 
@@ -408,7 +408,7 @@ export class SnotificationService {
   async(
     body: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>
-  ): SnotifireModel;
+  ): NotifireModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -420,7 +420,7 @@ export class SnotificationService {
     body: string,
     title: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>
-  ): SnotifireModel;
+  ): NotifireModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -432,7 +432,7 @@ export class SnotificationService {
     body: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>,
     config: SnotifireConfig
-  ): SnotifireModel;
+  ): NotifireModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -446,7 +446,7 @@ export class SnotificationService {
     title: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>,
     config: SnotifireConfig
-  ): SnotifireModel;
+  ): NotifireModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -455,7 +455,7 @@ export class SnotificationService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  async(args: any): SnotifireModel {
+  async(args: any): NotifireModel {
     let async: Observable<any>;
     if (args.action instanceof Promise) {
       async = from(args.action);

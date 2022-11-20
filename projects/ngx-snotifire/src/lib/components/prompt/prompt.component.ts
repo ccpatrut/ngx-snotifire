@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { SnotifireEventType } from '../../models';
-import { SnotifireModel } from '../toast/snotifire-toast.model';
+import { NotifireModel } from '../toast/notifire-toast.model';
 
 @Component({
   selector: 'ngx-snotify-prompt',
@@ -19,7 +19,7 @@ export class PromptComponent {
   /**
    * Get PROMPT placeholder
    */
-  @Input() toast!: SnotifireModel;
+  @Input() toast!: NotifireModel;
   /**
    * Is PROMPT focused
    */
