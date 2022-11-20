@@ -24,7 +24,7 @@ jobs:
       - run: npm install gitbook-cli@2.1.2  -g
       - run: npm run-script compodoc:build
       - run: npm run-script docs:build
-      - name: Deploy to github page🚀
+      - name: Deploy to github page 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: demo
