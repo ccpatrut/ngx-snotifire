@@ -1,8 +1,6 @@
 name: Release
 
-on:
-  branches:
-    - main
+on: [push]
 
 run-name: release
 jobs:
