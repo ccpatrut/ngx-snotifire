@@ -1,6 +1,6 @@
 {
   "name": "snotifire-workspace",
-  "version": "1.0.2-beta",
+  "version": "1.0.1-beta",
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
