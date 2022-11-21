@@ -30,3 +30,7 @@ jobs:
       - run: cd dist/ngx-snotifire && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy to github page 🚀
+          uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            folder: demo
