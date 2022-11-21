@@ -1,6 +1,7 @@
 # NgxSnotifire
 
 Demo project at [https://ccpatrut.github.io/ngx-snotifire/](https://ccpatrut.github.io/ngx-snotifire/)
+Github repo: [https://github.com/ccpatrut/ngx-snotifire](https://github.com/ccpatrut/ngx-snotifire)
 
 ## Features
 
