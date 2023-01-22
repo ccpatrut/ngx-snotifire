@@ -3,7 +3,7 @@
  * @param sources Array<Object<any>>
  * @returns Object<any>
  */
-export function mergeDeep(...sources: any) {
+export function mergeDeep(...sources: any[]) {
   const target: any = {};
   if (!sources.length) {
     return target;
