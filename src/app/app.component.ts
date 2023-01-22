@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
         // @ts-ignore
         filterDuplicates: this.visualConfig.isFilterDuplicates,
       },
-      snotifireConfig: ToastDefaults.toast,
+      snotifireConfig: ToastDefaults.snotifireConfig,
     });
     return {
       bodyMaxLength: this.functionalConfig.boydMaxLength,
@@ -103,11 +103,7 @@ export class AppComponent implements OnInit {
   }
 
   onSuccess() {
-    this.snotifireService.success(
-      this.toastData.body,
-      this.toastData.title,
-      this.getConfig()
-    );
+    this.snotifireService.success(this.toastData.body, this.toastData.title);
   }
   onInfo() {
     this.snotifireService.info(

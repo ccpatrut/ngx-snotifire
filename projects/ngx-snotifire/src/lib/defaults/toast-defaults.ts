@@ -10,7 +10,7 @@ export const ToastDefaults = {
     maxAtPosition: 8,
     filterDuplicates: false,
   },
-  toast: {
+  snotifireConfig: {
     type: SnotifireType.INFO,
     showProgressBar: true,
     timeout: 5000,
@@ -22,7 +22,7 @@ export const ToastDefaults = {
     icon: undefined,
     iconClass: undefined,
     html: undefined,
-    position: 'RIGHT_TOP' as SnotificationPositionType,
+    position: 'RIGHT_BOTTOM' as SnotificationPositionType,
     animation: { enter: 'fadeIn', exit: 'fadeOut', time: 400 },
   },
   type: {
