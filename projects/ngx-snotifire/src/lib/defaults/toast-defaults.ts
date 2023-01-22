@@ -22,7 +22,7 @@ export const ToastDefaults = {
     icon: undefined,
     iconClass: undefined,
     html: undefined,
-    position: SnotificationPositionType.RIGHT_BOTTOM,
+    position: 'RIGHT_BOTTOM' as SnotificationPositionType,
     animation: { enter: 'fadeIn', exit: 'fadeOut', time: 400 },
   },
   type: {
