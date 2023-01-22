@@ -48,7 +48,6 @@ export class SnotifireService {
         notif.body ? notif.body : '',
         config
       );
-      console.log(config);
       this.add(toast);
       return toast;
     }
