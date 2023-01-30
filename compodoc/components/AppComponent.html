@@ -473,8 +473,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="286"
-                            class="link-to-prism">src/app/app.component.ts:286</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="283"
+                            class="link-to-prism">src/app/app.component.ts:283</a></div>
                 </td>
             </tr>
 
@@ -653,8 +653,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="208"
-                            class="link-to-prism">src/app/app.component.ts:208</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/app/app.component.ts:205</a></div>
                 </td>
             </tr>
 
@@ -801,8 +801,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="241"
-                            class="link-to-prism">src/app/app.component.ts:241</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="238"
+                            class="link-to-prism">src/app/app.component.ts:238</a></div>
                 </td>
             </tr>
 
@@ -1047,7 +1047,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="271" class="link-to-prism">src/app/app.component.ts:271</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="268" class="link-to-prism">src/app/app.component.ts:268</a></div>
                                 </td>
                             </tr>
 
@@ -1069,7 +1069,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/app.component.ts:275</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="272" class="link-to-prism">src/app/app.component.ts:272</a></div>
                                 </td>
                             </tr>
 
@@ -1091,7 +1091,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="278" class="link-to-prism">src/app/app.component.ts:278</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/app.component.ts:275</a></div>
                                 </td>
                             </tr>
 
@@ -1113,7 +1113,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="282" class="link-to-prism">src/app/app.component.ts:282</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="279" class="link-to-prism">src/app/app.component.ts:279</a></div>
                                 </td>
                             </tr>
 
@@ -1286,7 +1286,7 @@ export class AppComponent implements OnInit {
           body: &#x27;Example. Data loaded!&#x27;,
           config: {
             closeOnClick: true,
-            timeout: 5000,
+            timeout: 3000,
             showProgressBar: true,
           },
         });
@@ -1299,36 +1299,33 @@ export class AppComponent implements OnInit {
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
      */
     const { timeout, ...config } &#x3D; this.getConfig(); // Omit timeout
-    this.snotifireService.async(
-      &#x27;This will resolve with error&#x27;,
-      &#x27;Async&#x27;,
-      errorAction,
-      config
-    );
-    this.snotifireService.async(
-      &#x27;This will resolve with success&#x27;,
-      successAction,
-      config
-    );
-    this.snotifireService.async(
-      &#x27;Called with promise&#x27;,
-      &#x27;Error async&#x27;,
-      new Promise((resolve, reject) &#x3D;&gt; {
-        setTimeout(
-          () &#x3D;&gt;
-            reject({
-              title: &#x27;Error!!!&#x27;,
-              body: &#x27;We got an example error!&#x27;,
-              config: {
-                closeOnClick: true,
-              },
-            }),
-          1000
-        );
-        setTimeout(() &#x3D;&gt; resolve({}), 1500);
-      }),
-      config
-    );
+    this.snotifireService
+      .async(&#x27;This will resolve with error&#x27;, &#x27;Async&#x27;, errorAction, config)
+      .subscribe();
+    this.snotifireService
+      .async(&#x27;This will resolve with success&#x27;, successAction, config)
+      .subscribe();
+    this.snotifireService
+      .async(
+        &#x27;Called with promise&#x27;,
+        &#x27;Error async&#x27;,
+        new Promise((resolve, reject) &#x3D;&gt; {
+          setTimeout(
+            () &#x3D;&gt;
+              reject({
+                title: &#x27;Error!!!&#x27;,
+                body: &#x27;We got an example error!&#x27;,
+                config: {
+                  closeOnClick: true,
+                },
+              }),
+            1000
+          );
+          setTimeout(() &#x3D;&gt; resolve({}), 1500);
+        }),
+        config
+      )
+      .subscribe();
   }
 
   onConfirmation() {

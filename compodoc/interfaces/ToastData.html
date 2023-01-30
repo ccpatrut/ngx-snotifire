@@ -340,7 +340,7 @@ export class AppComponent implements OnInit {
           body: &#x27;Example. Data loaded!&#x27;,
           config: {
             closeOnClick: true,
-            timeout: 5000,
+            timeout: 3000,
             showProgressBar: true,
           },
         });
@@ -353,36 +353,33 @@ export class AppComponent implements OnInit {
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
      */
     const { timeout, ...config } &#x3D; this.getConfig(); // Omit timeout
-    this.snotifireService.async(
-      &#x27;This will resolve with error&#x27;,
-      &#x27;Async&#x27;,
-      errorAction,
-      config
-    );
-    this.snotifireService.async(
-      &#x27;This will resolve with success&#x27;,
-      successAction,
-      config
-    );
-    this.snotifireService.async(
-      &#x27;Called with promise&#x27;,
-      &#x27;Error async&#x27;,
-      new Promise((resolve, reject) &#x3D;&gt; {
-        setTimeout(
-          () &#x3D;&gt;
-            reject({
-              title: &#x27;Error!!!&#x27;,
-              body: &#x27;We got an example error!&#x27;,
-              config: {
-                closeOnClick: true,
-              },
-            }),
-          1000
-        );
-        setTimeout(() &#x3D;&gt; resolve({}), 1500);
-      }),
-      config
-    );
+    this.snotifireService
+      .async(&#x27;This will resolve with error&#x27;, &#x27;Async&#x27;, errorAction, config)
+      .subscribe();
+    this.snotifireService
+      .async(&#x27;This will resolve with success&#x27;, successAction, config)
+      .subscribe();
+    this.snotifireService
+      .async(
+        &#x27;Called with promise&#x27;,
+        &#x27;Error async&#x27;,
+        new Promise((resolve, reject) &#x3D;&gt; {
+          setTimeout(
+            () &#x3D;&gt;
+              reject({
+                title: &#x27;Error!!!&#x27;,
+                body: &#x27;We got an example error!&#x27;,
+                config: {
+                  closeOnClick: true,
+                },
+              }),
+            1000
+          );
+          setTimeout(() &#x3D;&gt; resolve({}), 1500);
+        }),
+        config
+      )
+      .subscribe();
   }
 
   onConfirmation() {
