@@ -1,6 +1,15 @@
 import { Inject, Injectable } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
-import { from, Observable, Subject, Subscription } from 'rxjs';
+import {
+  catchError,
+  finalize,
+  from,
+  Observable,
+  of,
+  Subject,
+  tap,
+  throwError,
+} from 'rxjs';
 import { SetToastType } from '../decorators/set-toast-type.decorator';
 import { TransformArgument } from '../decorators/transform-argument.decorator';
 import { SnotifireConfig, SnotifireEventType, SnotifireType } from '../models';
@@ -432,7 +441,7 @@ export class SnotifireService {
   async(
     body: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>
-  ): SnotifireToastModel;
+  ): Observable<any>;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -444,7 +453,7 @@ export class SnotifireService {
     body: string,
     title: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>
-  ): SnotifireToastModel;
+  ): Observable<any>;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -456,7 +465,7 @@ export class SnotifireService {
     body: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>,
     config: SnotifireConfig
-  ): SnotifireToastModel;
+  ): Observable<any>;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -470,7 +479,7 @@ export class SnotifireService {
     title: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>,
     config: SnotifireConfig
-  ): SnotifireToastModel;
+  ): Observable<any>;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -479,7 +488,7 @@ export class SnotifireService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  async(args: any): SnotifireToastModel {
+  async(args: any): Observable<any> {
     let async: Observable<any>;
     if (args.action instanceof Promise) {
       async = from(args.action);
@@ -488,24 +497,48 @@ export class SnotifireService {
     }
 
     const toast = this.create(args);
-
+    let failed = false;
+    const asyncAtion = async.pipe(
+      tap((next) => {
+        console.log('called'), this.mergeToast(toast, next);
+      }),
+      catchError((error) => {
+        failed = true;
+        return throwError(() => error);
+      }),
+      finalize(() => {
+        this.mergeToast(
+          toast,
+          {},
+          failed === true ? SnotifireType.ERROR : SnotifireType.SUCCESS
+        );
+      })
+    );
     toast.on(SnotifireEventType.MOUNTED, () => {
-      const subscription: Subscription = async.subscribe({
-        next: (next?: SnotifireModel) => {
-          this.mergeToast(toast, next);
-        },
-        error: (error?: SnotifireModel) => {
-          this.mergeToast(toast, error, SnotifireType.ERROR);
-          subscription.unsubscribe();
-        },
-        complete: () => {
-          this.mergeToast(toast, {}, SnotifireType.SUCCESS);
-          subscription.unsubscribe();
-        },
-      });
+      console.log('mounted');
+      return asyncAtion;
     });
+    return asyncAtion;
 
-    return toast;
+    // const toast = this.create(args);
+
+    // toast.on(SnotifireEventType.MOUNTED, () => {
+    //   const subscription: Subscription = async.subscribe({
+    //     next: (next?: SnotifireModel) => {
+    //       this.mergeToast(toast, next);
+    //     },
+    //     error: (error?: SnotifireModel) => {
+    //       this.mergeToast(toast, error, SnotifireType.ERROR);
+    //       subscription.unsubscribe();
+    //     },
+    //     complete: () => {
+    //       this.mergeToast(toast, {}, SnotifireType.SUCCESS);
+    //       subscription.unsubscribe();
+    //     },
+    //   });
+    // });
+
+    // return toast;
   }
 
   private mergeToast(toast: any, next: any, type?: SnotifireType) {
@@ -515,7 +548,9 @@ export class SnotifireService {
     if (next.title) {
       toast.title = next.title;
     }
+
     if (type && this.defaultConfig) {
+      console.log(type);
       toast.config = mergeDeep(
         toast.config,
         this.defaultConfig.global,

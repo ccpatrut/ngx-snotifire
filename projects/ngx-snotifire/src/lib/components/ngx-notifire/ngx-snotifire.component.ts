@@ -131,7 +131,6 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
         result[searchedString]?.push(toast);
       }
     });
-    console.log(result);
     return result;
   }
 
