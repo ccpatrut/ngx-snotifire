@@ -1,6 +1,6 @@
 {
   "name": "ngx-snotifire",
-  "version": "15.0.9",
+  "version": "15.0.10-beta",
   "license": "Apache-2.0",
   "peerDependencies": {
     "@angular/common": "^15.0.0",

@@ -48,7 +48,6 @@ export class ToastComponent implements OnInit, OnDestroy {
     this.service.toastChanged
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((toast: SnotifireToastModel) => {
-        console.log('toast');
         if (this.toast.id === toast.id) {
           this.initToast();
         }

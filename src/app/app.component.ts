@@ -160,7 +160,7 @@ export class AppComponent implements OnInit {
           body: 'Example. Data loaded!',
           config: {
             closeOnClick: true,
-            timeout: 5000,
+            timeout: 3000,
             showProgressBar: true,
           },
         });
@@ -173,36 +173,33 @@ export class AppComponent implements OnInit {
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
      */
     const { timeout, ...config } = this.getConfig(); // Omit timeout
-    this.snotifireService.async(
-      'This will resolve with error',
-      'Async',
-      errorAction,
-      config
-    );
-    this.snotifireService.async(
-      'This will resolve with success',
-      successAction,
-      config
-    );
-    this.snotifireService.async(
-      'Called with promise',
-      'Error async',
-      new Promise((resolve, reject) => {
-        setTimeout(
-          () =>
-            reject({
-              title: 'Error!!!',
-              body: 'We got an example error!',
-              config: {
-                closeOnClick: true,
-              },
-            }),
-          1000
-        );
-        setTimeout(() => resolve({}), 1500);
-      }),
-      config
-    );
+    this.snotifireService
+      .async('This will resolve with error', 'Async', errorAction, config)
+      .subscribe();
+    this.snotifireService
+      .async('This will resolve with success', successAction, config)
+      .subscribe();
+    this.snotifireService
+      .async(
+        'Called with promise',
+        'Error async',
+        new Promise((resolve, reject) => {
+          setTimeout(
+            () =>
+              reject({
+                title: 'Error!!!',
+                body: 'We got an example error!',
+                config: {
+                  closeOnClick: true,
+                },
+              }),
+            1000
+          );
+          setTimeout(() => resolve({}), 1500);
+        }),
+        config
+      )
+      .subscribe();
   }
 
   onConfirmation() {
