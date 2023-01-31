@@ -53,7 +53,56 @@ this.snotifireService.async(
   "This will resolve with success",
   successAction,
   config
-);
+).subscribe();
+```
+Susbcription is needed, this makes it advantageous to pipe the snotifire service in a http interceptor. 
+For instance:
+
+```typescript
+import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { SnotifireModel, SnotifireService, SnotifireType } from 'ngx-snotifire';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable()
+export class SnotifireIntercetor implements HttpInterceptor {
+  constructor(private readonly snotifireService: SnotifireService) {}
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    const paths = ['/api'];
+    if (
+      paths.some((path) => req.url.startsWith(path) && req.method === 'POST')
+    ) {
+      return this.snotifireService.async(
+        'Processing ',
+        next
+          .handle(req)
+          .pipe(
+            map(
+              (httpEvent) =>
+                new SnotifireModel(
+                  SnotifireType.INFO,
+                  'Processed ',
+                  'Saved successfully',
+                  { showProgressBar: true, timeout: 3000, closeOnClick: true }
+                )
+            )
+          )
+      );
+    }
+    return next.handle(req);
+  }
+}
+
+
 ```
 
 ###### Error
