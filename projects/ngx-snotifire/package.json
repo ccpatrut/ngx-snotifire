@@ -9,5 +9,34 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "keywords": [
+    "angular",
+    "angular 14",
+    "angular 15",
+    "ng14",
+    "ng15",
+    "Angular14",
+    "Angular15",
+    "14",
+    "15",
+    "Library",
+    "Notifications",
+    "Notification",
+    "Toast",
+    "toasts",
+    "promt",
+    "async",
+    "confirmation",
+    "notify",
+    "notie",
+    "notification-center",
+    "snotify",
+    "ng7-snotify",
+    "ng14-snotify",
+    "angular14 notifications",
+    "angular15 notifications",
+    "toaster",
+    "snotifire"
+  ]
 }
