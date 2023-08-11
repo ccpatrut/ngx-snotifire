@@ -23,4 +23,4 @@ jobs:
       - run: npm run-script test
       - run: npm install gitbook-cli@2.1.2  -g
       - run: npm run-script compodoc:build
-      - run: npm run-script docs:build
+     # - run: npm run-script docs:build
