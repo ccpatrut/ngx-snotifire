@@ -57,8 +57,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                 </li>
                     <li class="chapter modules">
                         <a data-type="chapter-link" href="modules.html">
-                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                'data-target="#modules-links"' : 'data-target="#xs-modules-links"' }>
+                            <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?
+                                'data-bs-target="#modules-links"' : 'data-bs-target="#xs-modules-links"' }>
                                 <span class="icon ion-ios-archive"></span>
                                 <span class="link-name">Modules</span>
                                 <span class="icon ion-ios-arrow-down"></span>
@@ -68,8 +68,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
-                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' : 'data-target="#xs-components-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' }>
+                                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#components-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' : 'data-bs-target="#xs-components-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
@@ -82,8 +82,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
-                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' : 'data-target="#xs-injectables-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' }>
+                                    <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                        'data-bs-target="#injectables-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' : 'data-bs-target="#xs-injectables-links-module-AppModule-2154a5cf2fca2fc57ed5738ae695495a17fa7863e15644b53eab25c3192bc9974659740aa1dcf5dd9ab317638d9deb6e63a8c17dd16af77b8dc4cd2b076ce00c"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
@@ -99,8 +99,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="modules/NgxSnotifireModule.html" data-type="entity-link" >NgxSnotifireModule</a>
                                     <li class="chapter inner">
-                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' : 'data-target="#xs-components-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' }>
+                                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#components-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' : 'data-bs-target="#xs-components-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
@@ -122,8 +122,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         </ul>
                                     </li>
                                     <li class="chapter inner">
-                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' : 'data-target="#xs-pipes-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' }>
+                                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#pipes-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' : 'data-bs-target="#xs-pipes-links-module-NgxSnotifireModule-08bda785ee2bef0e80bb209ba06f7b93770900f76cbf1792eb04bad9ec4eea2adcfecc9b410aae51604c1b725c1f5f2d3747ac6e29a3a4e9e53fd0316ef564a2"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
@@ -142,8 +142,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                 </ul>
                 </li>
                     <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links"' :
-                            'data-target="#xs-components-links"' }>
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#components-links"' :
+                            'data-bs-target="#xs-components-links"' }>
                             <span class="icon ion-md-cog"></span>
                             <span>Components</span>
                             <span class="icon ion-ios-arrow-down"></span>
@@ -164,8 +164,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </ul>
                     </li>
                     <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
-                            'data-target="#xs-classes-links"' }>
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#classes-links"' :
+                            'data-bs-target="#xs-classes-links"' }>
                             <span class="icon ion-ios-paper"></span>
                             <span>Classes</span>
                             <span class="icon ion-ios-arrow-down"></span>
@@ -180,8 +180,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </ul>
                     </li>
                         <li class="chapter">
-                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
-                                'data-target="#xs-injectables-links"' }>
+                            <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#injectables-links"' :
+                                'data-bs-target="#xs-injectables-links"' }>
                                 <span class="icon ion-md-arrow-round-down"></span>
                                 <span>Injectables</span>
                                 <span class="icon ion-ios-arrow-down"></span>
@@ -193,8 +193,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </ul>
                         </li>
                     <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#interfaces-links"' :
-                            'data-target="#xs-interfaces-links"' }>
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#interfaces-links"' :
+                            'data-bs-target="#xs-interfaces-links"' }>
                             <span class="icon ion-md-information-circle-outline"></span>
                             <span>Interfaces</span>
                             <span class="icon ion-ios-arrow-down"></span>
@@ -236,8 +236,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </ul>
                     </li>
                         <li class="chapter">
-                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#pipes-links"' :
-                                'data-target="#xs-pipes-links"' }>
+                            <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#pipes-links"' :
+                                'data-bs-target="#xs-pipes-links"' }>
                                 <span class="icon ion-md-add"></span>
                                 <span>Pipes</span>
                                 <span class="icon ion-ios-arrow-down"></span>
@@ -252,8 +252,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </ul>
                         </li>
                     <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#miscellaneous-links"'
-                            : 'data-target="#xs-miscellaneous-links"' }>
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#miscellaneous-links"'
+                            : 'data-bs-target="#xs-miscellaneous-links"' }>
                             <span class="icon ion-ios-cube"></span>
                             <span>Miscellaneous</span>
                             <span class="icon ion-ios-arrow-down"></span>
