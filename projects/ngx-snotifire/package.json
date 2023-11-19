@@ -3,8 +3,8 @@
   "version": "17.0.0",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@angular/common": "^16.2.12",
-    "@angular/core": "^16.2.12",
+    "@angular/common": "^17.0.3",
+    "@angular/core": "^17.0.3",
     "rxjs": "^7.0.0"
   },
   "dependencies": {
