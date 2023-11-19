@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "snotifire-workspace:build:production"
+              "buildTarget": "snotifire-workspace:build:production"
             },
             "development": {
-              "browserTarget": "snotifire-workspace:build:development"
+              "buildTarget": "snotifire-workspace:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "snotifire-workspace:build"
+            "buildTarget": "snotifire-workspace:build"
           }
         },
         "test": {
