@@ -10,16 +10,17 @@
     "example:build": "ng build ",
     "watch": "ng build --watch --configuration development",
     "test": "npm run snotifire-workspace:test; npm run lib:test",
-    "snotifire-workspace:test": "ng test  snotifire-workspace  --browsers=ChromeHeadless --watch=false --progress --code-coverage",
-    "lib:test": "ng test ngx-snotifire  --browsers=ChromeHeadless --watch=false --progress --code-coverage",
+    "snotifire-workspace:test": "ng test snotifire-workspace --browsers=ChromeHeadless --watch=false --progress --code-coverage",
+    "lib:test": "ng test ngx-snotifire --browsers=ChromeHeadless --watch=false --progress --code-coverage",
     "lint": "ng lint",
-    "compodoc:build": "compodoc -p  tsconfig.doc.json -n ng-snotify -d demo/compodoc/ --hideGenerator --theme Laravel",
+    "compodoc:build": "compodoc -p tsconfig.doc.json -n ng-snotify -d demo/compodoc/ --hideGenerator --theme Laravel",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
     "docs:build": "gitbook install docs && gitbook build ./docs ./demo/documentation"
   },
   "private": false,
   "dependencies": {
+<<<<<<< HEAD
     "@angular/animations": "^17.3.12",
     "@angular/common": "^17.3.12",
     "@angular/compiler": "^17.3.12",
@@ -29,20 +30,44 @@
     "@angular/platform-browser": "^17.3.12",
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
+=======
+    "@angular/animations": "^17.0.3",
+    "@angular/cdk": "^17.0.1",
+    "@angular/common": "^17.0.3",
+    "@angular/compiler": "^17.0.3",
+    "@angular/core": "^17.0.3",
+    "@angular/forms": "^17.0.3",
+    "@angular/material": "^17.0.1",
+    "@angular/platform-browser": "^17.0.3",
+    "@angular/platform-browser-dynamic": "^17.0.3",
+    "@angular/router": "^17.0.3",
+>>>>>>> main
     "@compodoc/compodoc": "^1.1.19",
     "graceful-fs": "^4.2.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+<<<<<<< HEAD
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.8",
+=======
+    "zone.js": "~0.14.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "17.0.1",
+>>>>>>> main
     "@angular-eslint/builder": "14.1.2",
     "@angular-eslint/eslint-plugin": "14.1.2",
     "@angular-eslint/eslint-plugin-template": "14.1.2",
     "@angular-eslint/template-parser": "14.1.2",
+<<<<<<< HEAD
     "@angular/cli": "~17.3.8",
     "@angular/compiler-cli": "^17.3.12",
+=======
+    "@angular/cli": "17.0.1",
+    "@angular/compiler-cli": "17.0.3",
+>>>>>>> main
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
@@ -54,7 +79,12 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+<<<<<<< HEAD
     "ng-packagr": "^17.3.0",
     "typescript": "~5.4.5"
+=======
+    "ng-packagr": "^17.0.1",
+    "typescript": "~5.2.2"
+>>>>>>> main
   }
 }

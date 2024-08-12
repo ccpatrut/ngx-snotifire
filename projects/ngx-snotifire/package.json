@@ -3,8 +3,13 @@
   "version": "17.0.0",
   "license": "Apache-2.0",
   "peerDependencies": {
+<<<<<<< HEAD
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0",
+=======
+    "@angular/common": "^17.0.3",
+    "@angular/core": "^17.0.3",
+>>>>>>> main
     "rxjs": "^7.0.0"
   },
   "dependencies": {
@@ -15,16 +20,23 @@
     "angular 14",
     "angular 16",
     "angular 15",
+<<<<<<< HEAD
     "angular 17",
+=======
+    "angular 16",
+>>>>>>> main
     "ng14",
     "ng15",
     "ng17",
     "Angular14",
     "Angular15",
     "Angular16",
+<<<<<<< HEAD
     "Angular17",
+=======
+>>>>>>> main
     "14",
-    "15",
+    "16",
     "Library",
     "Notifications",
     "Notification",
@@ -36,9 +48,9 @@
     "notify",
     "notie",
     "notification-center",
-    "snotify",
+    "snotifire",
     "ng7-snotify",
-    "ng14-snotify",
+    "ngx14-snotifire",
     "angular14 notifications",
     "angular15 notifications",
     "angular17 notifications",
