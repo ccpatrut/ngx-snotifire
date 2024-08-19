@@ -13,7 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 
 describe('TestComponent', () => {
@@ -22,9 +22,8 @@ describe('TestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [
-        ReactiveFormsModule,
+    declarations: [AppComponent],
+    imports: [ReactiveFormsModule,
         NgxSnotifireModule,
         BrowserAnimationsModule,
         MatInputModule,
@@ -33,14 +32,13 @@ describe('TestComponent', () => {
         MatSlideToggleModule,
         MatFormFieldModule,
         MatDividerModule,
-        MatIconModule,
-        HttpClientModule,
-      ],
-      providers: [
+        MatIconModule],
+    providers: [
         { provide: 'snotifireConfig', useValue: ToastDefaults },
         SnotifireService,
-      ],
-    }).compileComponents();
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+}).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
