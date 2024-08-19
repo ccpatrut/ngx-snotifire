@@ -1,10 +1,10 @@
 {
   "name": "ngx-snotifire",
-  "version": "17.0.1",
+  "version": "18.0.0",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@angular/common": "^17.0.3",
-    "@angular/core": "^17.0.3",
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0",
     "rxjs": "^7.0.0"
   },
   "dependencies": {
@@ -13,17 +13,25 @@
   "keywords": [
     "angular",
     "angular 14",
-    "angular 16",
     "angular 15",
     "angular 16",
+    "angular 17",
+    "angular 18",
     "ng14",
     "ng15",
+    "ng16",
     "ng17",
+    "ng18",
     "Angular14",
     "Angular15",
     "Angular16",
+    "Angular17",
+    "Angular18",
     "14",
+    "15",
     "16",
+    "17",
+    "18",
     "Library",
     "Notifications",
     "Notification",
@@ -40,7 +48,9 @@
     "ngx14-snotifire",
     "angular14 notifications",
     "angular15 notifications",
+    "angular16 notifications",
     "angular17 notifications",
+    "angular18 notifications",
     "toaster",
     "snotifire"
   ]
