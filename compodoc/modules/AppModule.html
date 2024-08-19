@@ -296,30 +296,24 @@ import { MatSlideToggleModule } from &#x27;@angular/material/slide-toggle&#x27;;
 import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
 import { MatDividerModule } from &#x27;@angular/material/divider&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
-import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
+import { provideHttpClient, withInterceptorsFromDi } from &#x27;@angular/common/http&#x27;;
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    NgxSnotifireModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatSlideToggleModule,
-    MatFormFieldModule,
-    MatDividerModule,
-    MatIconModule,
-    HttpClientModule,
-  ],
-  providers: [
-    { provide: &#x27;snotifireConfig&#x27;, useValue: ToastDefaults },
-    SnotifireService,
-  ],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        ReactiveFormsModule,
+        NgxSnotifireModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatSlideToggleModule,
+        MatFormFieldModule,
+        MatDividerModule,
+        MatIconModule], providers: [
+        { provide: &#x27;snotifireConfig&#x27;, useValue: ToastDefaults },
+        SnotifireService,
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {}
 </code></pre>
     </div>
