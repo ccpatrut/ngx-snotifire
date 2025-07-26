@@ -441,7 +441,7 @@ export class SnotifireService {
   async(
     body: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>
-  ): Observable<any>;
+  ): SnotifireToastModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -453,7 +453,7 @@ export class SnotifireService {
     body: string,
     title: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>
-  ): Observable<any>;
+  ): SnotifireToastModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -465,7 +465,7 @@ export class SnotifireService {
     body: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>,
     config: SnotifireConfig
-  ): Observable<any>;
+  ): SnotifireToastModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -479,7 +479,7 @@ export class SnotifireService {
     title: string,
     action: Promise<SnotifireModel> | Observable<SnotifireModel>,
     config: SnotifireConfig
-  ): Observable<any>;
+  ): SnotifireToastModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -488,7 +488,7 @@ export class SnotifireService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  async(args: any): Observable<any> {
+  async(args: any): SnotifireToastModel {
     let async: Observable<any>;
     if (args.action instanceof Promise) {
       async = from(args.action);
@@ -498,27 +498,25 @@ export class SnotifireService {
 
     const toast = this.create(args);
     let failed = false;
-    const asyncAtion = async.pipe(
-      tap((next) => {
-        console.log('called'), this.mergeToast(toast, next);
-      }),
-      catchError((error) => {
-        failed = true;
-        return throwError(() => error);
-      }),
-      finalize(() => {
+    async
+      .subscribe({
+        next: (next) => this.mergeToast(toast, next),
+        error: (error) => {
+          failed = true;
+          // As long as error is defined, and not an error object assume it is a new toast config
+          if (error && typeof error === 'object' && !(error instanceof Error)) {
+            this.mergeToast(toast, error);
+          }
+        },
+      })
+      .add(() => {
         this.mergeToast(
           toast,
           {},
           failed === true ? SnotifireType.ERROR : SnotifireType.SUCCESS
         );
-      })
-    );
-    toast.on(SnotifireEventType.MOUNTED, () => {
-      console.log('mounted');
-      return asyncAtion;
-    });
-    return asyncAtion;
+      });
+    return toast;
 
     // const toast = this.create(args);
 
