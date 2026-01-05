@@ -54,4 +54,8 @@
     "toaster",
     "snotifire"
   ]
+  ,
+  "engines": {
+    "node": ">=24.0.0"
+  }
 }
