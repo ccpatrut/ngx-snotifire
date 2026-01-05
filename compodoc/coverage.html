@@ -62,6 +62,20 @@
                }
                toggleDarkMode(darkModeState);
           </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
 
         <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
                <div class="d-flex">
@@ -82,6 +96,10 @@
                <!-- START CONTENT -->
                <div class="content coverage">
                    <div class="content-data">
+
+
+
+
 
 
 
@@ -122,7 +140,7 @@
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/ButtonsConfig.html">projects/ngx-snotifire/src/lib/components/buttons/buttons-config.interface.ts</a>
+                        <a href="./interfaces/ButtonsConfig.html">projects/ngx-snotifire/src/lib/components/buttons/buttons-config.interface.ts</a>
             </td>
             <td>interface</td>
             <td>ButtonsConfig</td>
@@ -134,7 +152,7 @@
         <tr class="medium">
             <td>
                 <!-- miscellaneous -->
-                <a href="./components/ButtonsComponent.html">projects/ngx-snotifire/src/lib/components/buttons/buttons.component.ts</a>
+                        <a href="./components/ButtonsComponent.html">projects/ngx-snotifire/src/lib/components/buttons/buttons.component.ts</a>
             </td>
             <td>component</td>
             <td>ButtonsComponent</td>
@@ -146,7 +164,7 @@
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./components/NgxSnotifireComponent.html">projects/ngx-snotifire/src/lib/components/ngx-notifire/ngx-snotifire.component.ts</a>
+                        <a href="./components/NgxSnotifireComponent.html">projects/ngx-snotifire/src/lib/components/ngx-notifire/ngx-snotifire.component.ts</a>
             </td>
             <td>component</td>
             <td>NgxSnotifireComponent</td>
@@ -158,7 +176,7 @@
         <tr class="medium">
             <td>
                 <!-- miscellaneous -->
-                <a href="./components/PromptComponent.html">projects/ngx-snotifire/src/lib/components/prompt/prompt.component.ts</a>
+                        <a href="./components/PromptComponent.html">projects/ngx-snotifire/src/lib/components/prompt/prompt.component.ts</a>
             </td>
             <td>component</td>
             <td>PromptComponent</td>
@@ -170,7 +188,7 @@
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./classes/SnotifireToastModel.html">projects/ngx-snotifire/src/lib/components/toast/notifire-toast.model.ts</a>
+                        <a href="./classes/SnotifireToastModel.html">projects/ngx-snotifire/src/lib/components/toast/notifire-toast.model.ts</a>
             </td>
             <td>class</td>
             <td>SnotifireToastModel</td>
@@ -182,7 +200,7 @@
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./components/ToastComponent.html">projects/ngx-snotifire/src/lib/components/toast/toast.component.ts</a>
+                        <a href="./components/ToastComponent.html">projects/ngx-snotifire/src/lib/components/toast/toast.component.ts</a>
             </td>
             <td>component</td>
             <td>ToastComponent</td>
@@ -194,7 +212,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/functions.html#SetToastType">projects/ngx-snotifire/src/lib/decorators/set-toast-type.decorator.ts</a>
+                        <a href="./miscellaneous/functions.html#SetToastType">projects/ngx-snotifire/src/lib/decorators/set-toast-type.decorator.ts</a>
             </td>
             <td>function</td>
             <td>SetToastType</td>
@@ -206,7 +224,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/functions.html#TransformArgument">projects/ngx-snotifire/src/lib/decorators/transform-argument.decorator.ts</a>
+                        <a href="./miscellaneous/functions.html#TransformArgument">projects/ngx-snotifire/src/lib/decorators/transform-argument.decorator.ts</a>
             </td>
             <td>function</td>
             <td>TransformArgument</td>
@@ -218,7 +236,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/SnotifireDefaults.html">projects/ngx-snotifire/src/lib/defaults/defaults.interface.ts</a>
+                        <a href="./interfaces/SnotifireDefaults.html">projects/ngx-snotifire/src/lib/defaults/defaults.interface.ts</a>
             </td>
             <td>interface</td>
             <td>SnotifireDefaults</td>
@@ -230,7 +248,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/SnotifireGlobalConfig.html">projects/ngx-snotifire/src/lib/defaults/global-config.interface.ts</a>
+                        <a href="./interfaces/SnotifireGlobalConfig.html">projects/ngx-snotifire/src/lib/defaults/global-config.interface.ts</a>
             </td>
             <td>interface</td>
             <td>SnotifireGlobalConfig</td>
@@ -242,7 +260,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#ToastDefaults">projects/ngx-snotifire/src/lib/defaults/toast-defaults.ts</a>
+                        <a href="./miscellaneous/variables.html#ToastDefaults">projects/ngx-snotifire/src/lib/defaults/toast-defaults.ts</a>
             </td>
             <td>variable</td>
             <td>ToastDefaults</td>
@@ -254,7 +272,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/SnotifireAnimate.html">projects/ngx-snotifire/src/lib/models/snotifire-animate.interface.ts</a>
+                        <a href="./interfaces/SnotifireAnimate.html">projects/ngx-snotifire/src/lib/models/snotifire-animate.interface.ts</a>
             </td>
             <td>interface</td>
             <td>SnotifireAnimate</td>
@@ -266,7 +284,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/SnotifireConfig.html">projects/ngx-snotifire/src/lib/models/snotifire-config.interface.ts</a>
+                        <a href="./interfaces/SnotifireConfig.html">projects/ngx-snotifire/src/lib/models/snotifire-config.interface.ts</a>
             </td>
             <td>interface</td>
             <td>SnotifireConfig</td>
@@ -278,7 +296,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/SnotifireNotifications.html">projects/ngx-snotifire/src/lib/models/snotifire-notifications.interface.ts</a>
+                        <a href="./interfaces/SnotifireNotifications.html">projects/ngx-snotifire/src/lib/models/snotifire-notifications.interface.ts</a>
             </td>
             <td>interface</td>
             <td>SnotifireNotifications</td>
@@ -290,7 +308,7 @@
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./classes/SnotifireModel.html">projects/ngx-snotifire/src/lib/models/snotifire.model.ts</a>
+                        <a href="./classes/SnotifireModel.html">projects/ngx-snotifire/src/lib/models/snotifire.model.ts</a>
             </td>
             <td>class</td>
             <td>SnotifireModel</td>
@@ -302,7 +320,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./pipes/KeysPipe.html">projects/ngx-snotifire/src/lib/pipes/keys.pipe.ts</a>
+                        <a href="./pipes/KeysPipe.html">projects/ngx-snotifire/src/lib/pipes/keys.pipe.ts</a>
             </td>
             <td>pipe</td>
             <td>KeysPipe</td>
@@ -314,7 +332,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./pipes/TruncatePipe.html">projects/ngx-snotifire/src/lib/pipes/truncate.pipe.ts</a>
+                        <a href="./pipes/TruncatePipe.html">projects/ngx-snotifire/src/lib/pipes/truncate.pipe.ts</a>
             </td>
             <td>pipe</td>
             <td>TruncatePipe</td>
@@ -326,7 +344,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./injectables/SnotifireService.html">projects/ngx-snotifire/src/lib/services/notification.service.ts</a>
+                        <a href="./injectables/SnotifireService.html">projects/ngx-snotifire/src/lib/services/notification.service.ts</a>
             </td>
             <td>injectable</td>
             <td>SnotifireService</td>
@@ -338,7 +356,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#context">projects/ngx-snotifire/src/lib/test.ts</a>
+                        <a href="./miscellaneous/variables.html#context">projects/ngx-snotifire/src/lib/test.ts</a>
             </td>
             <td>variable</td>
             <td>context</td>
@@ -350,7 +368,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#require">projects/ngx-snotifire/src/lib/test.ts</a>
+                        <a href="./miscellaneous/variables.html#require">projects/ngx-snotifire/src/lib/test.ts</a>
             </td>
             <td>variable</td>
             <td>require</td>
@@ -362,7 +380,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/functions.html#isObject">projects/ngx-snotifire/src/lib/utils.ts</a>
+                        <a href="./miscellaneous/functions.html#isObject">projects/ngx-snotifire/src/lib/utils.ts</a>
             </td>
             <td>function</td>
             <td>isObject</td>
@@ -374,7 +392,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/functions.html#mergeDeep">projects/ngx-snotifire/src/lib/utils.ts</a>
+                        <a href="./miscellaneous/functions.html#mergeDeep">projects/ngx-snotifire/src/lib/utils.ts</a>
             </td>
             <td>function</td>
             <td>mergeDeep</td>
@@ -386,7 +404,7 @@
         <tr class="very-good">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/functions.html#uuid">projects/ngx-snotifire/src/lib/utils.ts</a>
+                        <a href="./miscellaneous/functions.html#uuid">projects/ngx-snotifire/src/lib/utils.ts</a>
             </td>
             <td>function</td>
             <td>uuid</td>
@@ -398,7 +416,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./components/AppComponent.html">src/app/app.component.ts</a>
+                        <a href="./components/AppComponent.html">src/app/app.component.ts</a>
             </td>
             <td>component</td>
             <td>AppComponent</td>
@@ -410,7 +428,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/FunctionalConfig.html">src/app/app.component.ts</a>
+                        <a href="./interfaces/FunctionalConfig.html">src/app/app.component.ts</a>
             </td>
             <td>interface</td>
             <td>FunctionalConfig</td>
@@ -422,7 +440,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/NotificationConfig.html">src/app/app.component.ts</a>
+                        <a href="./interfaces/NotificationConfig.html">src/app/app.component.ts</a>
             </td>
             <td>interface</td>
             <td>NotificationConfig</td>
@@ -434,7 +452,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/NotificationFormValue.html">src/app/app.component.ts</a>
+                        <a href="./interfaces/NotificationFormValue.html">src/app/app.component.ts</a>
             </td>
             <td>interface</td>
             <td>NotificationFormValue</td>
@@ -446,7 +464,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/ToastData.html">src/app/app.component.ts</a>
+                        <a href="./interfaces/ToastData.html">src/app/app.component.ts</a>
             </td>
             <td>interface</td>
             <td>ToastData</td>
@@ -458,7 +476,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./interfaces/VisualConfig.html">src/app/app.component.ts</a>
+                        <a href="./interfaces/VisualConfig.html">src/app/app.component.ts</a>
             </td>
             <td>interface</td>
             <td>VisualConfig</td>
@@ -470,7 +488,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
+                        <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
             </td>
             <td>variable</td>
             <td>environment</td>
@@ -482,7 +500,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
+                        <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
             </td>
             <td>variable</td>
             <td>environment</td>
@@ -554,7 +572,6 @@
        <script src="./js/libs/es6-shim.min.js"></script>
        <script src="./js/libs/EventDispatcher.js"></script>
        <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
 
        <script src="./js/compodoc.js"></script>
 

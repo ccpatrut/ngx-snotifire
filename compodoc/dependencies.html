@@ -62,6 +62,20 @@
                }
                toggleDarkMode(darkModeState);
           </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
 
         <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
                <div class="d-flex">
@@ -97,28 +111,32 @@
 
 
 
+
+
+
+
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Dependencies</li>
     </ol>
     <ul class="dependencies-list">
         <li>
-            <b>@angular/animations</b> : ^18.2.0</li>
+            <b>@angular/animations</b> : ^19.2.17</li>
         <li>
-            <b>@angular/common</b> : ^18.2.0</li>
+            <b>@angular/common</b> : ^19.2.17</li>
         <li>
-            <b>@angular/compiler</b> : ^18.2.0</li>
+            <b>@angular/compiler</b> : ^19.2.17</li>
         <li>
-            <b>@angular/core</b> : ^18.2.0</li>
+            <b>@angular/core</b> : ^19.2.17</li>
         <li>
-            <b>@angular/forms</b> : ^18.2.0</li>
+            <b>@angular/forms</b> : ^19.2.17</li>
         <li>
-            <b>@angular/material</b> : ^18.2.0</li>
+            <b>@angular/material</b> : ^19.2.19</li>
         <li>
-            <b>@angular/platform-browser</b> : ^18.2.0</li>
+            <b>@angular/platform-browser</b> : ^19.2.17</li>
         <li>
-            <b>@angular/platform-browser-dynamic</b> : ^18.2.0</li>
+            <b>@angular/platform-browser-dynamic</b> : ^19.2.17</li>
         <li>
-            <b>@angular/router</b> : ^18.2.0</li>
+            <b>@angular/router</b> : ^19.2.17</li>
         <li>
             <b>@compodoc/compodoc</b> : ^1.1.19</li>
         <li>
@@ -128,7 +146,7 @@
         <li>
             <b>tslib</b> : ^2.3.0</li>
         <li>
-            <b>zone.js</b> : ~0.14.10</li>
+            <b>zone.js</b> : ~0.15.1</li>
     </ul>
 
 
@@ -191,7 +209,6 @@
        <script src="./js/libs/es6-shim.min.js"></script>
        <script src="./js/libs/EventDispatcher.js"></script>
        <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
 
        <script src="./js/compodoc.js"></script>
 

@@ -62,6 +62,20 @@
                }
                toggleDarkMode(darkModeState);
           </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
 
         <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
                <div class="d-flex">
@@ -80,14 +94,26 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content getting-started">
+               <div class="content changelog">
                    <div class="content-data">
+
+
 
 <h2>Change Log</h2>
 <h3>v1.0.0</h3>
 <ul>
 <li>Migrating from artemsky on angular v14</li>
 </ul>
+<h3>v19.0.0</h3>
+<ul>
+<li>Angular 19 compatibility: updated to <code>@angular/core</code>, <code>@angular/cli</code>, and <code>@angular/material</code> v19.</li>
+<li>Library peers widened to support Angular <code>^16 || ^17 || ^18 || ^19</code> with <code>rxjs ^7</code>.</li>
+<li>Internal migrations: CLI builder migrated to <code>application</code> builder; standalone flags normalized by Angular schematics.</li>
+<li>Demo builds fine; Material theming warns about v19 theme API maps (color/typography/density). Styling remains functional.</li>
+<li>Docs: compodoc and GitBook can be rebuilt via workspace scripts.</li>
+</ul>
+
+
 
 
 
@@ -134,7 +160,7 @@
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'changelog';
             var COMPODOC_CURRENT_PAGE_URL = 'changelog.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
@@ -163,7 +189,6 @@
        <script src="./js/libs/es6-shim.min.js"></script>
        <script src="./js/libs/EventDispatcher.js"></script>
        <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
 
        <script src="./js/compodoc.js"></script>
 
