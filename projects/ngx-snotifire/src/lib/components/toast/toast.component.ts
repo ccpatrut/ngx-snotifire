@@ -13,9 +13,10 @@ import { SnotifireToastModel } from './notifire-toast.model';
 import { SnotifireService } from '../../services';
 
 @Component({
-  selector: 'ngx-toast',
-  templateUrl: './toast.component.html',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'ngx-toast',
+    templateUrl: './toast.component.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class ToastComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();

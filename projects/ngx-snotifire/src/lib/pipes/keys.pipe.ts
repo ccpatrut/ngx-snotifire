@@ -1,8 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'keys',
-  pure: false,
+    name: 'keys',
+    pure: false,
+    standalone: false
 })
 /**
  * Extract object keys pipe

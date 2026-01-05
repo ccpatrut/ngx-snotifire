@@ -9,10 +9,11 @@ import { SnotifireEventType } from '../../models';
 import { SnotifireToastModel } from '../toast/notifire-toast.model';
 
 @Component({
-  selector: 'ngx-snotify-prompt',
-  templateUrl: './prompt.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+    selector: 'ngx-snotify-prompt',
+    templateUrl: './prompt.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class PromptComponent {
   inputType = SnotifireEventType.INPUT;

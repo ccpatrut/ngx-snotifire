@@ -9,10 +9,11 @@ import { SnotifireToastModel } from '../toast/notifire-toast.model';
 import { SnotifireService } from '../../services';
 
 @Component({
-  selector: 'notifire-button',
-  templateUrl: './buttons.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+    selector: 'notifire-button',
+    templateUrl: './buttons.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 /**
  * Buttons component
