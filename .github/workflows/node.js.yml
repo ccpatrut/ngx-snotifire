@@ -8,22 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [24.x]
+        node-version: [22.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-          registry-url: "https://registry.npmjs.org"
-      - name: Prepare npm
-        run: |
-          npm --version
-          npm config delete always-auth || true
-          npm i -g npm@10
-          npm --version
-      - run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+      - run: npm ci
       - run: npm run-script lib:build:prod
       - run: npm run-script build
       - run: npm run-script test
