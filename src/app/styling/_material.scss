@@ -143,7 +143,8 @@ $mat-dark-theme-background: (
   disabled-list-option: $dark-bg-lighter-10,
 );
 
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Theme Config
 
