@@ -17,6 +17,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
+      - name: Prepare npm
+        run: |
+          npm --version
+          npm config delete always-auth || true
+          npm i -g npm@10
+          npm --version
       - run: npm ci
       - run: npm run-script lib:build:prod
       - run: npm run-script build
