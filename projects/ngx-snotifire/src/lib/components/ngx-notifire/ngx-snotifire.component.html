@@ -1,18 +1,18 @@
-<div
-    class="snotifire-backdrop"
-    *ngIf="backdrop && backdrop >= 0"
-    [style.opacity]="backdrop"
-></div>
+@if (backdrop && backdrop >= 0) {
+    <div
+        class="snotifire-backdrop"
+        [style.opacity]="backdrop"
+    ></div>
+}
 
-<div
-    *ngFor="let position of notifications | keys"
-    class="snotify snotify-{{ position }}"
->
-    <ngx-toast
-        *ngFor="let notification of getNotificationArray(notifications, position) | slice: blockSizeA:blockSizeB"
-        [toast]="notification"
-        (stateChanged)="stateChanged($event)"
-    >
-    </ngx-toast>
-
-</div>
+@for (position of notifications | keys; track position) {
+    <div class="snotify snotify-{{ position }}">
+        @for (notification of getNotificationArray(notifications, position) | slice: blockSizeA:blockSizeB; track notification.id) {
+            <ngx-toast
+                [toast]="notification"
+                (stateChanged)="stateChanged($event)"
+            >
+            </ngx-toast>
+        }
+    </div>
+}

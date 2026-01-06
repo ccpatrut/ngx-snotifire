@@ -11,3 +11,8 @@
 - Internal migrations: CLI builder migrated to `application` builder; standalone flags normalized by Angular schematics.
 - Demo builds fine; Material theming warns about v19 theme API maps (color/typography/density). Styling remains functional.
 - Docs: compodoc and GitBook can be rebuilt via workspace scripts.
+
+### v19.1.0
+
+- Migrated from deprecated `*ngIf`, `*ngFor`, `*ngSwitch` structural directives to Angular's built-in control flow (`@if`, `@for`, `@switch`).
+- This ensures compatibility with Angular 22+ where the legacy directives will be removed.

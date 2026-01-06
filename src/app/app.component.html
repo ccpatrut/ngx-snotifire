@@ -82,23 +82,21 @@
                 </div>
                 <mat-divider></mat-divider>
                 <div class="snotifire-position">
-                    <mat-form-field
-                        appearance="outline"
-                        *ngIf="positionFormControl"
-                    >
-                        <mat-label>Select Notification Position</mat-label>
-                        <mat-select
-                            [formControl]="positionFormControl"
-                            name="position"
-                        >
-                            <mat-option
-                                *ngFor="let position  of positions"
-                                [value]="position"
+                    @if (positionFormControl) {
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select Notification Position</mat-label>
+                            <mat-select
+                                [formControl]="positionFormControl"
+                                name="position"
                             >
-                                {{position}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
+                                @for (position of positions; track position) {
+                                    <mat-option [value]="position">
+                                        {{position}}
+                                    </mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    }
                 </div>
                 <div
                     class="config__booleans"
@@ -138,23 +136,21 @@
 
                 </div>
 
-                <mat-form-field
-                    appearance="outline"
-                    *ngIf="themeControl"
-                >
-                    <mat-label>Select theme</mat-label>
-                    <mat-select
-                        [formControl]="themeControl"
-                        name="toastStyle"
-                    >
-                        <mat-option
-                            *ngFor="let theme of themes"
-                            [value]="theme"
+                @if (themeControl) {
+                    <mat-form-field appearance="outline">
+                        <mat-label>Select theme</mat-label>
+                        <mat-select
+                            [formControl]="themeControl"
+                            name="toastStyle"
                         >
-                            {{theme}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+                            @for (theme of themes; track theme) {
+                                <mat-option [value]="theme">
+                                    {{theme}}
+                                </mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                }
             </div>
 
         </form>

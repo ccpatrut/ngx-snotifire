@@ -15,11 +15,10 @@
         class="notifire-toast__input__label"
         [for]="toast.id"
     >
-        <span
-            class="notifire-toast__input__labelContent"
-            *ngIf="toast.config && toast.config.placeholder "
-        >
-            {{ toast.config.placeholder | truncate }}
-        </span>
+        @if (toast.config && toast.config.placeholder) {
+            <span class="notifire-toast__input__labelContent">
+                {{ toast.config.placeholder | truncate }}
+            </span>
+        }
     </label>
 </span>

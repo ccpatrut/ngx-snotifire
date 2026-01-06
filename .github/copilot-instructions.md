@@ -44,3 +44,4 @@
 - `async` toasts: omit/override `timeout` and progress as needed; success/error style is applied when the stream completes/errors.
 - `mergeDeep` expects plain objects; avoid arrays/functions in config.
 - To remove a toast programmatically: `service.remove(toast.id)`; to clear all: `service.remove(0)` or `service.clear()`.
+- **Control Flow**: Templates use Angular's built-in control flow (`@if`, `@for`, `@switch`) instead of deprecated `*ngIf`/`*ngFor`/`*ngSwitch`. This ensures compatibility with Angular 22+.
