@@ -16,3 +16,10 @@
 
 - Migrated from deprecated `*ngIf`, `*ngFor`, `*ngSwitch` structural directives to Angular's built-in control flow (`@if`, `@for`, `@switch`).
 - This ensures compatibility with Angular 22+ where the legacy directives will be removed.
+
+### v20.0.0
+
+- Angular 20 compatibility: updated to `@angular/core`, `@angular/cli`, and `@angular/material` v20.
+- Library peers widened to support Angular `^16 || ^17 || ^18 || ^19 || ^20` with `rxjs ^7`.
+- TypeScript `moduleResolution` updated to `bundler` as per Angular 20 migration.
+- Control flow (`@if`, `@for`) already in place from v19.1.0 - ready for Angular 22+ deprecation of `*ngIf`/`*ngFor`.
