@@ -565,7 +565,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                            <b>Returns : </b>        <code><a href="../classes/SnotifireToastModel.html" target="_self" >SnotifireToastModel</a></code>
 
                         </div>
                             <div class="io-description">
@@ -672,7 +672,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                            <b>Returns : </b>        <code><a href="../classes/SnotifireToastModel.html" target="_self" >SnotifireToastModel</a></code>
 
                         </div>
                             <div class="io-description">
@@ -779,7 +779,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                            <b>Returns : </b>        <code><a href="../classes/SnotifireToastModel.html" target="_self" >SnotifireToastModel</a></code>
 
                         </div>
                             <div class="io-description">
@@ -902,7 +902,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                            <b>Returns : </b>        <code><a href="../classes/SnotifireToastModel.html" target="_self" >SnotifireToastModel</a></code>
 
                         </div>
                             <div class="io-description">
@@ -982,7 +982,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                            <b>Returns : </b>        <code><a href="../classes/SnotifireToastModel.html" target="_self" >SnotifireToastModel</a></code>
 
                         </div>
                             <div class="io-description">
@@ -2125,8 +2125,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="575"
-                                    class="link-to-prism">projects/ngx-snotifire/src/lib/services/notification.service.ts:575</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="573"
+                                    class="link-to-prism">projects/ngx-snotifire/src/lib/services/notification.service.ts:573</a></div>
                         </td>
                     </tr>
 
@@ -2736,8 +2736,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="544"
-                                    class="link-to-prism">projects/ngx-snotifire/src/lib/services/notification.service.ts:544</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="542"
+                                    class="link-to-prism">projects/ngx-snotifire/src/lib/services/notification.service.ts:542</a></div>
                         </td>
                     </tr>
 
@@ -4957,7 +4957,7 @@ export class SnotifireService {
   async(
     body: string,
     action: Promise&lt;SnotifireModel&gt; | Observable&lt;SnotifireModel&gt;
-  ): Observable&lt;any&gt;;
+  ): SnotifireToastModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -4969,7 +4969,7 @@ export class SnotifireService {
     body: string,
     title: string,
     action: Promise&lt;SnotifireModel&gt; | Observable&lt;SnotifireModel&gt;
-  ): Observable&lt;any&gt;;
+  ): SnotifireToastModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -4981,7 +4981,7 @@ export class SnotifireService {
     body: string,
     action: Promise&lt;SnotifireModel&gt; | Observable&lt;SnotifireModel&gt;,
     config: SnotifireConfig
-  ): Observable&lt;any&gt;;
+  ): SnotifireToastModel;
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body string
@@ -4995,7 +4995,7 @@ export class SnotifireService {
     title: string,
     action: Promise&lt;SnotifireModel&gt; | Observable&lt;SnotifireModel&gt;,
     config: SnotifireConfig
-  ): Observable&lt;any&gt;;
+  ): SnotifireToastModel;
   /**
    * Transform toast arguments into NotificationModel object
    */
@@ -5004,7 +5004,7 @@ export class SnotifireService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  async(args: any): Observable&lt;any&gt; {
+  async(args: any): SnotifireToastModel {
     let async: Observable&lt;any&gt;;
     if (args.action instanceof Promise) {
       async &#x3D; from(args.action);
@@ -5014,27 +5014,25 @@ export class SnotifireService {
 
     const toast &#x3D; this.create(args);
     let failed &#x3D; false;
-    const asyncAtion &#x3D; async.pipe(
-      tap((next) &#x3D;&gt; {
-        console.log(&#x27;called&#x27;), this.mergeToast(toast, next);
-      }),
-      catchError((error) &#x3D;&gt; {
-        failed &#x3D; true;
-        return throwError(() &#x3D;&gt; error);
-      }),
-      finalize(() &#x3D;&gt; {
+    async
+      .subscribe({
+        next: (next) &#x3D;&gt; this.mergeToast(toast, next),
+        error: (error) &#x3D;&gt; {
+          failed &#x3D; true;
+          // As long as error is defined, and not an error object assume it is a new toast config
+          if (error &amp;&amp; typeof error &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; !(error instanceof Error)) {
+            this.mergeToast(toast, error);
+          }
+        },
+      })
+      .add(() &#x3D;&gt; {
         this.mergeToast(
           toast,
           {},
           failed &#x3D;&#x3D;&#x3D; true ? SnotifireType.ERROR : SnotifireType.SUCCESS
         );
-      })
-    );
-    toast.on(SnotifireEventType.MOUNTED, () &#x3D;&gt; {
-      console.log(&#x27;mounted&#x27;);
-      return asyncAtion;
-    });
-    return asyncAtion;
+      });
+    return toast;
 
     // const toast &#x3D; this.create(args);
 
