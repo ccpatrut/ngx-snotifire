@@ -1170,7 +1170,7 @@ export class ToastComponent implements OnInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;toast &amp;&amp; toast.config&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">@if (toast &amp;&amp; toast.config) {
     &lt;div
         [attr.role]&#x3D;&quot;toast.config.type &#x3D;&#x3D;&#x3D; state.promptType ? &#x27;dialog&#x27; : &#x27;alert&#x27;&quot;
         [attr.aria-labelledby]&#x3D;&quot;&#x27;snotify_&#x27; + toast.id&quot;
@@ -1191,60 +1191,54 @@ export class ToastComponent implements OnInit, OnDestroy {
         (mouseenter)&#x3D;&quot;onMouseEnter()&quot;
         (mouseleave)&#x3D;&quot;onMouseLeave()&quot;
     &gt;
-        &lt;div
-            class&#x3D;&quot;notifire-toast__progressBar&quot;
-            *ngIf&#x3D;&quot;toast.config.showProgressBar&quot;
-        &gt;
-            &lt;span
-                class&#x3D;&quot;notifire-toast__progressBar__percentage&quot;
-                [ngStyle]&#x3D;&quot;{ width: state.progress * 100 + &#x27;%&#x27; }&quot;
-            &gt;&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div
-            class&#x3D;&quot;notifire-toast__inner&quot;
-            *ngIf&#x3D;&quot;!toast.config.html; else toastHTML&quot;
-        &gt;
-            &lt;div
-                class&#x3D;&quot;notifire-toast__title&quot;
-                [attr.id]&#x3D;&quot;&#x27;snotify_&#x27; + toast.id&quot;
-                *ngIf&#x3D;&quot;toast.title&quot;
-            &gt;
-                {{ toast.title | truncate: toast.config.titleMaxLength }}
+        @if (toast.config.showProgressBar) {
+            &lt;div class&#x3D;&quot;notifire-toast__progressBar&quot;&gt;
+                &lt;span
+                    class&#x3D;&quot;notifire-toast__progressBar__percentage&quot;
+                    [ngStyle]&#x3D;&quot;{ width: state.progress * 100 + &#x27;%&#x27; }&quot;
+                &gt;&lt;/span&gt;
             &lt;/div&gt;
-            &lt;div
-                class&#x3D;&quot;notifire-toast__body&quot;
-                *ngIf&#x3D;&quot;toast.body&quot;
-            &gt;
-                {{ toast.body | truncate: toast.config.bodyMaxLength }}
+        }
+        @if (!toast.config.html) {
+            &lt;div class&#x3D;&quot;notifire-toast__inner&quot;&gt;
+                @if (toast.title) {
+                    &lt;div
+                        class&#x3D;&quot;notifire-toast__title&quot;
+                        [attr.id]&#x3D;&quot;&#x27;snotify_&#x27; + toast.id&quot;
+                    &gt;
+                        {{ toast.title | truncate: toast.config.titleMaxLength }}
+                    &lt;/div&gt;
+                }
+                @if (toast.body) {
+                    &lt;div class&#x3D;&quot;notifire-toast__body&quot;&gt;
+                        {{ toast.body | truncate: toast.config.bodyMaxLength }}
+                    &lt;/div&gt;
+                }
+                @if (toast.config.type &#x3D;&#x3D;&#x3D; state.promptType) {
+                    &lt;ngx-snotify-prompt [toast]&#x3D;&quot;toast&quot;&gt;&lt;/ngx-snotify-prompt&gt;
+                }
+                @if (!toast.config.icon) {
+                    &lt;div
+                        [ngClass]&#x3D;&quot;[&#x27;snotifire-icon&#x27;, toast.config.iconClass || &#x27;snotifire-icon--&#x27; + toast.config.type]&quot;
+                    &gt;&lt;/div&gt;
+                } @else {
+                    &lt;img
+                        class&#x3D;&quot;snotifire-icon&quot;
+                        [src]&#x3D;&quot;toast.config.icon&quot;
+                    &gt;
+                }
             &lt;/div&gt;
-            &lt;ngx-snotify-prompt
-                *ngIf&#x3D;&quot;toast.config.type &#x3D;&#x3D;&#x3D; state.promptType&quot;
-                [toast]&#x3D;&quot;toast&quot;
-            &gt;
-            &lt;/ngx-snotify-prompt&gt;
-            &lt;div
-                *ngIf&#x3D;&quot;!toast.config.icon; else elseBlock&quot;
-                [ngClass]&#x3D;&quot;[&#x27;snotifire-icon&#x27;, toast.config.iconClass || &#x27;snotifire-icon--&#x27; + toast.config.type]&quot;
-            &gt;&lt;/div&gt;
-            &lt;ng-template #elseBlock&gt;
-                &lt;img
-                    class&#x3D;&quot;snotifire-icon&quot;
-                    [src]&#x3D;&quot;toast.config.icon&quot;
-                &gt;
-            &lt;/ng-template&gt;
-        &lt;/div&gt;
-        &lt;ng-template #toastHTML&gt;
+        } @else {
             &lt;div
                 class&#x3D;&quot;notifire-toast__inner&quot;
                 [innerHTML]&#x3D;&quot;toast.config.html&quot;
             &gt;&lt;/div&gt;
-        &lt;/ng-template&gt;
-        &lt;notifire-button
-            *ngIf&#x3D;&quot;toast.config.buttons&quot;
-            [toast]&#x3D;&quot;toast&quot;
-        &gt;&lt;/notifire-button&gt;
+        }
+        @if (toast.config.buttons) {
+            &lt;notifire-button [toast]&#x3D;&quot;toast&quot;&gt;&lt;/notifire-button&gt;
+        }
     &lt;/div&gt;
-&lt;/ng-container&gt;
+}
 </code></pre>
     </div>
 
@@ -1274,7 +1268,7 @@ export class ToastComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="toast && toast.config">    <div        [attr.role]="toast.config.type === state.promptType ? \'dialog\' : \'alert\'"        [attr.aria-labelledby]="\'snotify_\' + toast.id"        [attr.aria-modal]="toast.config.type === state.promptType"        [ngClass]="[  \'notifire-toast animated\',  \'snotify-\' + toast.config.type,  state.animation,  toast.valid === undefined ? \'\' : toast.valid ? \'snotifyToast--valid\' : \'snotifyToast--invalid\']"        [ngStyle]="{  \'-webkit-transition\': toast.config.animation && toast.config.animation.time  + \'ms\',  transition:  toast.config.animation && toast.config.animation.time + \'ms\',  \'-webkit-animation-duration\':  toast.config.animation &&  toast.config.animation.time + \'ms\',  \'animation-duration\':  toast.config.animation && toast.config.animation.time + \'ms\'}"        (animationend)="onExitTransitionEnd()"        (click)="onClick()"        (mouseenter)="onMouseEnter()"        (mouseleave)="onMouseLeave()"    >        <div            class="notifire-toast__progressBar"            *ngIf="toast.config.showProgressBar"        >            <span                class="notifire-toast__progressBar__percentage"                [ngStyle]="{ width: state.progress * 100 + \'%\' }"            ></span>        </div>        <div            class="notifire-toast__inner"            *ngIf="!toast.config.html; else toastHTML"        >            <div                class="notifire-toast__title"                [attr.id]="\'snotify_\' + toast.id"                *ngIf="toast.title"            >                {{ toast.title | truncate: toast.config.titleMaxLength }}            </div>            <div                class="notifire-toast__body"                *ngIf="toast.body"            >                {{ toast.body | truncate: toast.config.bodyMaxLength }}            </div>            <ngx-snotify-prompt                *ngIf="toast.config.type === state.promptType"                [toast]="toast"            >            </ngx-snotify-prompt>            <div                *ngIf="!toast.config.icon; else elseBlock"                [ngClass]="[\'snotifire-icon\', toast.config.iconClass || \'snotifire-icon--\' + toast.config.type]"            ></div>            <ng-template #elseBlock>                <img                    class="snotifire-icon"                    [src]="toast.config.icon"                >            </ng-template>        </div>        <ng-template #toastHTML>            <div                class="notifire-toast__inner"                [innerHTML]="toast.config.html"            ></div>        </ng-template>        <notifire-button            *ngIf="toast.config.buttons"            [toast]="toast"        ></notifire-button>    </div></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div>@if (toast && toast.config) {    <div        [attr.role]="toast.config.type === state.promptType ? \'dialog\' : \'alert\'"        [attr.aria-labelledby]="\'snotify_\' + toast.id"        [attr.aria-modal]="toast.config.type === state.promptType"        [ngClass]="[  \'notifire-toast animated\',  \'snotify-\' + toast.config.type,  state.animation,  toast.valid === undefined ? \'\' : toast.valid ? \'snotifyToast--valid\' : \'snotifyToast--invalid\']"        [ngStyle]="{  \'-webkit-transition\': toast.config.animation && toast.config.animation.time  + \'ms\',  transition:  toast.config.animation && toast.config.animation.time + \'ms\',  \'-webkit-animation-duration\':  toast.config.animation &&  toast.config.animation.time + \'ms\',  \'animation-duration\':  toast.config.animation && toast.config.animation.time + \'ms\'}"        (animationend)="onExitTransitionEnd()"        (click)="onClick()"        (mouseenter)="onMouseEnter()"        (mouseleave)="onMouseLeave()"    >        @if (toast.config.showProgressBar) {            <div class="notifire-toast__progressBar">                <span                    class="notifire-toast__progressBar__percentage"                    [ngStyle]="{ width: state.progress * 100 + \'%\' }"                ></span>            </div>        }        @if (!toast.config.html) {            <div class="notifire-toast__inner">                @if (toast.title) {                    <div                        class="notifire-toast__title"                        [attr.id]="\'snotify_\' + toast.id"                    >                        {{ toast.title | truncate: toast.config.titleMaxLength }}                    </div>                }                @if (toast.body) {                    <div class="notifire-toast__body">                        {{ toast.body | truncate: toast.config.bodyMaxLength }}                    </div>                }                @if (toast.config.type === state.promptType) {                    <ngx-snotify-prompt [toast]="toast"></ngx-snotify-prompt>                }                @if (!toast.config.icon) {                    <div                        [ngClass]="[\'snotifire-icon\', toast.config.iconClass || \'snotifire-icon--\' + toast.config.type]"                    ></div>                } @else {                    <img                        class="snotifire-icon"                        [src]="toast.config.icon"                    >                }            </div>        } @else {            <div                class="notifire-toast__inner"                [innerHTML]="toast.config.html"            ></div>        }        @if (toast.config.buttons) {            <notifire-button [toast]="toast"></notifire-button>        }    </div>}</div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'notifire-button'},{'name': 'NgxSnotifireComponent', 'selector': 'ngx-snotifire'},{'name': 'PromptComponent', 'selector': 'ngx-snotify-prompt'},{'name': 'ToastComponent', 'selector': 'ngx-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToastComponent'};

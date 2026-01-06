@@ -491,12 +491,11 @@ export class PromptComponent {
         class&#x3D;&quot;notifire-toast__input__label&quot;
         [for]&#x3D;&quot;toast.id&quot;
     &gt;
-        &lt;span
-            class&#x3D;&quot;notifire-toast__input__labelContent&quot;
-            *ngIf&#x3D;&quot;toast.config &amp;&amp; toast.config.placeholder &quot;
-        &gt;
-            {{ toast.config.placeholder | truncate }}
-        &lt;/span&gt;
+        @if (toast.config &amp;&amp; toast.config.placeholder) {
+            &lt;span class&#x3D;&quot;notifire-toast__input__labelContent&quot;&gt;
+                {{ toast.config.placeholder | truncate }}
+            &lt;/span&gt;
+        }
     &lt;/label&gt;
 &lt;/span&gt;
 </code></pre>
@@ -528,7 +527,7 @@ export class PromptComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><span    class="notifire-toast__input"    [ngClass]="{ \'notifire-toast__input--filled\': isPromptFocused }">    <input        (input)="toast.value = getValue($event); toast.eventEmitter.next(inputType)"        autofocus        class="notifire-toast__input__field"        type="text"        [id]="toast.id"        (focus)="isPromptFocused = true"        (blur)="isPromptFocused = !!toast.value && !!toast.value.length"    >    <label        class="notifire-toast__input__label"        [for]="toast.id"    >        <span            class="notifire-toast__input__labelContent"            *ngIf="toast.config && toast.config.placeholder "        >            {{ toast.config.placeholder | truncate }}        </span>    </label></span></div>'
+        var COMPONENT_TEMPLATE = '<div><span    class="notifire-toast__input"    [ngClass]="{ \'notifire-toast__input--filled\': isPromptFocused }">    <input        (input)="toast.value = getValue($event); toast.eventEmitter.next(inputType)"        autofocus        class="notifire-toast__input__field"        type="text"        [id]="toast.id"        (focus)="isPromptFocused = true"        (blur)="isPromptFocused = !!toast.value && !!toast.value.length"    >    <label        class="notifire-toast__input__label"        [for]="toast.id"    >        @if (toast.config && toast.config.placeholder) {            <span class="notifire-toast__input__labelContent">                {{ toast.config.placeholder | truncate }}            </span>        }    </label></span></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'notifire-button'},{'name': 'NgxSnotifireComponent', 'selector': 'ngx-snotifire'},{'name': 'PromptComponent', 'selector': 'ngx-snotify-prompt'},{'name': 'ToastComponent', 'selector': 'ngx-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PromptComponent'};

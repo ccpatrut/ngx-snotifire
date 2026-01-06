@@ -1175,24 +1175,24 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div
-    class&#x3D;&quot;snotifire-backdrop&quot;
-    *ngIf&#x3D;&quot;backdrop &amp;&amp; backdrop &gt;&#x3D; 0&quot;
-    [style.opacity]&#x3D;&quot;backdrop&quot;
-&gt;&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">@if (backdrop &amp;&amp; backdrop &gt;&#x3D; 0) {
+    &lt;div
+        class&#x3D;&quot;snotifire-backdrop&quot;
+        [style.opacity]&#x3D;&quot;backdrop&quot;
+    &gt;&lt;/div&gt;
+}
 
-&lt;div
-    *ngFor&#x3D;&quot;let position of notifications | keys&quot;
-    class&#x3D;&quot;snotify snotify-{{ position }}&quot;
-&gt;
-    &lt;ngx-toast
-        *ngFor&#x3D;&quot;let notification of getNotificationArray(notifications, position) | slice: blockSizeA:blockSizeB&quot;
-        [toast]&#x3D;&quot;notification&quot;
-        (stateChanged)&#x3D;&quot;stateChanged($event)&quot;
-    &gt;
-    &lt;/ngx-toast&gt;
-
-&lt;/div&gt;
+@for (position of notifications | keys; track position) {
+    &lt;div class&#x3D;&quot;snotify snotify-{{ position }}&quot;&gt;
+        @for (notification of getNotificationArray(notifications, position) | slice: blockSizeA:blockSizeB; track notification.id) {
+            &lt;ngx-toast
+                [toast]&#x3D;&quot;notification&quot;
+                (stateChanged)&#x3D;&quot;stateChanged($event)&quot;
+            &gt;
+            &lt;/ngx-toast&gt;
+        }
+    &lt;/div&gt;
+}
 </code></pre>
     </div>
 
@@ -1222,7 +1222,7 @@ export class NgxSnotifireComponent implements OnInit, OnDestroy, AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div    class="snotifire-backdrop"    *ngIf="backdrop && backdrop >= 0"    [style.opacity]="backdrop"></div><div    *ngFor="let position of notifications | keys"    class="snotify snotify-{{ position }}">    <ngx-toast        *ngFor="let notification of getNotificationArray(notifications, position) | slice: blockSizeA:blockSizeB"        [toast]="notification"        (stateChanged)="stateChanged($event)"    >    </ngx-toast></div></div>'
+        var COMPONENT_TEMPLATE = '<div>@if (backdrop && backdrop >= 0) {    <div        class="snotifire-backdrop"        [style.opacity]="backdrop"    ></div>}@for (position of notifications | keys; track position) {    <div class="snotify snotify-{{ position }}">        @for (notification of getNotificationArray(notifications, position) | slice: blockSizeA:blockSizeB; track notification.id) {            <ngx-toast                [toast]="notification"                (stateChanged)="stateChanged($event)"            >            </ngx-toast>        }    </div>}</div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'notifire-button'},{'name': 'NgxSnotifireComponent', 'selector': 'ngx-snotifire'},{'name': 'PromptComponent', 'selector': 'ngx-snotify-prompt'},{'name': 'ToastComponent', 'selector': 'ngx-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NgxSnotifireComponent'};

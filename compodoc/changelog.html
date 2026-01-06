@@ -112,6 +112,11 @@
 <li>Demo builds fine; Material theming warns about v19 theme API maps (color/typography/density). Styling remains functional.</li>
 <li>Docs: compodoc and GitBook can be rebuilt via workspace scripts.</li>
 </ul>
+<h3>v19.1.0</h3>
+<ul>
+<li>Migrated from deprecated <code>*ngIf</code>, <code>*ngFor</code>, <code>*ngSwitch</code> structural directives to Angular&#39;s built-in control flow (<code>@if</code>, <code>@for</code>, <code>@switch</code>).</li>
+<li>This ensures compatibility with Angular 22+ where the legacy directives will be removed.</li>
+</ul>
 
 
 
