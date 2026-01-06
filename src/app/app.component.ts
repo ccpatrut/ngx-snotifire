@@ -175,11 +175,9 @@ export class AppComponent implements OnInit {
      */
     const { timeout, ...config } = this.getConfig(); // Omit timeout
     this.snotifireService
-      .async('This will resolve with error', 'Async', errorAction, config)
-      .subscribe();
+      .async('This will resolve with error', 'Async', errorAction, config);
     this.snotifireService
-      .async('This will resolve with success', successAction, config)
-      .subscribe();
+      .async('This will resolve with success', successAction, config);
     this.snotifireService
       .async(
         'Called with promise',
@@ -199,8 +197,7 @@ export class AppComponent implements OnInit {
           setTimeout(() => resolve({}), 1500);
         }),
         config
-      )
-      .subscribe();
+      );
   }
 
   onConfirmation() {
