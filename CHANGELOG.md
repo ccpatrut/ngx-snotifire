@@ -23,3 +23,10 @@
 - Library peers widened to support Angular `^16 || ^17 || ^18 || ^19 || ^20` with `rxjs ^7`.
 - TypeScript `moduleResolution` updated to `bundler` as per Angular 20 migration.
 - Control flow (`@if`, `@for`) already in place from v19.1.0 - ready for Angular 22+ deprecation of `*ngIf`/`*ngFor`.
+
+### v21.0.0
+
+- Angular 21 compatibility: updated to `@angular/core`, `@angular/cli`, and `@angular/material` v21.
+- Library peers widened to support Angular `^16 || ^17 || ^18 || ^19 || ^20 || ^21` with `rxjs ^7`.
+- TypeScript updated to v5.9.
+- ng-packagr updated to v21.
